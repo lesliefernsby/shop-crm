@@ -1,8 +1,6 @@
 {
   "development": {
-    "username": "admindb",
-    "password": "admindb",
-    "database": "database_shop_crm",
+    "use_env_variable":	"DB_URL",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
