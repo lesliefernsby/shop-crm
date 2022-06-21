@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
-import { PrivateRoute } from './hoc/PrivateComponent';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -12,7 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <PrivateRoute exact path="/checkout" element={<Checkout />} />
+        <Route exact path='/checkout' element={<PrivateRoute />}>
+            <Route exact path='/checkout' element={<Checkout />}/>
+        </Route>
       </Routes>
     </React.Fragment>
   );
