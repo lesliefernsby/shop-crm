@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -7,6 +8,10 @@ import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material'
 
 const Navbar = (props) => {
 
+  const loggedIn = useSelector(state => state.authentication.loggedIn);
+  // console.log('isLogged', loggedIn)
+  const user = useSelector(state => state.authentication.user);
+  // console.log('user', user)
   const {query, setQuery, setPageNumber} = props
 
  function handleSearch(e) {
@@ -33,8 +38,9 @@ const Navbar = (props) => {
             component='h2'
             noWrap
             sx={{flexGrow:1, display:{xs:'none', md:'flex'}}}
+            style={{ minWidth: '20%', margin: '0.5rem' }}
             >
-              The Awesome Shop  (of all the shops teh)
+              The Top Shop
             </Typography>
 
             <Typography
@@ -43,7 +49,7 @@ const Navbar = (props) => {
             noWrap
             sx={{flexGrow:1, display:{xs:'flex', md:'none'}}}
             >
-              the_m
+              TTS
             </Typography>
 
             <Grid container
@@ -56,29 +62,30 @@ const Navbar = (props) => {
           value={query} 
           onChange={handleSearch} 
           placeholder={'What are we looking for?'} 
-          style={{ minWidth: '20%', margin: '0.5rem' }}>
+          style={{ minWidth: '20%', margin: '0.3rem' }}>
           </TextField>
             </Grid>
             
-            {/* unlogged */}
-        <Link className='NavLink' to={"/login"}>
+        
+       { (!loggedIn)?<>
+       <Link className='NavLink' to={"/login"}>
           <Button 
           color='inherit'
           startIcon={<Lock />}
           >
           Login
           </Button>
-        </Link>
+        </Link> 
+        </> : ''}
          
-            {/* /unlogged */}
-
-            {/* logged */}
-            <Link className='NavLink' to={"/"}>
+         
+            { (loggedIn)?<>
+              <Link className='NavLink' to={"/"}>
             <Button 
           color='inherit'
           startIcon={<Person />}
           href= "/">
-          username
+          {user.firstName}
           </Button>
             </Link>
 
@@ -89,8 +96,9 @@ const Navbar = (props) => {
           >
           Logout
           </Button>
-          </Link>
-          {/* /logged */}
+          </Link> 
+          </> : ''}
+         
 
         </Toolbar>
       </Container>
