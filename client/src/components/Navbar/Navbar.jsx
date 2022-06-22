@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppBar, Container, Toolbar, Box, IconButton, Typography, Button } from '@mui/material'
 import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material'
 // import useProductSearch from '../customHooks/useProductSearch'; Над переносом надо нормально подумать
@@ -37,36 +38,35 @@ const Navbar = () => {
 
             
             {/* unlogged */}
+        <Link className='NavLink' to={"/login"}>
           <Button 
           color='inherit'
           startIcon={<Lock />}
-          href= "/login"
           >
           Login
           </Button>
-
-          {/* <Button 
-          color='inherit'
-          startIcon={<ExitToApp />}
-          >
-          Sign In
-          </Button> */}
+        </Link>
+         
             {/* /unlogged */}
 
             {/* logged */}
+            <Link className='NavLink' to={"/"}>
             <Button 
           color='inherit'
           startIcon={<Person />}
           href= "/">
           username
           </Button>
+            </Link>
 
+            <Link className='NavLink' to={"/checkout"}>
             <Button 
           color='inherit'
           startIcon={<MeetingRoom />}
-          href= "/checkout">
+          >
           Logout
           </Button>
+          </Link>
           {/* /logged */}
 
         </Toolbar>
