@@ -2,7 +2,7 @@ require('rootpath')();
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const {getProducts} = require('./mockedProducts')
+const {getProducts} = require('./mockedProducts')//todo delete
 const bodyParser = require('body-parser');
 const errorHandler = require('helpers/error-handler');
 
@@ -15,11 +15,12 @@ app.use(cors());
 
 // api routes
 app.use('/users', require('./controllers/users'));
+app.use('/products', require('./controllers/products'));
 
-app.get('/products/search', async (req, res) => {
-  const result = await getProducts(req.query);
-  res.json({result})
-})
+// app.get('/products/search', async (req, res) => {
+//   const products = await getProducts(req.query);
+//   res.json(products)
+// })
 
 // global error handler
 app.use(errorHandler);

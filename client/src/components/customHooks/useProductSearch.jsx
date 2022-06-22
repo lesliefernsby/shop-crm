@@ -16,18 +16,25 @@ export const  useProductSearch = (query, pageNumber) => {
     setLoading(true)
     setError(false)
     let cancel
+    // axios({
+    //   method: 'GET',
+    //   url: 'http://localhost:3001/products/search',
+    //   params: { q: query, page: pageNumber },
+    //   cancelToken: new axios.CancelToken(c => cancel = c)
+    // })
     axios({
-      method: 'GET',
-      url: 'http://localhost:3001/products/search',
-      params: { q: query, page: pageNumber },
-      cancelToken: new axios.CancelToken(c => cancel = c)
+      method: 'POST',
+      url: 'http://localhost:3001/products',
+        data: { q: query, page: 1, filters: {categories: [1,2]}, perPage: 15 },
+        cancelToken: new axios.CancelToken(c => cancel = c)
     })
     .then(res => {
-      console.log(res);
+      console.log(res, 'res');
+      const products = res?.data || [];
       setProducts(prevProducts => {
-        return [...new Set([...prevProducts, ...res.data.result.map(b => b)])]
+        return [...new Set([...prevProducts, ...products.map(b => b)])]
       })
-      setHasMore(res.data.result.length > 0)
+      setHasMore(products.length > 0)
       setLoading(false)
     }).catch(e => {
       if (axios.isCancel(e)) return
