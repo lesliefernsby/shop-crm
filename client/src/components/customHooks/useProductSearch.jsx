@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-
+import {useSelector} from 'react-redux';
 
 export const  useProductSearch = (query, pageNumber) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [products, setProducts] = useState([])
   const [hasMore, setHasMore] = useState(false)
-
+  const filtersCategories = useSelector((state) => state.productsList.filters.categories)
+  console.log();
   useEffect(() => {
     setProducts([])
-  }, [query])
+  }, [query, filtersCategories])
 
   useEffect(() => {
     setLoading(true)
@@ -19,7 +20,7 @@ export const  useProductSearch = (query, pageNumber) => {
     axios({
       method: 'POST',
       url: 'http://localhost:3001/products',
-        data: { q: query, page: pageNumber , filters: {categories: []}, perPage: 15 },
+        data: { q: query, page: pageNumber , filters: {categories: filtersCategories}, perPage: 15 },
         cancelToken: new axios.CancelToken(c => cancel = c)
     })
     .then(res => {
@@ -35,7 +36,7 @@ export const  useProductSearch = (query, pageNumber) => {
       setError(true)
     })
     return () => cancel()
-  }, [query, pageNumber])
+  }, [query, pageNumber, filtersCategories])
 
   return { loading, error, products, hasMore }
 }

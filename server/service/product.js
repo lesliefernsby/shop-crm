@@ -3,8 +3,15 @@ const Op = require('sequelize').Op;
 
 module.exports = {
   getProductsByPage,
+  getCategoriesOptions
 };
-
+async function getCategoriesOptions() {
+  try {
+    return await Category.findAll({raw: true});
+  } catch (error) {
+    console.log(error);
+  }
+}
 async function getProductsByPage(body) {
   try {
     const { page, filters } = body;
