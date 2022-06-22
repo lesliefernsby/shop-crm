@@ -2,14 +2,25 @@ import React, { useRef, useCallback } from 'react'
 import useProductSearch from '../customHooks/useProductSearch';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-// import TextField from '@mui/material/TextField';
 import ProductCard from '../ProductCard/ProductCard';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux'
+import { productsListActions } from '../../redux/actions/productsListActions';
+import CategoryFilter from '../CategoryFilter/CategoryFilter';
 
 const ProductsList = (props) => {
+  const dispatch = useDispatch();
 
-  const {query, pageNumber, setPageNumber} = props
+  useEffect(() => {
+    dispatch(productsListActions.setIsListPage(true));
+    return () => {
+      dispatch(productsListActions.setIsListPage(false));
+    }
+  }, []);
+
+  const { query, pageNumber, setPageNumber } = props;
 
   const {
     products,
@@ -32,16 +43,22 @@ const ProductsList = (props) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container 
-      spacing={{ xs: 2, md: 3 }} 
-      columns={{ xs: 4, sm: 8, md: 12 }}
-      style={{ marginTop: '3.5rem' }}>
-
+       <Grid container
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        style={{ marginTop: '3.5rem' }}>
+        <Grid container
+          item xs={12}
+          direction="row"
+          justifyContent="center"
+          alignItems="stretch">
+          <CategoryFilter />
+        </Grid>
         {products.map((product, index) => {
           if (products.length === index + 1) {
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{display: 'flex'}} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
+            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{ display: 'flex' }} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
           } else {
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{display: 'flex'}} key={product.id}><ProductCard product={product} /></div></Grid>;
+            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
           }
         })}
         <Grid

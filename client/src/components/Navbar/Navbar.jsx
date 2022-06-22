@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { AppBar, Container, Toolbar, Box, IconButton, Typography, Button } from '@mui/material'
-import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material'
+import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material';
 
 const Navbar = (props) => {
-
+  const isProductListPage = useSelector((state) => state.productsList.isProductListPage);
   const loggedIn = useSelector(state => state.authentication.loggedIn);
   // console.log('isLogged', loggedIn)
   const user = useSelector(state => state.authentication.user);
@@ -51,20 +51,21 @@ const Navbar = (props) => {
             >
               TTS
             </Typography>
-
-            <Grid container
-          item xs={12}
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch">
-          <TextField 
-          type="text" 
-          value={query} 
-          onChange={handleSearch} 
-          placeholder={'What are we looking for?'} 
-          style={{ minWidth: '20%', margin: '0.3rem' }}>
-          </TextField>
-            </Grid>
+            
+            
+            {isProductListPage && <Grid container
+            item xs={12}
+            direction="row"
+            justifyContent="center"
+            alignItems="stretch">
+            <TextField
+              type="text"
+              value={query}
+              onChange={handleSearch}
+              placeholder={'What are we looking for?'}
+              style={{ minWidth: '20%', margin: '0.5rem' }}>
+            </TextField>
+          </Grid>}
             
         
        { (!loggedIn)?<>
@@ -107,3 +108,5 @@ const Navbar = (props) => {
 }
 
 export default Navbar
+
+
