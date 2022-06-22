@@ -1,17 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { AppBar, Container, Toolbar, Box, IconButton, Typography, Button } from '@mui/material'
-import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material'
-import { useSelector } from 'react-redux';
-
+import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material';
 
 const Navbar = (props) => {
   const isProductListPage = useSelector((state) => state.productsList.isProductListPage);
-  const { query, setQuery, setPageNumber } = props
+  const loggedIn = useSelector(state => state.authentication.loggedIn);
+  // console.log('isLogged', loggedIn)
+  const user = useSelector(state => state.authentication.user);
+  // console.log('user', user)
+  const {query, setQuery, setPageNumber} = props
 
-  function handleSearch(e) {
+ function handleSearch(e) {
     setQuery(e.target.value)
     setPageNumber(1)
   }
@@ -22,33 +25,35 @@ const Navbar = (props) => {
 
         <Toolbar disableGutters>
 
-          <Box sx={{ mr: 1 }}>
-            <Link className='NavLink' to={"/"}>
-              <IconButton size='large' color='inherit'>
-                <Menu />
-              </IconButton>
+          <Box sx={{mr:1}}>
+          <Link className='NavLink' to={"/"}>
+            <IconButton size='large' color='inherit'>
+              <Menu />
+            </IconButton>
             </Link>
           </Box>
 
-          <Typography
+            <Typography
             variant='h6'
             component='h2'
             noWrap
-            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
-          >
-            The Awesome Shop  (of all the shops teh)
-          </Typography>
+            sx={{flexGrow:1, display:{xs:'none', md:'flex'}}}
+            style={{ minWidth: '20%', margin: '0.5rem' }}
+            >
+              The Top Shop
+            </Typography>
 
-          <Typography
+            <Typography
             variant='h6'
             component='h2'
             noWrap
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            the_m
-          </Typography>
-
-          {isProductListPage && <Grid container
+            sx={{flexGrow:1, display:{xs:'flex', md:'none'}}}
+            >
+              TTS
+            </Typography>
+            
+            
+            {isProductListPage && <Grid container
             item xs={12}
             direction="row"
             justifyContent="center"
@@ -61,38 +66,40 @@ const Navbar = (props) => {
               style={{ minWidth: '20%', margin: '0.5rem' }}>
             </TextField>
           </Grid>}
+            
+        
+       { (!loggedIn)?<>
+       <Link className='NavLink' to={"/login"}>
+          <Button 
+          color='inherit'
+          startIcon={<Lock />}
+          >
+          Login
+          </Button>
+        </Link> 
+        </> : ''}
+         
+         
+            { (loggedIn)?<>
+              <Link className='NavLink' to={"/"}>
+            <Button 
+          color='inherit'
+          startIcon={<Person />}
+          href= "/">
+          {user.firstName}
+          </Button>
+            </Link>
 
-          {/* unlogged */}
-          <Link className='NavLink' to={"/login"}>
-            <Button
-              color='inherit'
-              startIcon={<Lock />}
-            >
-              Login
-            </Button>
-          </Link>
-
-          {/* /unlogged */}
-
-          {/* logged */}
-          <Link className='NavLink' to={"/"}>
-            <Button
-              color='inherit'
-              startIcon={<Person />}
-              href="/">
-              username
-            </Button>
-          </Link>
-
-          <Link className='NavLink' to={"/checkout"}>
-            <Button
-              color='inherit'
-              startIcon={<MeetingRoom />}
-            >
-              Logout
-            </Button>
-          </Link>
-          {/* /logged */}
+            <Link className='NavLink' to={"/checkout"}>
+            <Button 
+          color='inherit'
+          startIcon={<MeetingRoom />}
+          >
+          Logout
+          </Button>
+          </Link> 
+          </> : ''}
+         
 
         </Toolbar>
       </Container>
@@ -101,3 +108,5 @@ const Navbar = (props) => {
 }
 
 export default Navbar
+
+
