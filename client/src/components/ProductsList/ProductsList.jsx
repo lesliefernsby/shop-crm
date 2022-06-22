@@ -2,7 +2,6 @@ import React, { useRef, useCallback } from 'react'
 import useProductSearch from '../customHooks/useProductSearch';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-// import TextField from '@mui/material/TextField';
 import ProductCard from '../ProductCard/ProductCard';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
