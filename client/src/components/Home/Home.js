@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <div className="main">
       <CssBaseline />
+      
       <Container maxWidth="lg">
         <ProductsList />
       </Container>
