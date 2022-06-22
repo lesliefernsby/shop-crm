@@ -5,9 +5,15 @@ const authorize = require('../helpers/authorize')
 const Role = require('../helpers/role');
 
 // routes
-router.post('/authenticate', authenticate);     // public route
-router.get('/', authorize(Role.Admin), getAll); // admin only
-router.get('/:id', authorize(), getById);       // all authenticated users
+// public routes
+router.post('/authenticate', authenticate);
+router.post('/register', register);
+
+// admin only
+router.get('/', authorize(Role.Admin), getAll); 
+
+// all authenticated users
+router.get('/:id', authorize(), getById);       
 module.exports = router;
 
 function authenticate(req, res, next) {
@@ -25,7 +31,7 @@ function getAll(req, res, next) {
 function getById(req, res, next) {
     const currentUser = req.user;
     const id = parseInt(req.params.id);
-    
+
     // only allow admins to access other user records
     if (id !== currentUser.sub && !currentUser.roles.includes(Role.Admin)) {
         return res.status(401).json({ message: 'Unauthorized' });
@@ -34,4 +40,10 @@ function getById(req, res, next) {
     userService.getById(id)
         .then(user => user ? res.json(user) : res.sendStatus(404))
         .catch(err => next(err));
+}
+
+function register(req, res, next) {
+  userService.register(req.body)
+  .then(user => user ? res.json(user) : res.status(500).json({ message: 'Failed to create' }))
+  .catch(err => next(err));
 }

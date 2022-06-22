@@ -9,7 +9,8 @@ const saltRounds = 10;
 module.exports = {
     authenticate,
     getAll,
-    getById
+    getById,
+    register
 };
 
 async function authenticate({ username, password }) {
@@ -46,4 +47,21 @@ async function getById(id) {
     if (!user) return;
     const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
     return userWithoutPassword;
+}
+
+async function register({username, password, firstName='', lastName='', email}) {
+  email = email || username;
+  let plainTextPassword = password;
+  password = await bcrypt.hash(plainTextPassword, saltRounds);
+  const roles = ['User'];
+  const user = await User.create({
+    username,
+    email,
+    password,
+    firstName,
+    lastName,
+    roles
+  })
+
+  return authenticate({username: username, password: plainTextPassword});
 }
