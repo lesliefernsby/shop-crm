@@ -16,16 +16,10 @@ export const  useProductSearch = (query, pageNumber) => {
     setLoading(true)
     setError(false)
     let cancel
-    // axios({
-    //   method: 'GET',
-    //   url: 'http://localhost:3001/products/search',
-    //   params: { q: query, page: pageNumber },
-    //   cancelToken: new axios.CancelToken(c => cancel = c)
-    // })
     axios({
       method: 'POST',
       url: 'http://localhost:3001/products',
-        data: { q: query, page: 1, filters: {categories: [1,2]}, perPage: 15 },
+        data: { q: query, page: pageNumber , filters: {categories: []}, perPage: 15 },
         cancelToken: new axios.CancelToken(c => cancel = c)
     })
     .then(res => {

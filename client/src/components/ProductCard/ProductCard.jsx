@@ -42,7 +42,7 @@ const ProductCard = (props) => {
           onClick={() => modal ? null : openModal()}
         />
         <CardContent onClick={() => modal ? null : openModal()}>
-          <Typography variant="h6">{product.categoryId}</Typography>
+          {/* <Typography variant="h6">{product.categoryId}</Typography> */}
           <Typography gutterBottom variant="h5" component="div">
             {product.title}
           </Typography>
