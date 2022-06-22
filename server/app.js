@@ -26,4 +26,4 @@ app.use(errorHandler);
 
 // start server
 
-app.listen(process.env.PORT ?? 3001, () => { console.log(`Server started sucessfully at port ${PORT}`); }); 
+app.listen(process.env.PORT ?? 3001, () => { console.log(`Server started sucessfully at port ${PORT} <3`); }); 
