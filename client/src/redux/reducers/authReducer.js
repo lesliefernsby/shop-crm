@@ -1,7 +1,8 @@
 import { userConstants } from '../constants';
+import jwt_decode from "jwt-decode";
 
-let user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? { loggedIn: true, user } : {};
+let token = localStorage.getItem('token');
+export const initialState = token ? { loggedIn: true, user: jwt_decode(token) } : {};
 
 export function authentication(state = initialState, action) {
   switch (action.type) {

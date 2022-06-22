@@ -23,13 +23,10 @@ async function authenticate({ username, password }) {
 
     const pass = await bcrypt.compare(password, user.password)
 
-    console.log(user, pass);
     if (user && pass) {
-        const token = jwt.sign({ sub: user.id, roles: user.roles }, config.secret);
-        const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
+        const token = jwt.sign({ sub: user.id, roles: user.roles, firstName: user.firstName, lastName: user.lastName }, config.secret);
         return {
-            ...userWithoutPassword,
-            token
+          token
         };
     }
 }
