@@ -47,9 +47,11 @@ function CategoryFilter() {
     setFilterObjects(
       event.target.value
     );
-    const data = event.target.value.map(i => i.id)
-    dispatch(productsListActions.addCategoriesFilter(data));
   };
+
+  useEffect(() => {
+    dispatch(productsListActions.addCategoriesFilter(filterObjects.map((item) => item.id)));
+  }, [filterObjects]);
 
   return (
     <div>
@@ -70,7 +72,6 @@ function CategoryFilter() {
               {selected.map((value) => (
                 <Chip key={value.id} label={value.title} onMouseDown={(event) => event.stopPropagation()} onDelete={() => {
                   setFilterObjects(selected.filter(item => item.id !== value.id))
-                  dispatch(productsListActions.addCategoriesFilter(selected.filter(item => item.id !== value.id).map((i) => i.id)))
                 }} />
               ))}
             </Box>
