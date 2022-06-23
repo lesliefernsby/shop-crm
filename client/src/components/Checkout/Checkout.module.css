@@ -1,0 +1,43 @@
+.AppBar {
+  position: "relative";
+}
+
+.Layout {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Paper {
+  margin-top: 6em;
+  margin-bottom: 6em;
+  padding: 3em;
+  min-height: 80vh;
+}
+
+.Stepper {
+  padding: 2em 0 2em;
+}
+
+.Buttons {
+  display: "flex";
+  justify-content: "flex-end";
+  margin-top: 3em;
+}
+
+.Button {
+  margin-top: 3em;
+  margin-left: 1em;
+}
+
+.ListItem {
+  padding: 1em 0
+}
+
+.Total {
+  font-weight: "700"
+}
+
+.Title {
+  margin-top: 2em
+}
