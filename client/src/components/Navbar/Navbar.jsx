@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
-import { Drawer, Badge ,
+import {
+  Drawer,
+  Badge,
   AppBar,
   Container,
   Toolbar,
@@ -11,7 +13,13 @@ import { Drawer, Badge ,
   Button,
 } from "@mui/material";
 import styled from "styled-components";
-import { AddShoppingCart , Menu, Lock, MeetingRoom, Person } from "@mui/icons-material";
+import {
+  AddShoppingCart,
+  Menu,
+  Lock,
+  MeetingRoom,
+  Person,
+} from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
@@ -88,16 +96,16 @@ function Navbar(props) {
                 onChange={handleSearch}
                 placeholder="What are we looking for?"
                 style={{ minWidth: "20%", margin: "0.5rem" }}
-               />
+              />
             </Grid>
           )}
 
           {!loggedIn ? (
             <Link className="NavLink" to="/login">
-                <Button color="inherit" startIcon={<Lock />}>
-                  Login
-                </Button>
-              </Link>
+              <Button color="inherit" startIcon={<Lock />}>
+                Login
+              </Button>
+            </Link>
           ) : (
             ""
           )}
@@ -105,7 +113,7 @@ function Navbar(props) {
           {loggedIn ? (
             <>
               <Link className="NavLink" to="/">
-                <Button color="inherit" startIcon={<Person />} href="/">
+                <Button color="inherit" startIcon={<Person />}>
                   {user.firstName}
                 </Button>
               </Link>
