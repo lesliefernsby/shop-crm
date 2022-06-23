@@ -32,7 +32,7 @@ function Cart() {
 
       <p>Total price: ${calculateTotal().toFixed(2)}</p>
 
-      <Button
+      {cart.length > 0 && <Button
         type="submit"
         variant="contained"
         color="primary"
@@ -40,7 +40,7 @@ function Cart() {
         onClick={()=>handleSubmit()}
       >
         Proceed to checkout
-      </Button>
+      </Button>}
     </div>
   );
 }
