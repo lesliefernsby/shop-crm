@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 import {
   Drawer,
   Badge,
@@ -27,7 +27,8 @@ import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
 import { productsListActions } from '../../redux/actions/productsListActions';
 // import CategoryFilter from '../CategoryFilter/CategoryFilter'
-
+import { userActions } from "../../redux/actions/userActions";
+import { cartActions } from "../../redux/actions/cartActions";
 
 const StyledButton = styled(IconButton)`
 position: relative;
@@ -40,6 +41,8 @@ function Navbar() {
 
   const dispatch = useDispatch();
 
+
+
   const isProductListPage = useSelector(
     (state) => state.productsList.isProductListPage
   );
@@ -51,14 +54,17 @@ function Navbar() {
 
   const query = useSelector(state => state.productsList.query)
 
+  const cartOpen = useSelector((state) => state.cartDialog);
+  const cart = useSelector((state) => state.cart);
 
   function handleSearch(e) {
     dispatch(productsListActions.setQuery(e.target.value))
     dispatch(productsListActions.setPageNumber(1))
   }
 
-  const [cartOpen, setCartOpen] = useState(false);
-  const cart = useSelector((state) => state.cart);
+  function handleLogout() {
+    dispatch(userActions.logout());
+  }
 
   return (
     <AppBar>
@@ -90,7 +96,7 @@ function Navbar() {
           >
             TTS
           </Typography>
-{/* 
+          {/* 
           {isProductListPage && (
             <Grid
               container
@@ -123,16 +129,6 @@ function Navbar() {
             </Grid>
           )}
 
-          {!loggedIn ? (
-            <Link className="NavLink" to="/login">
-              <Button color="inherit" startIcon={<Lock />}>
-                Login
-              </Button>
-            </Link>
-          ) : (
-            ""
-          )}
-
           {loggedIn ? (
             <>
               <Link className="NavLink" to="/">
@@ -141,17 +137,21 @@ function Navbar() {
                 </Button>
               </Link>
 
-              <Link className="NavLink" to="/checkout">
+              <Link className="NavLink" onClick={handleLogout} to="/">
                 <Button color="inherit" startIcon={<MeetingRoom />}>
                   Logout
                 </Button>
               </Link>
             </>
           ) : (
-            ""
+            <Link className="NavLink" to="/login">
+              <Button color="inherit" startIcon={<Lock />}>
+                Login
+              </Button>
+            </Link>
           )}
 
-          <StyledButton onClick={() => setCartOpen(true)}>
+          <StyledButton onClick={() => dispatch(cartActions.openCart())}>
             <Badge badgeContent={cart.length} color="error">
               <AddShoppingCart style={{ fontSize: "50px" }} />
             </Badge>
@@ -159,8 +159,8 @@ function Navbar() {
 
           <Drawer
             anchor="right"
-            open={cartOpen}
-            onClose={() => setCartOpen(false)}
+            open={cartOpen.isOpen}
+            onClose={() => dispatch(cartActions.closeCart())}
           >
             <Cart />
           </Drawer>

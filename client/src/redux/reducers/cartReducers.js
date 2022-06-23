@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 import { cartConstants } from "../constants";
 
-const initialState = [];
+const initialState = JSON.parse(localStorage.getItem("cart")) || [];
 
 export function cart(state = initialState, action) {
   switch (action.type) {
