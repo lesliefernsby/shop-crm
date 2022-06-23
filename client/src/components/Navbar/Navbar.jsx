@@ -70,9 +70,10 @@ const Navbar = (props) => {
             
             {isProductListPage && <Grid container
             item xs={12}
-            direction="row"
-            justifyContent="center"
-            alignItems="stretch">
+            // direction="row"
+            // justifyContent="center"
+            // alignItems="stretch"
+            >
             <TextField
               type="text"
               value={query}
@@ -83,55 +84,54 @@ const Navbar = (props) => {
           </Grid>}
             
         
-       { (!loggedIn)?<>
-       <Link className='NavLink' to={"/login"}>
+      { (!loggedIn)?<>
+      <Link className='NavLink' to={"/login"}>
           <Button 
           color='inherit'
           startIcon={<Lock />}
           >
           Login
           </Button>
-        </Link> 
-        </> : ''}
+      </Link> 
+      </> : ''}
          
-         
-            { (loggedIn)?<>
-              <Link className='NavLink' to={"/"}>
-            <Button 
+      { (loggedIn)?<>
+      <Link className='NavLink' to={"/"}>
+        <Button 
           color='inherit'
           startIcon={<Person />}
-          href= "/">
+          >
           {user.firstName}
-          </Button>
-            </Link>
+        </Button>
+      </Link>
 
-            <Link className='NavLink' to={"/checkout"}>
-            <Button 
+      <Link className='NavLink' to={"/checkout"}>
+        <Button 
           color='inherit'
           startIcon={<MeetingRoom />}
           >
           Logout
-          </Button>
-          </Link> 
-          </> : ''}
+        </Button>
+      </Link> 
+      </> : ''}
          
 
-          <StyledButton onClick={() => setCartOpen(true)}>
-              <Badge badgeContent={cart.length} color="error">
-                <AddShoppingCart style={{ fontSize: "50px" }} />
-              </Badge>
-          </StyledButton>
+      <StyledButton onClick={() => setCartOpen(true)}>
+        <Badge badgeContent={cart.length} color="error">
+            <AddShoppingCart style={{ fontSize: "50px" }} />
+            </Badge>
+      </StyledButton>
 
 
 
-          <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-              <Cart />
-          </Drawer>
-
-          
+      <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+          <Cart />
+      </Drawer>
 
           
-        </Toolbar>
+
+          
+       </Toolbar>
       </Container>
     </AppBar>
   )
