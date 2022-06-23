@@ -43,7 +43,7 @@ const ProductCard = (props) => {
       <Card sx={{ maxWidth: modal ? 500 : 345, display: 'flex', flexDirection: 'column'}} scroll={"paper"}>
         <CardHeader
           action={
-            <Chip label={<Typography variant="h6">{product.price}</Typography>} color="secondary" />
+            <Chip label={<Typography variant="h6">${product.price}</Typography>} color="secondary" />
           }
         />
         <CardMedia
@@ -54,6 +54,7 @@ const ProductCard = (props) => {
           onClick={() => modal ? null : openModal()}
         />
         <CardContent onClick={() => modal ? null : openModal()}>
+          {/* <Typography variant="h6">{product.categoryId}</Typography> */}
           <Typography gutterBottom variant="h5" component="div">
             {product.title}
           </Typography>

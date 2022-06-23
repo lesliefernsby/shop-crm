@@ -1,27 +1,39 @@
-import React from 'react'
-import { AppBar, Container, Toolbar, Box, IconButton, Typography, Button } from '@mui/material'
-import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material';
+import React from 'react';
 import { useState } from 'react';
 import { Drawer, Badge } from '@mui/material';
 import styled from "styled-components";
 import { AddShoppingCart } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 import Cart from '../Cart/Cart';
-// import useProductSearch from '../customHooks/useProductSearch'; Над переносом надо нормально подумать
+import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import { AppBar, Container, Toolbar, Box, IconButton, Typography, Button } from '@mui/material'
+import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const isProductListPage = useSelector((state) => state.productsList.isProductListPage);
+  const loggedIn = useSelector(state => state.authentication.loggedIn);
+  // console.log('isLogged', loggedIn)
+  const user = useSelector(state => state.authentication.user);
+  // console.log('user', user)
+  const {query, setQuery, setPageNumber} = props
+
+ function handleSearch(e) {
+    setQuery(e.target.value)
+    setPageNumber(1)
+  }
 
   const [cartOpen, setCartOpen] = useState(false);
   const cart = useSelector(state => state.cart);
   
   const StyledButton = styled(IconButton)`
-    position: relative;
-    z-index: 100;
-    right: 30px;
-    top: 90px;
-  
-  `;
+  position: relative;
+  z-index: 100;
+  right: 30px;
+  top: 90px;
 
+`;
   return (
     <AppBar>
       <Container maxWidth='lg'>
@@ -29,63 +41,80 @@ const Navbar = () => {
         <Toolbar disableGutters>
 
           <Box sx={{mr:1}}>
+          <Link className='NavLink' to={"/"}>
             <IconButton size='large' color='inherit'>
               <Menu />
             </IconButton>
+            </Link>
           </Box>
 
             <Typography
             variant='h6'
-            component='h1'
+            component='h2'
             noWrap
             sx={{flexGrow:1, display:{xs:'none', md:'flex'}}}
+            style={{ minWidth: '20%', margin: '0.5rem' }}
             >
-              The Awesome Shop
+              The Top Shop
             </Typography>
 
             <Typography
             variant='h6'
-            component='h1'
+            component='h2'
             noWrap
             sx={{flexGrow:1, display:{xs:'flex', md:'none'}}}
             >
-              Shop_m
+              TTS
             </Typography>
-
-
             
-            {/* unlogged */}
+            
+            {isProductListPage && <Grid container
+            item xs={12}
+            direction="row"
+            justifyContent="center"
+            alignItems="stretch">
+            <TextField
+              type="text"
+              value={query}
+              onChange={handleSearch}
+              placeholder={'What are we looking for?'}
+              style={{ minWidth: '20%', margin: '0.5rem' }}>
+            </TextField>
+          </Grid>}
+            
+        
+       { (!loggedIn)?<>
+       <Link className='NavLink' to={"/login"}>
           <Button 
           color='inherit'
           startIcon={<Lock />}
-          href= "/login"
           >
           Login
           </Button>
-
-          {/* <Button 
-          color='inherit'
-          startIcon={<ExitToApp />}
-          >
-          Sign In
-          </Button> */}
-            {/* /unlogged */}
-
-            {/* logged */}
+        </Link> 
+        </> : ''}
+         
+         
+            { (loggedIn)?<>
+              <Link className='NavLink' to={"/"}>
             <Button 
           color='inherit'
           startIcon={<Person />}
           href= "/">
-          username
+          {user.firstName}
           </Button>
+            </Link>
 
+            <Link className='NavLink' to={"/checkout"}>
             <Button 
           color='inherit'
           startIcon={<MeetingRoom />}
-          href= "/checkout">
+          >
           Logout
           </Button>
-          {/* /logged */}
+          </Link> 
+          </> : ''}
+         
 
           <StyledButton onClick={() => setCartOpen(true)}>
               <Badge badgeContent={cart.length} color="error">
@@ -109,3 +138,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+

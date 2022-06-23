@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
@@ -14,23 +14,23 @@ import RestrictedRoute from './components/RestrictedRoute';
 
 function App() {
 
+  const [query, setQuery] = useState('')
+  const [pageNumber, setPageNumber] = useState(1)
+  
   return (
     <React.Fragment>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={ <Home query={query} pageNumber={pageNumber} setPageNumber={setPageNumber}/> } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route exact path='/checkout' element={<PrivateRoute />}>
         <Route exact path='/checkout' element={<Checkout />} />
         </Route>
         <Route exact path='/admin' element={<RestrictedRoute />}>
-          <Route exact path='/admin' element={<Admin />} />
+        <Route exact path='/admin' element={<Admin />} />
         </Route>
       </Routes>
-    <Navbar />
-
-
-
+    <Navbar query={query} setQuery={setQuery} setPageNumber={setPageNumber}/>
     </React.Fragment>
   );
 }
