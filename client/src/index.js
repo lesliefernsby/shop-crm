@@ -1,11 +1,12 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import {  ThemeProvider } from '@mui/material/styles';
-import {theme} from './theme/theme.js'
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import {theme} from './theme/theme'
+import App from './App';
 import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
