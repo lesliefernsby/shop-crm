@@ -1,10 +1,6 @@
+/* eslint-disable import/prefer-default-export */
 import { cartConstants } from "../constants";
 import { cartService } from "../service/cartService";
-
-export const cartActions = {
-  addToCart,
-  removeFromCart
-};
 
 function addToCart(item) {
   return dispatch => { 
@@ -19,3 +15,8 @@ function removeFromCart(item) {
     dispatch({ type: cartConstants.REMOVE_FROM_CART, item});
   };
 }
+
+export const cartActions = {
+  addToCart,
+  removeFromCart
+};

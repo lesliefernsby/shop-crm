@@ -1,10 +1,10 @@
+/* eslint-disable import/prefer-default-export */
 export function authHeader() {
   // return authorization header with jwt token
-  let token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
 
   if (token) {
-      return { 'Authorization': 'Bearer ' + token };
-  } else {
-      return {};
+    return { Authorization: `Bearer ${token}` };
   }
+  return {};
 }

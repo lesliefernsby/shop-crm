@@ -1,13 +1,12 @@
-import { config } from '../constants';
-
-export const productsListService = {
-  getFilterCategoryOptions
-};
+/* eslint-disable import/prefer-default-export */
+import { config } from "../constants";
 
 function getFilterCategoryOptions() {
-    
-
-    return fetch(`${config.API_URL}/products/categoriesOptions`)
-        .then((res) => res.json())
-        .then(result => result);
+  return fetch(`${config.API_URL}/products/categoriesOptions`)
+    .then((res) => res.json())
+    .then((result) => result);
 }
+
+export const productsListService = {
+  getFilterCategoryOptions,
+};
