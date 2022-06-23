@@ -26,6 +26,15 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
 import { productsListActions } from '../../redux/actions/productsListActions';
+// import CategoryFilter from '../CategoryFilter/CategoryFilter'
+
+
+const StyledButton = styled(IconButton)`
+position: relative;
+z-index: 100;
+right: 30px;
+top: 90px;
+`;
 
 function Navbar() {
 
@@ -51,12 +60,6 @@ function Navbar() {
   const [cartOpen, setCartOpen] = useState(false);
   const cart = useSelector((state) => state.cart);
 
-  const StyledButton = styled(IconButton)`
-    position: relative;
-    z-index: 100;
-    right: 30px;
-    top: 90px;
-  `;
   return (
     <AppBar>
       <Container maxWidth="lg">
@@ -87,6 +90,19 @@ function Navbar() {
           >
             TTS
           </Typography>
+{/* 
+          {isProductListPage && (
+            <Grid
+              container
+              item
+              xs={12}
+              direction="row"
+              justifyContent="center"
+              alignItems="stretch"
+            >
+              <CategoryFilter />
+            </Grid>
+          )} */}
 
           {isProductListPage && (
             <Grid

@@ -2,6 +2,8 @@
 import { productsListConstants } from "../constants/productsListConstants";
 
 export const initialState = {
+  error: false,
+  pending: false,
   isProductListPage: false,
   pageNumber: 1,
   query: "",
@@ -14,7 +16,6 @@ export const initialState = {
 };
 
 export function productsList(state = initialState, action) {
-  console.log(state, "state productsList");
 
   switch (action.type) {
     case productsListConstants.SET_IS_LIST_PAGE:
@@ -42,8 +43,17 @@ export function productsList(state = initialState, action) {
         ...state,
         products: action.payload,
       };
+    case productsListConstants.SET_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case productsListConstants.SET_PENDING:
+      return {
+        ...state,
+        pending: action.payload,
+      };
     case productsListConstants.ADD_CATEGORIES_FILTER:
-      console.log(action.payload, "action.payloadaction.payloadaction.payload");
       return {
         ...state,
         filters: {

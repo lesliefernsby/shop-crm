@@ -47,26 +47,27 @@ function CategoryFilter() {
     setFilterObjects(
       event.target.value
     );
-  };
 
+  };
+  
   useEffect(() => {
+    
     dispatch(productsListActions.addCategoriesFilter(filterObjects.map((item) => item.id)));
   }, [filterObjects]);
 
   return (
     <div>
+
+
+
       <FormControl sx={{ m: 1, width: 300 }} variant="outlined">
-        <InputLabel id="demo-simple-select-outlined-label">
-          Category
-        </InputLabel>
+        <InputLabel id="test-select-label">Category</InputLabel>
         <Select
-          labelId="demo-simple-select-outlined-label"
-          label="Category"
-          id="Category"
+          label="Category" // here is the difference
           multiple
           value={filterObjects}
           onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+          input={<OutlinedInput id="select-multiple-chip" label="Category" />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
               {selected.map((value) => (

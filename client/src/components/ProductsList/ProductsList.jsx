@@ -11,9 +11,13 @@ import ProductCard from '../ProductCard/ProductCard';
 import useProductSearch from '../customHooks/useProductSearch';
 
 
-function ProductsList () {
+
+
+
+
+function ProductsList() {
   const dispatch = useDispatch();
-  const {query, pageNumber} = useSelector((state) => state.productsList);
+  const { query, pageNumber } = useSelector((state) => state.productsList);
 
   useEffect(() => {
     dispatch(productsListActions.setIsListPage(true));
@@ -42,25 +46,31 @@ function ProductsList () {
     if (node) observer.current.observe(node)
   }, [loading, hasMore]) // maybe error
 
+
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-       <Grid container
+      <Grid container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
         style={{ marginTop: '3.5rem' }}>
+
+
         <Grid container
           item xs={12}
           direction="row"
           justifyContent="center"
           alignItems="stretch">
           <CategoryFilter />
+
+
         </Grid>
         {products.map((product, index) => {
           if (products.length === index + 1) {
             return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={product.id}><div style={{ display: 'flex' }} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
-          } 
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={product.id}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
-          
+          }
+          return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={product.id}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
+
         })}
         <Grid
           container

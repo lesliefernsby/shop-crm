@@ -6,4 +6,6 @@ export const productsListConstants = {
   SET_QUERY: "SET_QUERY",
   SET_PAGE_NUMBER: "SET_PAGE_NUMBER",
   SET_PRODUCTS: "SET_PRODUCTS",
+  SET_PENDING: "SET_PENDING",
+  SET_ERROR: "SET_ERROR"
 };
