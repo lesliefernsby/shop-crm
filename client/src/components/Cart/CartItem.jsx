@@ -1,13 +1,12 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { Button } from '@mui/material';
-import { cartActions } from '../../redux/actions/cartActions';
-import styles from './Cart.module.css'
+/* eslint-disable react/prop-types */
+import React from "react";
+import { useDispatch } from "react-redux";
+import { Button } from "@mui/material";
+import { cartActions } from "../../redux/actions/cartActions";
+import styles from "./Cart.module.css";
 
-const CartItem = ({entry}) => {
-
+function CartItem({ entry }) {
   const dispatch = useDispatch();
-
 
   return (
     <div className={styles.CartItemWrapper}>
@@ -37,11 +36,13 @@ const CartItem = ({entry}) => {
           </Button>
         </div>
       </div>
-      <img className={styles.CartImage} src={entry.item.image} alt={entry.item.title} />
-
-
+      <img
+        className={styles.CartImage}
+        src={entry.item.image}
+        alt={entry.item.title}
+      />
     </div>
-  )
+  );
 }
 
-export default CartItem
+export default CartItem;

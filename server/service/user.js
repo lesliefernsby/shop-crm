@@ -33,7 +33,7 @@ async function authenticate({ username, password }) {
 }
 
 async function getAll() {
-    const users = await User.findAll({ raw: true});
+    const users = await User.findAll({ raw: true });
     return users.map(user => {
         const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
         return userWithoutPassword;
