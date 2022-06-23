@@ -1,5 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
+import { Drawer, Badge } from '@mui/material';
+import styled from "styled-components";
+import { AddShoppingCart } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
+import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -19,6 +24,16 @@ const Navbar = (props) => {
     setPageNumber(1)
   }
 
+  const [cartOpen, setCartOpen] = useState(false);
+  const cart = useSelector(state => state.cart);
+  
+  const StyledButton = styled(IconButton)`
+  position: relative;
+  z-index: 100;
+  right: 30px;
+  top: 90px;
+
+`;
   return (
     <AppBar>
       <Container maxWidth='lg'>
@@ -101,6 +116,21 @@ const Navbar = (props) => {
           </> : ''}
          
 
+          <StyledButton onClick={() => setCartOpen(true)}>
+              <Badge badgeContent={cart.length} color="error">
+                <AddShoppingCart style={{ fontSize: "50px" }} />
+              </Badge>
+          </StyledButton>
+
+
+
+          <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+              <Cart />
+          </Drawer>
+
+          
+
+          
         </Toolbar>
       </Container>
     </AppBar>
