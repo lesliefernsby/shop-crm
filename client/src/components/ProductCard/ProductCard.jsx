@@ -15,15 +15,27 @@ import Fab from '@mui/material/Fab';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ProductDialog from '../ProductDialog/ProductDialog'
 import Chip from '@mui/material/Chip';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../redux/actions/cartActions';
 
 
 const ProductCard = (props) => {
   const { product, modal } = props;
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const openModal = () => {
     setOpen(true);
   }
+
+  const handleAdd = () => {
+    dispatch(cartActions.addToCart(product))
+  }
+
+  const handleRemove = () => {
+    dispatch(cartActions.removeFromCart(product))
+  }
+
 
   return (
     <React.Fragment>
@@ -61,8 +73,9 @@ const ProductCard = (props) => {
             <ShareIcon />
           </IconButton>
           <Box sx={{ '& > :not(style)': { m: 1 }, marginLeft: 'auto' }}>
-            <Button size="small" >Add to cart</Button>
-            <Fab color="primary" aria-label="add">
+            <Button onClick={handleRemove} size="small" >Remove</Button>
+            <Button onClick={handleAdd} size="small" >Add</Button>
+            <Fab onClick={handleAdd} color="primary" aria-label="add">
               <ShoppingCartOutlinedIcon />
             </Fab>
           </Box>

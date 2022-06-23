@@ -39,7 +39,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "Phasellus nulla. Integer vulputate, risus",
 		"weight": "5",
-		"price": "$39.74",
+		"price": "39.74",
 		"categoryId": "2"
 	},
 	{
@@ -48,7 +48,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis",
 		"weight": "4",
-		"price": "$19.12",
+		"price": "19.12",
 		"categoryId": "2"
 	},
 	{
@@ -57,7 +57,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "enim. Mauris quis turpis",
 		"weight": "4",
-		"price": "$72.25",
+		"price": "72.25",
 		"categoryId": "3"
 	},
 	{
@@ -66,7 +66,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet,",
 		"weight": "8",
-		"price": "$77.86",
+		"price": "77.86",
 		"categoryId": "4"
 	},
 	{
@@ -75,7 +75,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam feugiat placerat velit. Quisque varius. Nam porttitor scelerisque neque.",
 		"weight": "7",
-		"price": "$13.05",
+		"price": "13.05",
 		"categoryId": "2"
 	},
 	{
@@ -84,7 +84,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "felis. Donec tempor, est",
 		"weight": "4",
-		"price": "$11.45",
+		"price": "11.45",
 		"categoryId": "3"
 	},
 	{
@@ -93,7 +93,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec",
 		"weight": "11",
-		"price": "$52.12",
+		"price": "52.12",
 		"categoryId": "2"
 	},
 	{
@@ -102,7 +102,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "Duis sit amet diam eu dolor egestas rhoncus. Proin",
 		"weight": "5",
-		"price": "$50.80",
+		"price": "50.80",
 		"categoryId": "2"
 	},
 	{
@@ -111,7 +111,7 @@ const mockedProduct = [
 		"image": "http://baidu.com",
 		"description": "enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a,",
 		"weight": "3",
-		"price": "$18.68",
+		"price": "18.68",
 		"categoryId": "4"
 	},
 	{
@@ -120,7 +120,7 @@ const mockedProduct = [
 		"image": "http://bbc.co.uk",
 		"description": "et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada",
 		"weight": "10",
-		"price": "$62.82",
+		"price": "62.82",
 		"categoryId": "4"
 	},
 	{
@@ -129,7 +129,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "primis in faucibus orci luctus et ultrices posuere cubilia Curae Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl",
 		"weight": "9",
-		"price": "$83.32",
+		"price": "83.32",
 		"categoryId": "4"
 	},
 	{
@@ -138,7 +138,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero est,",
 		"weight": "4",
-		"price": "$3.21",
+		"price": "3.21",
 		"categoryId": "4"
 	},
 	{
@@ -147,7 +147,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue",
 		"weight": "8",
-		"price": "$42.57",
+		"price": "42.57",
 		"categoryId": "5"
 	},
 	{
@@ -156,7 +156,7 @@ const mockedProduct = [
 		"image": "https://twitter.com",
 		"description": "libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum",
 		"weight": "11",
-		"price": "$30.88",
+		"price": "30.88",
 		"categoryId": "3"
 	},
 	{
@@ -165,7 +165,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "risus odio, auctor vitae, aliquet",
 		"weight": "11",
-		"price": "$53.03",
+		"price": "53.03",
 		"categoryId": "3"
 	},
 	{
@@ -174,7 +174,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut",
 		"weight": "5",
-		"price": "$4.13",
+		"price": "4.13",
 		"categoryId": "2"
 	},
 	{
@@ -183,7 +183,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "Nullam feugiat placerat velit. Quisque varius. Nam porttitor scelerisque neque. Nullam nisl. Maecenas malesuada",
 		"weight": "6",
-		"price": "$58.22",
+		"price": "58.22",
 		"categoryId": "1"
 	},
 	{
@@ -192,7 +192,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero.",
 		"weight": "11",
-		"price": "$81.77",
+		"price": "81.77",
 		"categoryId": "4"
 	},
 	{
@@ -201,7 +201,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim diam vel arcu. Curabitur ut",
 		"weight": "5",
-		"price": "$52.16",
+		"price": "52.16",
 		"categoryId": "2"
 	},
 	{
@@ -210,7 +210,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor",
 		"weight": "6",
-		"price": "$78.20",
+		"price": "78.20",
 		"categoryId": "2"
 	},
 	{
@@ -219,7 +219,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin ultrices. Duis",
 		"weight": "11",
-		"price": "$25.87",
+		"price": "25.87",
 		"categoryId": "3"
 	},
 	{
@@ -228,7 +228,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "tristique ac, eleifend vitae, erat.",
 		"weight": "3",
-		"price": "$81.27",
+		"price": "81.27",
 		"categoryId": "3"
 	},
 	{
@@ -237,7 +237,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "Integer mollis. Integer tincidunt aliquam",
 		"weight": "6",
-		"price": "$25.35",
+		"price": "25.35",
 		"categoryId": "1"
 	},
 	{
@@ -246,7 +246,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in lobortis tellus justo sit amet nulla. Donec non justo. Proin non",
 		"weight": "6",
-		"price": "$32.67",
+		"price": "32.67",
 		"categoryId": "3"
 	},
 	{
@@ -255,7 +255,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper,",
 		"weight": "5",
-		"price": "$33.62",
+		"price": "33.62",
 		"categoryId": "5"
 	},
 	{
@@ -264,7 +264,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed",
 		"weight": "9",
-		"price": "$4.50",
+		"price": "4.50",
 		"categoryId": "2"
 	},
 	{
@@ -273,7 +273,7 @@ const mockedProduct = [
 		"image": "http://pinterest.com",
 		"description": "conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc",
 		"weight": "11",
-		"price": "$38.57",
+		"price": "38.57",
 		"categoryId": "4"
 	},
 	{
@@ -282,7 +282,7 @@ const mockedProduct = [
 		"image": "http://pinterest.com",
 		"description": "venenatis vel, faucibus id, libero. Donec",
 		"weight": "9",
-		"price": "$96.64",
+		"price": "96.64",
 		"categoryId": "3"
 	},
 	{
@@ -291,7 +291,7 @@ const mockedProduct = [
 		"image": "http://pinterest.com",
 		"description": "Donec tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet,",
 		"weight": "8",
-		"price": "$84.34",
+		"price": "84.34",
 		"categoryId": "4"
 	},
 	{
@@ -300,7 +300,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "luctus et ultrices posuere cubilia Curae Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem",
 		"weight": "6",
-		"price": "$7.85",
+		"price": "7.85",
 		"categoryId": "3"
 	},
 	{
@@ -309,7 +309,7 @@ const mockedProduct = [
 		"image": "https://cnn.com",
 		"description": "placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis nec, eleifend non, dapibus rutrum,",
 		"weight": "12",
-		"price": "$55.25",
+		"price": "55.25",
 		"categoryId": "3"
 	},
 	{
@@ -318,7 +318,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "ipsum cursus vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo",
 		"weight": "8",
-		"price": "$6.79",
+		"price": "6.79",
 		"categoryId": "3"
 	},
 	{
@@ -327,7 +327,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "in faucibus orci luctus et ultrices posuere cubilia Curae Phasellus ornare. Fusce mollis.",
 		"weight": "5",
-		"price": "$33.54",
+		"price": "33.54",
 		"categoryId": "1"
 	},
 	{
@@ -336,7 +336,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et,",
 		"weight": "10",
-		"price": "$61.71",
+		"price": "61.71",
 		"categoryId": "3"
 	},
 	{
@@ -345,7 +345,7 @@ const mockedProduct = [
 		"image": "https://walmart.com",
 		"description": "vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros turpis non",
 		"weight": "5",
-		"price": "$13.36",
+		"price": "13.36",
 		"categoryId": "3"
 	},
 	{
@@ -354,7 +354,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque",
 		"weight": "4",
-		"price": "$72.31",
+		"price": "72.31",
 		"categoryId": "4"
 	},
 	{
@@ -363,7 +363,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "torquent per conubia nostra,",
 		"weight": "8",
-		"price": "$74.33",
+		"price": "74.33",
 		"categoryId": "3"
 	},
 	{
@@ -372,7 +372,7 @@ const mockedProduct = [
 		"image": "http://baidu.com",
 		"description": "luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et tristique pellentesque, tellus sem mollis dui, in",
 		"weight": "11",
-		"price": "$84.19",
+		"price": "84.19",
 		"categoryId": "4"
 	},
 	{
@@ -381,7 +381,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam",
 		"weight": "6",
-		"price": "$33.41",
+		"price": "33.41",
 		"categoryId": "3"
 	},
 	{
@@ -390,7 +390,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio.",
 		"weight": "12",
-		"price": "$79.70",
+		"price": "79.70",
 		"categoryId": "2"
 	},
 	{
@@ -399,7 +399,7 @@ const mockedProduct = [
 		"image": "https://pinterest.com",
 		"description": "risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien.",
 		"weight": "4",
-		"price": "$44.94",
+		"price": "44.94",
 		"categoryId": "2"
 	},
 	{
@@ -408,7 +408,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis.",
 		"weight": "10",
-		"price": "$90.85",
+		"price": "90.85",
 		"categoryId": "5"
 	},
 	{
@@ -417,7 +417,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "nulla at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum",
 		"weight": "12",
-		"price": "$81.55",
+		"price": "81.55",
 		"categoryId": "2"
 	},
 	{
@@ -426,7 +426,7 @@ const mockedProduct = [
 		"image": "https://twitter.com",
 		"description": "ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc,",
 		"weight": "4",
-		"price": "$55.29",
+		"price": "55.29",
 		"categoryId": "3"
 	},
 	{
@@ -435,7 +435,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed,",
 		"weight": "6",
-		"price": "$66.03",
+		"price": "66.03",
 		"categoryId": "4"
 	},
 	{
@@ -444,7 +444,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing",
 		"weight": "3",
-		"price": "$71.70",
+		"price": "71.70",
 		"categoryId": "4"
 	},
 	{
@@ -453,7 +453,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie",
 		"weight": "5",
-		"price": "$60.08",
+		"price": "60.08",
 		"categoryId": "4"
 	},
 	{
@@ -462,7 +462,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "morbi tristique senectus et netus et malesuada fames",
 		"weight": "7",
-		"price": "$81.34",
+		"price": "81.34",
 		"categoryId": "1"
 	},
 	{
@@ -471,7 +471,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum.",
 		"weight": "5",
-		"price": "$72.89",
+		"price": "72.89",
 		"categoryId": "5"
 	},
 	{
@@ -480,7 +480,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget",
 		"weight": "5",
-		"price": "$31.89",
+		"price": "31.89",
 		"categoryId": "2"
 	},
 	{
@@ -489,7 +489,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas",
 		"weight": "5",
-		"price": "$72.13",
+		"price": "72.13",
 		"categoryId": "4"
 	},
 	{
@@ -498,7 +498,7 @@ const mockedProduct = [
 		"image": "http://ebay.com",
 		"description": "ultrices a, auctor non, feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc",
 		"weight": "11",
-		"price": "$53.48",
+		"price": "53.48",
 		"categoryId": "3"
 	},
 	{
@@ -507,7 +507,7 @@ const mockedProduct = [
 		"image": "http://bbc.co.uk",
 		"description": "erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam feugiat placerat velit.",
 		"weight": "3",
-		"price": "$62.23",
+		"price": "62.23",
 		"categoryId": "2"
 	},
 	{
@@ -516,7 +516,7 @@ const mockedProduct = [
 		"image": "http://ebay.com",
 		"description": "imperdiet, erat nonummy ultricies ornare,",
 		"weight": "4",
-		"price": "$53.72",
+		"price": "53.72",
 		"categoryId": "4"
 	},
 	{
@@ -525,7 +525,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "diam nunc, ullamcorper eu, euismod ac, fermentum vel,",
 		"weight": "12",
-		"price": "$55.82",
+		"price": "55.82",
 		"categoryId": "4"
 	},
 	{
@@ -534,7 +534,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "amet massa. Quisque porttitor eros nec",
 		"weight": "11",
-		"price": "$54.50",
+		"price": "54.50",
 		"categoryId": "2"
 	},
 	{
@@ -543,7 +543,7 @@ const mockedProduct = [
 		"image": "http://pinterest.com",
 		"description": "massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros",
 		"weight": "10",
-		"price": "$61.08",
+		"price": "61.08",
 		"categoryId": "2"
 	},
 	{
@@ -552,7 +552,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "diam luctus lobortis. Class aptent taciti",
 		"weight": "5",
-		"price": "$89.33",
+		"price": "89.33",
 		"categoryId": "1"
 	},
 	{
@@ -561,7 +561,7 @@ const mockedProduct = [
 		"image": "http://baidu.com",
 		"description": "leo, in lobortis tellus justo sit amet nulla. Donec non justo. Proin non massa non ante bibendum ullamcorper. Duis cursus, diam at pretium",
 		"weight": "7",
-		"price": "$37.68",
+		"price": "37.68",
 		"categoryId": "2"
 	},
 	{
@@ -570,7 +570,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices",
 		"weight": "10",
-		"price": "$18.84",
+		"price": "18.84",
 		"categoryId": "3"
 	},
 	{
@@ -579,7 +579,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "quis arcu vel quam dignissim pharetra. Nam ac nulla. In",
 		"weight": "8",
-		"price": "$50.76",
+		"price": "50.76",
 		"categoryId": "3"
 	},
 	{
@@ -588,7 +588,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas",
 		"weight": "4",
-		"price": "$41.64",
+		"price": "41.64",
 		"categoryId": "4"
 	},
 	{
@@ -597,7 +597,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu",
 		"weight": "6",
-		"price": "$54.26",
+		"price": "54.26",
 		"categoryId": "5"
 	},
 	{
@@ -606,7 +606,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis.",
 		"weight": "7",
-		"price": "$20.54",
+		"price": "20.54",
 		"categoryId": "3"
 	},
 	{
@@ -615,7 +615,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris",
 		"weight": "6",
-		"price": "$2.56",
+		"price": "2.56",
 		"categoryId": "3"
 	},
 	{
@@ -624,7 +624,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae",
 		"weight": "6",
-		"price": "$26.25",
+		"price": "26.25",
 		"categoryId": "4"
 	},
 	{
@@ -633,7 +633,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere",
 		"weight": "9",
-		"price": "$58.88",
+		"price": "58.88",
 		"categoryId": "4"
 	},
 	{
@@ -642,7 +642,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "tellus. Phasellus elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras dolor",
 		"weight": "7",
-		"price": "$39.40",
+		"price": "39.40",
 		"categoryId": "3"
 	},
 	{
@@ -651,7 +651,7 @@ const mockedProduct = [
 		"image": "http://facebook.com",
 		"description": "pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien.",
 		"weight": "9",
-		"price": "$66.21",
+		"price": "66.21",
 		"categoryId": "3"
 	},
 	{
@@ -660,7 +660,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "hendrerit a, arcu.",
 		"weight": "7",
-		"price": "$71.99",
+		"price": "71.99",
 		"categoryId": "3"
 	},
 	{
@@ -669,7 +669,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "vitae, orci. Phasellus dapibus quam quis diam.",
 		"weight": "7",
-		"price": "$13.60",
+		"price": "13.60",
 		"categoryId": "4"
 	},
 	{
@@ -678,7 +678,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum,",
 		"weight": "3",
-		"price": "$32.11",
+		"price": "32.11",
 		"categoryId": "4"
 	},
 	{
@@ -687,7 +687,7 @@ const mockedProduct = [
 		"image": "https://naver.com",
 		"description": "Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel",
 		"weight": "8",
-		"price": "$97.79",
+		"price": "97.79",
 		"categoryId": "3"
 	},
 	{
@@ -696,7 +696,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "est. Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut lacus. Nulla tincidunt, neque vitae semper egestas, urna",
 		"weight": "9",
-		"price": "$63.58",
+		"price": "63.58",
 		"categoryId": "3"
 	},
 	{
@@ -705,7 +705,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "ut quam vel sapien",
 		"weight": "8",
-		"price": "$89.19",
+		"price": "89.19",
 		"categoryId": "1"
 	},
 	{
@@ -714,7 +714,7 @@ const mockedProduct = [
 		"image": "https://cnn.com",
 		"description": "turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam",
 		"weight": "10",
-		"price": "$62.68",
+		"price": "62.68",
 		"categoryId": "2"
 	},
 	{
@@ -723,7 +723,7 @@ const mockedProduct = [
 		"image": "https://whatsapp.com",
 		"description": "vel est tempor bibendum. Donec felis",
 		"weight": "6",
-		"price": "$35.41",
+		"price": "35.41",
 		"categoryId": "2"
 	},
 	{
@@ -732,7 +732,7 @@ const mockedProduct = [
 		"image": "http://bbc.co.uk",
 		"description": "rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere",
 		"weight": "5",
-		"price": "$69.26",
+		"price": "69.26",
 		"categoryId": "5"
 	},
 	{
@@ -741,7 +741,7 @@ const mockedProduct = [
 		"image": "http://pinterest.com",
 		"description": "sit amet, consectetuer adipiscing elit. Aliquam auctor, velit",
 		"weight": "10",
-		"price": "$59.77",
+		"price": "59.77",
 		"categoryId": "1"
 	},
 	{
@@ -750,7 +750,7 @@ const mockedProduct = [
 		"image": "http://bbc.co.uk",
 		"description": "pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus.",
 		"weight": "12",
-		"price": "$37.41",
+		"price": "37.41",
 		"categoryId": "5"
 	},
 	{
@@ -759,7 +759,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et tristique pellentesque, tellus sem mollis dui, in",
 		"weight": "8",
-		"price": "$36.27",
+		"price": "36.27",
 		"categoryId": "4"
 	},
 	{
@@ -768,7 +768,7 @@ const mockedProduct = [
 		"image": "http://pinterest.com",
 		"description": "molestie in, tempus eu, ligula. Aenean euismod",
 		"weight": "6",
-		"price": "$95.92",
+		"price": "95.92",
 		"categoryId": "4"
 	},
 	{
@@ -777,7 +777,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam",
 		"weight": "9",
-		"price": "$97.93",
+		"price": "97.93",
 		"categoryId": "4"
 	},
 	{
@@ -786,7 +786,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet posuere, enim nisl elementum purus, accumsan interdum",
 		"weight": "7",
-		"price": "$6.73",
+		"price": "6.73",
 		"categoryId": "1"
 	},
 	{
@@ -795,7 +795,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim",
 		"weight": "11",
-		"price": "$42.32",
+		"price": "42.32",
 		"categoryId": "2"
 	},
 	{
@@ -804,7 +804,7 @@ const mockedProduct = [
 		"image": "http://ebay.com",
 		"description": "enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio.",
 		"weight": "10",
-		"price": "$90.38",
+		"price": "90.38",
 		"categoryId": "5"
 	},
 	{
@@ -813,7 +813,7 @@ const mockedProduct = [
 		"image": "https://whatsapp.com",
 		"description": "Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce",
 		"weight": "6",
-		"price": "$1.94",
+		"price": "1.94",
 		"categoryId": "2"
 	},
 	{
@@ -822,7 +822,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut, molestie",
 		"weight": "5",
-		"price": "$49.78",
+		"price": "49.78",
 		"categoryId": "5"
 	},
 	{
@@ -831,7 +831,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor.",
 		"weight": "4",
-		"price": "$6.88",
+		"price": "6.88",
 		"categoryId": "3"
 	},
 	{
@@ -840,7 +840,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a,",
 		"weight": "5",
-		"price": "$34.21",
+		"price": "34.21",
 		"categoryId": "1"
 	},
 	{
@@ -849,7 +849,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at",
 		"weight": "9",
-		"price": "$96.91",
+		"price": "96.91",
 		"categoryId": "5"
 	},
 	{
@@ -858,7 +858,7 @@ const mockedProduct = [
 		"image": "https://instagram.com",
 		"description": "orci. Donec nibh. Quisque",
 		"weight": "9",
-		"price": "$94.29",
+		"price": "94.29",
 		"categoryId": "4"
 	},
 	{
@@ -867,7 +867,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer",
 		"weight": "12",
-		"price": "$48.82",
+		"price": "48.82",
 		"categoryId": "2"
 	},
 	{
@@ -876,7 +876,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et",
 		"weight": "8",
-		"price": "$3.13",
+		"price": "3.13",
 		"categoryId": "4"
 	},
 	{
@@ -885,7 +885,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros turpis non",
 		"weight": "7",
-		"price": "$1.75",
+		"price": "1.75",
 		"categoryId": "4"
 	},
 	{
@@ -894,7 +894,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "lacus pede sagittis augue, eu tempor erat neque non",
 		"weight": "4",
-		"price": "$28.90",
+		"price": "28.90",
 		"categoryId": "1"
 	},
 	{
@@ -903,7 +903,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem",
 		"weight": "6",
-		"price": "$91.44",
+		"price": "91.44",
 		"categoryId": "5"
 	},
 	{
@@ -912,7 +912,7 @@ const mockedProduct = [
 		"image": "http://netflix.com",
 		"description": "ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut, molestie",
 		"weight": "3",
-		"price": "$87.61",
+		"price": "87.61",
 		"categoryId": "5"
 	},
 	{
@@ -921,7 +921,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "Nullam feugiat placerat velit. Quisque varius. Nam porttitor scelerisque neque. Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut lacus. Nulla tincidunt, neque",
 		"weight": "8",
-		"price": "$74.01",
+		"price": "74.01",
 		"categoryId": "2"
 	},
 	{
@@ -930,7 +930,7 @@ const mockedProduct = [
 		"image": "https://walmart.com",
 		"description": "metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam",
 		"weight": "9",
-		"price": "$1.16",
+		"price": "1.16",
 		"categoryId": "5"
 	},
 	{
@@ -939,7 +939,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris",
 		"weight": "6",
-		"price": "$51.80",
+		"price": "51.80",
 		"categoryId": "4"
 	},
 	{
@@ -948,7 +948,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique neque venenatis lacus. Etiam",
 		"weight": "5",
-		"price": "$27.54",
+		"price": "27.54",
 		"categoryId": "3"
 	},
 	{
@@ -957,7 +957,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "Quisque imperdiet, erat nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In",
 		"weight": "4",
-		"price": "$83.04",
+		"price": "83.04",
 		"categoryId": "5"
 	},
 	{
@@ -966,7 +966,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "risus. In mi pede, nonummy ut, molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy.",
 		"weight": "11",
-		"price": "$66.88",
+		"price": "66.88",
 		"categoryId": "4"
 	},
 	{
@@ -975,7 +975,7 @@ const mockedProduct = [
 		"image": "http://ebay.com",
 		"description": "Nam ligula elit, pretium et, rutrum non, hendrerit id,",
 		"weight": "9",
-		"price": "$78.58",
+		"price": "78.58",
 		"categoryId": "5"
 	},
 	{
@@ -984,7 +984,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "mus. Donec dignissim magna a tortor.",
 		"weight": "11",
-		"price": "$64.63",
+		"price": "64.63",
 		"categoryId": "3"
 	},
 	{
@@ -993,7 +993,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet posuere,",
 		"weight": "6",
-		"price": "$4.34",
+		"price": "4.34",
 		"categoryId": "1"
 	},
 	{
@@ -1002,7 +1002,7 @@ const mockedProduct = [
 		"image": "http://baidu.com",
 		"description": "nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc",
 		"weight": "4",
-		"price": "$32.16",
+		"price": "32.16",
 		"categoryId": "1"
 	},
 	{
@@ -1011,7 +1011,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in lobortis tellus justo sit amet nulla. Donec non justo. Proin non",
 		"weight": "10",
-		"price": "$93.04",
+		"price": "93.04",
 		"categoryId": "2"
 	},
 	{
@@ -1020,7 +1020,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec",
 		"weight": "10",
-		"price": "$94.25",
+		"price": "94.25",
 		"categoryId": "3"
 	},
 	{
@@ -1029,7 +1029,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "dolor. Donec fringilla. Donec feugiat metus sit",
 		"weight": "5",
-		"price": "$66.00",
+		"price": "66.00",
 		"categoryId": "3"
 	},
 	{
@@ -1038,7 +1038,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "risus. Duis a mi fringilla",
 		"weight": "8",
-		"price": "$9.63",
+		"price": "9.63",
 		"categoryId": "4"
 	},
 	{
@@ -1047,7 +1047,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus",
 		"weight": "3",
-		"price": "$34.69",
+		"price": "34.69",
 		"categoryId": "4"
 	},
 	{
@@ -1056,7 +1056,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis, tristique ac,",
 		"weight": "4",
-		"price": "$41.02",
+		"price": "41.02",
 		"categoryId": "4"
 	},
 	{
@@ -1065,7 +1065,7 @@ const mockedProduct = [
 		"image": "https://pinterest.com",
 		"description": "accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a",
 		"weight": "4",
-		"price": "$97.72",
+		"price": "97.72",
 		"categoryId": "3"
 	},
 	{
@@ -1074,7 +1074,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "sit amet nulla. Donec non justo. Proin non massa non ante bibendum ullamcorper. Duis cursus, diam at pretium aliquet, metus urna convallis erat, eget tincidunt dui augue",
 		"weight": "5",
-		"price": "$18.52",
+		"price": "18.52",
 		"categoryId": "3"
 	},
 	{
@@ -1083,7 +1083,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "nunc ac mattis ornare, lectus ante dictum mi,",
 		"weight": "8",
-		"price": "$77.55",
+		"price": "77.55",
 		"categoryId": "1"
 	},
 	{
@@ -1092,7 +1092,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris",
 		"weight": "7",
-		"price": "$93.35",
+		"price": "93.35",
 		"categoryId": "5"
 	},
 	{
@@ -1101,7 +1101,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "libero et tristique pellentesque, tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet, erat nonummy ultricies ornare,",
 		"weight": "7",
-		"price": "$44.97",
+		"price": "44.97",
 		"categoryId": "4"
 	},
 	{
@@ -1110,7 +1110,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et,",
 		"weight": "9",
-		"price": "$81.63",
+		"price": "81.63",
 		"categoryId": "1"
 	},
 	{
@@ -1119,7 +1119,7 @@ const mockedProduct = [
 		"image": "http://zoom.us",
 		"description": "congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Donec tincidunt. Donec",
 		"weight": "3",
-		"price": "$83.35",
+		"price": "83.35",
 		"categoryId": "2"
 	},
 	{
@@ -1128,7 +1128,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "a, scelerisque sed, sapien. Nunc pulvinar",
 		"weight": "5",
-		"price": "$7.95",
+		"price": "7.95",
 		"categoryId": "4"
 	},
 	{
@@ -1137,7 +1137,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede.",
 		"weight": "4",
-		"price": "$78.04",
+		"price": "78.04",
 		"categoryId": "1"
 	},
 	{
@@ -1146,7 +1146,7 @@ const mockedProduct = [
 		"image": "http://bbc.co.uk",
 		"description": "rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero. Proin sed turpis nec mauris blandit mattis. Cras eget nisi dictum augue malesuada malesuada. Integer id magna et ipsum",
 		"weight": "11",
-		"price": "$12.38",
+		"price": "12.38",
 		"categoryId": "4"
 	},
 	{
@@ -1155,7 +1155,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "sapien. Cras dolor dolor, tempus non, lacinia at, iaculis quis, pede. Praesent eu dui. Cum sociis natoque penatibus et magnis dis parturient",
 		"weight": "11",
-		"price": "$27.86",
+		"price": "27.86",
 		"categoryId": "4"
 	},
 	{
@@ -1164,7 +1164,7 @@ const mockedProduct = [
 		"image": "https://bbc.co.uk",
 		"description": "vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada",
 		"weight": "10",
-		"price": "$55.43",
+		"price": "55.43",
 		"categoryId": "4"
 	},
 	{
@@ -1173,7 +1173,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis",
 		"weight": "10",
-		"price": "$74.14",
+		"price": "74.14",
 		"categoryId": "5"
 	},
 	{
@@ -1182,7 +1182,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel",
 		"weight": "11",
-		"price": "$89.16",
+		"price": "89.16",
 		"categoryId": "4"
 	},
 	{
@@ -1191,7 +1191,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "luctus et ultrices posuere cubilia Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae",
 		"weight": "6",
-		"price": "$63.75",
+		"price": "63.75",
 		"categoryId": "3"
 	},
 	{
@@ -1200,7 +1200,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "montes, nascetur ridiculus mus. Proin vel arcu",
 		"weight": "7",
-		"price": "$23.75",
+		"price": "23.75",
 		"categoryId": "2"
 	},
 	{
@@ -1209,7 +1209,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "nisi dictum augue malesuada malesuada. Integer id magna et ipsum cursus vestibulum. Mauris magna. Duis",
 		"weight": "4",
-		"price": "$55.78",
+		"price": "55.78",
 		"categoryId": "1"
 	},
 	{
@@ -1218,7 +1218,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in",
 		"weight": "4",
-		"price": "$26.14",
+		"price": "26.14",
 		"categoryId": "5"
 	},
 	{
@@ -1227,7 +1227,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "tempor arcu. Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit",
 		"weight": "6",
-		"price": "$42.12",
+		"price": "42.12",
 		"categoryId": "4"
 	},
 	{
@@ -1236,7 +1236,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin",
 		"weight": "12",
-		"price": "$53.65",
+		"price": "53.65",
 		"categoryId": "4"
 	},
 	{
@@ -1245,7 +1245,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "a tortor. Nunc commodo auctor velit.",
 		"weight": "8",
-		"price": "$30.05",
+		"price": "30.05",
 		"categoryId": "2"
 	},
 	{
@@ -1254,7 +1254,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt",
 		"weight": "9",
-		"price": "$65.84",
+		"price": "65.84",
 		"categoryId": "2"
 	},
 	{
@@ -1263,7 +1263,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed",
 		"weight": "8",
-		"price": "$31.32",
+		"price": "31.32",
 		"categoryId": "4"
 	},
 	{
@@ -1272,7 +1272,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper",
 		"weight": "10",
-		"price": "$4.51",
+		"price": "4.51",
 		"categoryId": "1"
 	},
 	{
@@ -1281,7 +1281,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus.",
 		"weight": "7",
-		"price": "$17.03",
+		"price": "17.03",
 		"categoryId": "4"
 	},
 	{
@@ -1290,7 +1290,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "quam quis diam. Pellentesque habitant",
 		"weight": "4",
-		"price": "$91.27",
+		"price": "91.27",
 		"categoryId": "2"
 	},
 	{
@@ -1299,7 +1299,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit",
 		"weight": "4",
-		"price": "$27.53",
+		"price": "27.53",
 		"categoryId": "2"
 	},
 	{
@@ -1308,7 +1308,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "diam vel arcu. Curabitur ut odio vel est tempor bibendum.",
 		"weight": "6",
-		"price": "$9.53",
+		"price": "9.53",
 		"categoryId": "5"
 	},
 	{
@@ -1317,7 +1317,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna.",
 		"weight": "4",
-		"price": "$91.83",
+		"price": "91.83",
 		"categoryId": "4"
 	},
 	{
@@ -1326,7 +1326,7 @@ const mockedProduct = [
 		"image": "http://netflix.com",
 		"description": "et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui, semper et,",
 		"weight": "6",
-		"price": "$63.48",
+		"price": "63.48",
 		"categoryId": "5"
 	},
 	{
@@ -1335,7 +1335,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus",
 		"weight": "9",
-		"price": "$62.56",
+		"price": "62.56",
 		"categoryId": "1"
 	},
 	{
@@ -1344,7 +1344,7 @@ const mockedProduct = [
 		"image": "https://bbc.co.uk",
 		"description": "et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel",
 		"weight": "12",
-		"price": "$79.17",
+		"price": "79.17",
 		"categoryId": "2"
 	},
 	{
@@ -1353,7 +1353,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.",
 		"weight": "4",
-		"price": "$11.42",
+		"price": "11.42",
 		"categoryId": "1"
 	},
 	{
@@ -1362,7 +1362,7 @@ const mockedProduct = [
 		"image": "https://whatsapp.com",
 		"description": "orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet",
 		"weight": "8",
-		"price": "$54.78",
+		"price": "54.78",
 		"categoryId": "4"
 	},
 	{
@@ -1371,7 +1371,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et",
 		"weight": "4",
-		"price": "$32.58",
+		"price": "32.58",
 		"categoryId": "5"
 	},
 	{
@@ -1380,7 +1380,7 @@ const mockedProduct = [
 		"image": "http://zoom.us",
 		"description": "Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent",
 		"weight": "10",
-		"price": "$7.74",
+		"price": "7.74",
 		"categoryId": "4"
 	},
 	{
@@ -1389,7 +1389,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam vitae diam. Proin dolor.",
 		"weight": "9",
-		"price": "$61.12",
+		"price": "61.12",
 		"categoryId": "4"
 	},
 	{
@@ -1398,7 +1398,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "lorem, luctus ut, pellentesque eget, dictum placerat,",
 		"weight": "11",
-		"price": "$12.93",
+		"price": "12.93",
 		"categoryId": "4"
 	},
 	{
@@ -1407,7 +1407,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac",
 		"weight": "11",
-		"price": "$9.69",
+		"price": "9.69",
 		"categoryId": "5"
 	},
 	{
@@ -1416,7 +1416,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut",
 		"weight": "8",
-		"price": "$4.07",
+		"price": "4.07",
 		"categoryId": "2"
 	},
 	{
@@ -1425,7 +1425,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at, velit. Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus.",
 		"weight": "10",
-		"price": "$56.15",
+		"price": "56.15",
 		"categoryId": "5"
 	},
 	{
@@ -1434,7 +1434,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie",
 		"weight": "3",
-		"price": "$46.33",
+		"price": "46.33",
 		"categoryId": "5"
 	},
 	{
@@ -1443,7 +1443,7 @@ const mockedProduct = [
 		"image": "https://naver.com",
 		"description": "ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum.",
 		"weight": "4",
-		"price": "$69.32",
+		"price": "69.32",
 		"categoryId": "5"
 	},
 	{
@@ -1452,7 +1452,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a",
 		"weight": "5",
-		"price": "$6.43",
+		"price": "6.43",
 		"categoryId": "3"
 	},
 	{
@@ -1461,7 +1461,7 @@ const mockedProduct = [
 		"image": "http://ebay.com",
 		"description": "neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus",
 		"weight": "3",
-		"price": "$59.54",
+		"price": "59.54",
 		"categoryId": "3"
 	},
 	{
@@ -1470,7 +1470,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem,",
 		"weight": "8",
-		"price": "$44.79",
+		"price": "44.79",
 		"categoryId": "1"
 	},
 	{
@@ -1479,7 +1479,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In",
 		"weight": "5",
-		"price": "$26.29",
+		"price": "26.29",
 		"categoryId": "4"
 	},
 	{
@@ -1488,7 +1488,7 @@ const mockedProduct = [
 		"image": "http://walmart.com",
 		"description": "arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa.",
 		"weight": "10",
-		"price": "$50.28",
+		"price": "50.28",
 		"categoryId": "4"
 	},
 	{
@@ -1497,7 +1497,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet",
 		"weight": "7",
-		"price": "$82.55",
+		"price": "82.55",
 		"categoryId": "3"
 	},
 	{
@@ -1506,7 +1506,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra",
 		"weight": "12",
-		"price": "$71.64",
+		"price": "71.64",
 		"categoryId": "2"
 	},
 	{
@@ -1515,7 +1515,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida",
 		"weight": "6",
-		"price": "$24.24",
+		"price": "24.24",
 		"categoryId": "3"
 	},
 	{
@@ -1524,7 +1524,7 @@ const mockedProduct = [
 		"image": "https://bbc.co.uk",
 		"description": "erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget",
 		"weight": "5",
-		"price": "$5.04",
+		"price": "5.04",
 		"categoryId": "2"
 	},
 	{
@@ -1533,7 +1533,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus.",
 		"weight": "5",
-		"price": "$41.25",
+		"price": "41.25",
 		"categoryId": "3"
 	},
 	{
@@ -1542,7 +1542,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "pede, ultrices a, auctor non, feugiat nec, diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede. Cum sociis",
 		"weight": "4",
-		"price": "$40.72",
+		"price": "40.72",
 		"categoryId": "5"
 	},
 	{
@@ -1551,7 +1551,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget",
 		"weight": "7",
-		"price": "$20.87",
+		"price": "20.87",
 		"categoryId": "2"
 	},
 	{
@@ -1560,7 +1560,7 @@ const mockedProduct = [
 		"image": "https://twitter.com",
 		"description": "Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis",
 		"weight": "4",
-		"price": "$78.15",
+		"price": "78.15",
 		"categoryId": "4"
 	},
 	{
@@ -1569,7 +1569,7 @@ const mockedProduct = [
 		"image": "http://zoom.us",
 		"description": "eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan laoreet",
 		"weight": "5",
-		"price": "$63.36",
+		"price": "63.36",
 		"categoryId": "4"
 	},
 	{
@@ -1578,7 +1578,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "arcu. Morbi sit amet massa. Quisque porttitor",
 		"weight": "7",
-		"price": "$93.00",
+		"price": "93.00",
 		"categoryId": "3"
 	},
 	{
@@ -1587,7 +1587,7 @@ const mockedProduct = [
 		"image": "http://facebook.com",
 		"description": "sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros.",
 		"weight": "5",
-		"price": "$79.34",
+		"price": "79.34",
 		"categoryId": "2"
 	},
 	{
@@ -1596,7 +1596,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum",
 		"weight": "8",
-		"price": "$74.40",
+		"price": "74.40",
 		"categoryId": "5"
 	},
 	{
@@ -1605,7 +1605,7 @@ const mockedProduct = [
 		"image": "https://twitter.com",
 		"description": "at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac",
 		"weight": "10",
-		"price": "$4.67",
+		"price": "4.67",
 		"categoryId": "5"
 	},
 	{
@@ -1614,7 +1614,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla ante,",
 		"weight": "4",
-		"price": "$54.31",
+		"price": "54.31",
 		"categoryId": "3"
 	},
 	{
@@ -1623,7 +1623,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris.",
 		"weight": "9",
-		"price": "$47.49",
+		"price": "47.49",
 		"categoryId": "2"
 	},
 	{
@@ -1632,7 +1632,7 @@ const mockedProduct = [
 		"image": "https://whatsapp.com",
 		"description": "egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci",
 		"weight": "7",
-		"price": "$85.24",
+		"price": "85.24",
 		"categoryId": "4"
 	},
 	{
@@ -1641,7 +1641,7 @@ const mockedProduct = [
 		"image": "http://ebay.com",
 		"description": "faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus",
 		"weight": "5",
-		"price": "$25.07",
+		"price": "25.07",
 		"categoryId": "3"
 	},
 	{
@@ -1650,7 +1650,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices",
 		"weight": "5",
-		"price": "$50.67",
+		"price": "50.67",
 		"categoryId": "4"
 	},
 	{
@@ -1659,7 +1659,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut, molestie in, tempus eu,",
 		"weight": "11",
-		"price": "$68.06",
+		"price": "68.06",
 		"categoryId": "4"
 	},
 	{
@@ -1668,7 +1668,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "vulputate, posuere vulputate, lacus. Cras interdum. Nunc",
 		"weight": "6",
-		"price": "$47.28",
+		"price": "47.28",
 		"categoryId": "4"
 	},
 	{
@@ -1677,7 +1677,7 @@ const mockedProduct = [
 		"image": "https://cnn.com",
 		"description": "Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum",
 		"weight": "4",
-		"price": "$59.55",
+		"price": "59.55",
 		"categoryId": "2"
 	},
 	{
@@ -1686,7 +1686,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non,",
 		"weight": "8",
-		"price": "$11.97",
+		"price": "11.97",
 		"categoryId": "1"
 	},
 	{
@@ -1695,7 +1695,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "libero et tristique pellentesque, tellus sem mollis dui, in sodales elit",
 		"weight": "11",
-		"price": "$52.35",
+		"price": "52.35",
 		"categoryId": "3"
 	},
 	{
@@ -1704,7 +1704,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "at, velit. Cras lorem lorem,",
 		"weight": "6",
-		"price": "$36.74",
+		"price": "36.74",
 		"categoryId": "3"
 	},
 	{
@@ -1713,7 +1713,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit",
 		"weight": "4",
-		"price": "$25.02",
+		"price": "25.02",
 		"categoryId": "3"
 	},
 	{
@@ -1722,7 +1722,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed",
 		"weight": "7",
-		"price": "$69.21",
+		"price": "69.21",
 		"categoryId": "4"
 	},
 	{
@@ -1731,7 +1731,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "facilisis non, bibendum sed, est. Nunc laoreet",
 		"weight": "6",
-		"price": "$92.61",
+		"price": "92.61",
 		"categoryId": "5"
 	},
 	{
@@ -1740,7 +1740,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet",
 		"weight": "7",
-		"price": "$92.25",
+		"price": "92.25",
 		"categoryId": "2"
 	},
 	{
@@ -1749,7 +1749,7 @@ const mockedProduct = [
 		"image": "http://zoom.us",
 		"description": "elementum sem, vitae aliquam eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim",
 		"weight": "11",
-		"price": "$95.94",
+		"price": "95.94",
 		"categoryId": "1"
 	},
 	{
@@ -1758,7 +1758,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper",
 		"weight": "12",
-		"price": "$46.49",
+		"price": "46.49",
 		"categoryId": "3"
 	},
 	{
@@ -1767,7 +1767,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "Curabitur dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris",
 		"weight": "7",
-		"price": "$98.17",
+		"price": "98.17",
 		"categoryId": "4"
 	},
 	{
@@ -1776,7 +1776,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in",
 		"weight": "3",
-		"price": "$3.35",
+		"price": "3.35",
 		"categoryId": "2"
 	},
 	{
@@ -1785,7 +1785,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien.",
 		"weight": "5",
-		"price": "$48.12",
+		"price": "48.12",
 		"categoryId": "4"
 	},
 	{
@@ -1794,7 +1794,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat",
 		"weight": "5",
-		"price": "$2.52",
+		"price": "2.52",
 		"categoryId": "1"
 	},
 	{
@@ -1803,7 +1803,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae",
 		"weight": "5",
-		"price": "$79.12",
+		"price": "79.12",
 		"categoryId": "2"
 	},
 	{
@@ -1812,7 +1812,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat",
 		"weight": "6",
-		"price": "$32.56",
+		"price": "32.56",
 		"categoryId": "1"
 	},
 	{
@@ -1821,7 +1821,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci",
 		"weight": "3",
-		"price": "$38.84",
+		"price": "38.84",
 		"categoryId": "3"
 	},
 	{
@@ -1830,7 +1830,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Phasellus ornare. Fusce mollis. Duis sit amet",
 		"weight": "4",
-		"price": "$25.38",
+		"price": "25.38",
 		"categoryId": "1"
 	},
 	{
@@ -1839,7 +1839,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "ipsum leo elementum sem, vitae aliquam eros turpis non enim. Mauris quis turpis",
 		"weight": "3",
-		"price": "$50.01",
+		"price": "50.01",
 		"categoryId": "5"
 	},
 	{
@@ -1848,7 +1848,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "vel arcu. Curabitur ut odio vel est tempor bibendum.",
 		"weight": "5",
-		"price": "$78.19",
+		"price": "78.19",
 		"categoryId": "2"
 	},
 	{
@@ -1857,7 +1857,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus",
 		"weight": "8",
-		"price": "$30.31",
+		"price": "30.31",
 		"categoryId": "3"
 	},
 	{
@@ -1866,7 +1866,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi",
 		"weight": "8",
-		"price": "$72.66",
+		"price": "72.66",
 		"categoryId": "4"
 	},
 	{
@@ -1875,7 +1875,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi. Mauris nulla. Integer urna. Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas ornare egestas",
 		"weight": "9",
-		"price": "$25.35",
+		"price": "25.35",
 		"categoryId": "2"
 	},
 	{
@@ -1884,7 +1884,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "vulputate dui, nec tempus mauris erat",
 		"weight": "12",
-		"price": "$10.71",
+		"price": "10.71",
 		"categoryId": "2"
 	},
 	{
@@ -1893,7 +1893,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante",
 		"weight": "7",
-		"price": "$57.38",
+		"price": "57.38",
 		"categoryId": "4"
 	},
 	{
@@ -1902,7 +1902,7 @@ const mockedProduct = [
 		"image": "https://twitter.com",
 		"description": "Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit",
 		"weight": "9",
-		"price": "$46.17",
+		"price": "46.17",
 		"categoryId": "3"
 	},
 	{
@@ -1911,7 +1911,7 @@ const mockedProduct = [
 		"image": "http://facebook.com",
 		"description": "eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat,",
 		"weight": "8",
-		"price": "$88.47",
+		"price": "88.47",
 		"categoryId": "3"
 	},
 	{
@@ -1920,7 +1920,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et tristique pellentesque, tellus sem mollis dui, in sodales elit erat vitae risus. Duis",
 		"weight": "8",
-		"price": "$63.76",
+		"price": "63.76",
 		"categoryId": "5"
 	},
 	{
@@ -1929,7 +1929,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit",
 		"weight": "8",
-		"price": "$51.57",
+		"price": "51.57",
 		"categoryId": "5"
 	},
 	{
@@ -1938,7 +1938,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed",
 		"weight": "8",
-		"price": "$67.27",
+		"price": "67.27",
 		"categoryId": "3"
 	},
 	{
@@ -1947,7 +1947,7 @@ const mockedProduct = [
 		"image": "http://cnn.com",
 		"description": "est mauris, rhoncus id, mollis nec, cursus a, enim.",
 		"weight": "10",
-		"price": "$15.00",
+		"price": "15.00",
 		"categoryId": "3"
 	},
 	{
@@ -1956,7 +1956,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "faucibus orci luctus et ultrices posuere cubilia Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui.",
 		"weight": "7",
-		"price": "$85.93",
+		"price": "85.93",
 		"categoryId": "3"
 	},
 	{
@@ -1965,7 +1965,7 @@ const mockedProduct = [
 		"image": "https://instagram.com",
 		"description": "egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum",
 		"weight": "6",
-		"price": "$12.65",
+		"price": "12.65",
 		"categoryId": "2"
 	},
 	{
@@ -1974,7 +1974,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "tempor arcu. Vestibulum ut eros non enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus",
 		"weight": "3",
-		"price": "$33.79",
+		"price": "33.79",
 		"categoryId": "2"
 	},
 	{
@@ -1983,7 +1983,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis",
 		"weight": "10",
-		"price": "$78.03",
+		"price": "78.03",
 		"categoryId": "2"
 	},
 	{
@@ -1992,7 +1992,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "in aliquet lobortis, nisi nibh lacinia orci, consectetuer",
 		"weight": "11",
-		"price": "$46.33",
+		"price": "46.33",
 		"categoryId": "2"
 	},
 	{
@@ -2001,7 +2001,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "nunc sed pede. Cum sociis natoque penatibus",
 		"weight": "8",
-		"price": "$64.70",
+		"price": "64.70",
 		"categoryId": "3"
 	},
 	{
@@ -2010,7 +2010,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "at, egestas a, scelerisque sed,",
 		"weight": "9",
-		"price": "$47.04",
+		"price": "47.04",
 		"categoryId": "4"
 	},
 	{
@@ -2019,7 +2019,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean",
 		"weight": "3",
-		"price": "$86.44",
+		"price": "86.44",
 		"categoryId": "3"
 	},
 	{
@@ -2028,7 +2028,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "pharetra. Quisque ac libero nec ligula",
 		"weight": "6",
-		"price": "$61.81",
+		"price": "61.81",
 		"categoryId": "1"
 	},
 	{
@@ -2037,7 +2037,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui,",
 		"weight": "8",
-		"price": "$26.77",
+		"price": "26.77",
 		"categoryId": "2"
 	},
 	{
@@ -2046,7 +2046,7 @@ const mockedProduct = [
 		"image": "https://nytimes.com",
 		"description": "vel est tempor bibendum.",
 		"weight": "6",
-		"price": "$11.83",
+		"price": "11.83",
 		"categoryId": "2"
 	},
 	{
@@ -2055,7 +2055,7 @@ const mockedProduct = [
 		"image": "https://walmart.com",
 		"description": "odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet,",
 		"weight": "6",
-		"price": "$72.30",
+		"price": "72.30",
 		"categoryId": "1"
 	},
 	{
@@ -2064,7 +2064,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat",
 		"weight": "5",
-		"price": "$9.91",
+		"price": "9.91",
 		"categoryId": "2"
 	},
 	{
@@ -2073,7 +2073,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor",
 		"weight": "12",
-		"price": "$83.83",
+		"price": "83.83",
 		"categoryId": "2"
 	},
 	{
@@ -2082,7 +2082,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere",
 		"weight": "6",
-		"price": "$71.70",
+		"price": "71.70",
 		"categoryId": "2"
 	},
 	{
@@ -2091,7 +2091,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "Nullam scelerisque neque sed sem",
 		"weight": "7",
-		"price": "$89.26",
+		"price": "89.26",
 		"categoryId": "2"
 	},
 	{
@@ -2100,7 +2100,7 @@ const mockedProduct = [
 		"image": "http://zoom.us",
 		"description": "Phasellus elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras dolor dolor,",
 		"weight": "7",
-		"price": "$10.41",
+		"price": "10.41",
 		"categoryId": "1"
 	},
 	{
@@ -2109,7 +2109,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus",
 		"weight": "5",
-		"price": "$34.93",
+		"price": "34.93",
 		"categoryId": "2"
 	},
 	{
@@ -2118,7 +2118,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "ultrices posuere cubilia Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit",
 		"weight": "5",
-		"price": "$64.70",
+		"price": "64.70",
 		"categoryId": "2"
 	},
 	{
@@ -2127,7 +2127,7 @@ const mockedProduct = [
 		"image": "https://ebay.com",
 		"description": "tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc",
 		"weight": "8",
-		"price": "$42.12",
+		"price": "42.12",
 		"categoryId": "3"
 	},
 	{
@@ -2136,7 +2136,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "netus et malesuada fames ac turpis",
 		"weight": "11",
-		"price": "$24.30",
+		"price": "24.30",
 		"categoryId": "1"
 	},
 	{
@@ -2145,7 +2145,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "Vivamus rhoncus. Donec est. Nunc ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu",
 		"weight": "4",
-		"price": "$52.13",
+		"price": "52.13",
 		"categoryId": "2"
 	},
 	{
@@ -2154,7 +2154,7 @@ const mockedProduct = [
 		"image": "https://naver.com",
 		"description": "nonummy ut, molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy.",
 		"weight": "8",
-		"price": "$68.96",
+		"price": "68.96",
 		"categoryId": "5"
 	},
 	{
@@ -2163,7 +2163,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est.",
 		"weight": "7",
-		"price": "$23.64",
+		"price": "23.64",
 		"categoryId": "1"
 	},
 	{
@@ -2172,7 +2172,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero.",
 		"weight": "6",
-		"price": "$69.53",
+		"price": "69.53",
 		"categoryId": "3"
 	},
 	{
@@ -2181,7 +2181,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "In lorem. Donec elementum, lorem ut aliquam iaculis, lacus",
 		"weight": "10",
-		"price": "$78.39",
+		"price": "78.39",
 		"categoryId": "2"
 	},
 	{
@@ -2190,7 +2190,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "luctus. Curabitur egestas nunc sed libero. Proin sed turpis nec mauris blandit mattis. Cras eget nisi dictum augue malesuada malesuada. Integer id magna et ipsum cursus",
 		"weight": "10",
-		"price": "$38.80",
+		"price": "38.80",
 		"categoryId": "3"
 	},
 	{
@@ -2199,7 +2199,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "est, congue a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum",
 		"weight": "10",
-		"price": "$33.10",
+		"price": "33.10",
 		"categoryId": "3"
 	},
 	{
@@ -2208,7 +2208,7 @@ const mockedProduct = [
 		"image": "http://google.com",
 		"description": "est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus.",
 		"weight": "6",
-		"price": "$92.75",
+		"price": "92.75",
 		"categoryId": "2"
 	},
 	{
@@ -2217,7 +2217,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "nec ante blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem, sit",
 		"weight": "8",
-		"price": "$77.02",
+		"price": "77.02",
 		"categoryId": "4"
 	},
 	{
@@ -2226,7 +2226,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at",
 		"weight": "3",
-		"price": "$97.94",
+		"price": "97.94",
 		"categoryId": "2"
 	},
 	{
@@ -2235,7 +2235,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis nec,",
 		"weight": "8",
-		"price": "$90.28",
+		"price": "90.28",
 		"categoryId": "2"
 	},
 	{
@@ -2244,7 +2244,7 @@ const mockedProduct = [
 		"image": "https://whatsapp.com",
 		"description": "lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna.",
 		"weight": "6",
-		"price": "$94.37",
+		"price": "94.37",
 		"categoryId": "3"
 	},
 	{
@@ -2253,7 +2253,7 @@ const mockedProduct = [
 		"image": "https://pinterest.com",
 		"description": "volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget",
 		"weight": "4",
-		"price": "$62.22",
+		"price": "62.22",
 		"categoryId": "2"
 	},
 	{
@@ -2262,7 +2262,7 @@ const mockedProduct = [
 		"image": "https://naver.com",
 		"description": "ornare placerat, orci lacus vestibulum lorem,",
 		"weight": "11",
-		"price": "$6.28",
+		"price": "6.28",
 		"categoryId": "4"
 	},
 	{
@@ -2271,7 +2271,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam. Duis mi enim, condimentum",
 		"weight": "4",
-		"price": "$96.07",
+		"price": "96.07",
 		"categoryId": "1"
 	},
 	{
@@ -2280,7 +2280,7 @@ const mockedProduct = [
 		"image": "http://zoom.us",
 		"description": "eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus",
 		"weight": "7",
-		"price": "$49.30",
+		"price": "49.30",
 		"categoryId": "3"
 	},
 	{
@@ -2289,7 +2289,7 @@ const mockedProduct = [
 		"image": "https://reddit.com",
 		"description": "quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in lobortis tellus justo sit amet nulla. Donec non justo. Proin non massa non",
 		"weight": "5",
-		"price": "$85.69",
+		"price": "85.69",
 		"categoryId": "5"
 	},
 	{
@@ -2298,7 +2298,7 @@ const mockedProduct = [
 		"image": "http://wikipedia.org",
 		"description": "egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero.",
 		"weight": "11",
-		"price": "$65.28",
+		"price": "65.28",
 		"categoryId": "3"
 	},
 	{
@@ -2307,7 +2307,7 @@ const mockedProduct = [
 		"image": "https://cnn.com",
 		"description": "non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor",
 		"weight": "10",
-		"price": "$28.28",
+		"price": "28.28",
 		"categoryId": "3"
 	},
 	{
@@ -2316,7 +2316,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse",
 		"weight": "5",
-		"price": "$52.47",
+		"price": "52.47",
 		"categoryId": "5"
 	},
 	{
@@ -2325,7 +2325,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui.",
 		"weight": "8",
-		"price": "$48.55",
+		"price": "48.55",
 		"categoryId": "4"
 	},
 	{
@@ -2334,7 +2334,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "dictum ultricies ligula. Nullam enim. Sed nulla ante, iaculis nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero. Proin sed turpis nec mauris blandit mattis. Cras eget",
 		"weight": "6",
-		"price": "$52.03",
+		"price": "52.03",
 		"categoryId": "1"
 	},
 	{
@@ -2343,7 +2343,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor",
 		"weight": "6",
-		"price": "$68.82",
+		"price": "68.82",
 		"categoryId": "3"
 	},
 	{
@@ -2352,7 +2352,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "neque non quam. Pellentesque habitant morbi tristique senectus et netus",
 		"weight": "8",
-		"price": "$37.01",
+		"price": "37.01",
 		"categoryId": "4"
 	},
 	{
@@ -2361,7 +2361,7 @@ const mockedProduct = [
 		"image": "http://youtube.com",
 		"description": "malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel",
 		"weight": "9",
-		"price": "$43.59",
+		"price": "43.59",
 		"categoryId": "3"
 	},
 	{
@@ -2370,7 +2370,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "nunc sed pede. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac",
 		"weight": "9",
-		"price": "$24.85",
+		"price": "24.85",
 		"categoryId": "4"
 	},
 	{
@@ -2379,7 +2379,7 @@ const mockedProduct = [
 		"image": "http://whatsapp.com",
 		"description": "et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam",
 		"weight": "4",
-		"price": "$43.69",
+		"price": "43.69",
 		"categoryId": "2"
 	},
 	{
@@ -2388,7 +2388,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "molestie sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum",
 		"weight": "7",
-		"price": "$48.36",
+		"price": "48.36",
 		"categoryId": "3"
 	},
 	{
@@ -2397,7 +2397,7 @@ const mockedProduct = [
 		"image": "http://baidu.com",
 		"description": "urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien.",
 		"weight": "7",
-		"price": "$14.27",
+		"price": "14.27",
 		"categoryId": "5"
 	},
 	{
@@ -2406,7 +2406,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi",
 		"weight": "10",
-		"price": "$50.63",
+		"price": "50.63",
 		"categoryId": "1"
 	},
 	{
@@ -2415,7 +2415,7 @@ const mockedProduct = [
 		"image": "http://nytimes.com",
 		"description": "arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque",
 		"weight": "4",
-		"price": "$93.22",
+		"price": "93.22",
 		"categoryId": "3"
 	},
 	{
@@ -2424,7 +2424,7 @@ const mockedProduct = [
 		"image": "https://naver.com",
 		"description": "nulla. Integer urna. Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam feugiat placerat velit.",
 		"weight": "8",
-		"price": "$71.36",
+		"price": "71.36",
 		"categoryId": "2"
 	},
 	{
@@ -2433,7 +2433,7 @@ const mockedProduct = [
 		"image": "https://walmart.com",
 		"description": "semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet,",
 		"weight": "10",
-		"price": "$67.09",
+		"price": "67.09",
 		"categoryId": "4"
 	},
 	{
@@ -2442,7 +2442,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus convallis est,",
 		"weight": "7",
-		"price": "$86.36",
+		"price": "86.36",
 		"categoryId": "1"
 	},
 	{
@@ -2451,7 +2451,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu eu",
 		"weight": "10",
-		"price": "$98.58",
+		"price": "98.58",
 		"categoryId": "5"
 	},
 	{
@@ -2460,7 +2460,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "tempor bibendum. Donec",
 		"weight": "5",
-		"price": "$68.50",
+		"price": "68.50",
 		"categoryId": "3"
 	},
 	{
@@ -2469,7 +2469,7 @@ const mockedProduct = [
 		"image": "http://reddit.com",
 		"description": "elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada",
 		"weight": "10",
-		"price": "$89.33",
+		"price": "89.33",
 		"categoryId": "4"
 	},
 	{
@@ -2478,7 +2478,7 @@ const mockedProduct = [
 		"image": "https://youtube.com",
 		"description": "justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis",
 		"weight": "8",
-		"price": "$72.15",
+		"price": "72.15",
 		"categoryId": "2"
 	},
 	{
@@ -2487,7 +2487,7 @@ const mockedProduct = [
 		"image": "https://zoom.us",
 		"description": "hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie",
 		"weight": "9",
-		"price": "$80.88",
+		"price": "80.88",
 		"categoryId": "4"
 	},
 	{
@@ -2496,7 +2496,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus",
 		"weight": "5",
-		"price": "$88.99",
+		"price": "88.99",
 		"categoryId": "3"
 	},
 	{
@@ -2505,7 +2505,7 @@ const mockedProduct = [
 		"image": "https://bbc.co.uk",
 		"description": "feugiat metus sit amet ante.",
 		"weight": "7",
-		"price": "$82.06",
+		"price": "82.06",
 		"categoryId": "2"
 	},
 	{
@@ -2514,7 +2514,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "fringilla euismod enim. Etiam gravida",
 		"weight": "8",
-		"price": "$51.17",
+		"price": "51.17",
 		"categoryId": "4"
 	},
 	{
@@ -2523,7 +2523,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede,",
 		"weight": "9",
-		"price": "$96.58",
+		"price": "96.58",
 		"categoryId": "2"
 	},
 	{
@@ -2532,7 +2532,7 @@ const mockedProduct = [
 		"image": "https://facebook.com",
 		"description": "vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel lectus. Cum sociis natoque penatibus et",
 		"weight": "6",
-		"price": "$88.62",
+		"price": "88.62",
 		"categoryId": "2"
 	},
 	{
@@ -2541,7 +2541,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "ligula. Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis a, magna.",
 		"weight": "8",
-		"price": "$34.16",
+		"price": "34.16",
 		"categoryId": "5"
 	},
 	{
@@ -2550,7 +2550,7 @@ const mockedProduct = [
 		"image": "https://netflix.com",
 		"description": "elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",
 		"weight": "7",
-		"price": "$45.78",
+		"price": "45.78",
 		"categoryId": "3"
 	},
 	{
@@ -2559,7 +2559,7 @@ const mockedProduct = [
 		"image": "https://guardian.co.uk",
 		"description": "tellus eu augue porttitor",
 		"weight": "8",
-		"price": "$36.63",
+		"price": "36.63",
 		"categoryId": "3"
 	},
 	{
@@ -2568,7 +2568,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "ante, iaculis nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero. Proin sed turpis nec",
 		"weight": "4",
-		"price": "$25.58",
+		"price": "25.58",
 		"categoryId": "4"
 	},
 	{
@@ -2577,7 +2577,7 @@ const mockedProduct = [
 		"image": "http://netflix.com",
 		"description": "Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare",
 		"weight": "7",
-		"price": "$38.93",
+		"price": "38.93",
 		"categoryId": "5"
 	},
 	{
@@ -2586,7 +2586,7 @@ const mockedProduct = [
 		"image": "https://wikipedia.org",
 		"description": "leo, in lobortis tellus justo sit amet nulla. Donec non",
 		"weight": "7",
-		"price": "$87.91",
+		"price": "87.91",
 		"categoryId": "3"
 	},
 	{
@@ -2595,7 +2595,7 @@ const mockedProduct = [
 		"image": "https://yahoo.com",
 		"description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et tristique pellentesque, tellus sem mollis dui,",
 		"weight": "11",
-		"price": "$36.39",
+		"price": "36.39",
 		"categoryId": "4"
 	},
 	{
@@ -2604,7 +2604,7 @@ const mockedProduct = [
 		"image": "https://naver.com",
 		"description": "velit eu sem. Pellentesque ut",
 		"weight": "7",
-		"price": "$7.94",
+		"price": "7.94",
 		"categoryId": "2"
 	},
 	{
@@ -2613,7 +2613,7 @@ const mockedProduct = [
 		"image": "http://instagram.com",
 		"description": "orci luctus et ultrices",
 		"weight": "9",
-		"price": "$62.47",
+		"price": "62.47",
 		"categoryId": "4"
 	},
 	{
@@ -2622,7 +2622,7 @@ const mockedProduct = [
 		"image": "http://bbc.co.uk",
 		"description": "tristique neque venenatis lacus. Etiam bibendum fermentum metus. Aenean sed pede nec ante blandit viverra. Donec tempus, lorem fringilla",
 		"weight": "6",
-		"price": "$82.19",
+		"price": "82.19",
 		"categoryId": "4"
 	},
 	{
@@ -2631,7 +2631,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "blandit at, nisi. Cum sociis natoque penatibus et magnis dis",
 		"weight": "7",
-		"price": "$35.74",
+		"price": "35.74",
 		"categoryId": "4"
 	},
 	{
@@ -2640,7 +2640,7 @@ const mockedProduct = [
 		"image": "http://naver.com",
 		"description": "metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus",
 		"weight": "10",
-		"price": "$50.72",
+		"price": "50.72",
 		"categoryId": "4"
 	},
 	{
@@ -2649,7 +2649,7 @@ const mockedProduct = [
 		"image": "http://yahoo.com",
 		"description": "fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet, erat nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras",
 		"weight": "7",
-		"price": "$70.60",
+		"price": "70.60",
 		"categoryId": "1"
 	},
 	{
@@ -2658,7 +2658,7 @@ const mockedProduct = [
 		"image": "http://twitter.com",
 		"description": "id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede",
 		"weight": "9",
-		"price": "$55.96",
+		"price": "55.96",
 		"categoryId": "5"
 	},
 	{
@@ -2667,7 +2667,7 @@ const mockedProduct = [
 		"image": "http://guardian.co.uk",
 		"description": "elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed",
 		"weight": "9",
-		"price": "$94.75",
+		"price": "94.75",
 		"categoryId": "5"
 	},
 	{
@@ -2676,7 +2676,7 @@ const mockedProduct = [
 		"image": "http://facebook.com",
 		"description": "at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie",
 		"weight": "6",
-		"price": "$74.66",
+		"price": "74.66",
 		"categoryId": "3"
 	},
 	{
@@ -2685,7 +2685,7 @@ const mockedProduct = [
 		"image": "https://twitter.com",
 		"description": "sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla",
 		"weight": "9",
-		"price": "$91.08",
+		"price": "91.08",
 		"categoryId": "2"
 	},
 	{
@@ -2694,7 +2694,7 @@ const mockedProduct = [
 		"image": "https://baidu.com",
 		"description": "diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus,",
 		"weight": "5",
-		"price": "$64.07",
+		"price": "64.07",
 		"categoryId": "5"
 	},
 	{
@@ -2703,7 +2703,7 @@ const mockedProduct = [
 		"image": "http://facebook.com",
 		"description": "massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum.",
 		"weight": "5",
-		"price": "$99.31",
+		"price": "99.31",
 		"categoryId": "3"
 	},
 	{
@@ -2712,7 +2712,7 @@ const mockedProduct = [
 		"image": "https://pinterest.com",
 		"description": "Integer tincidunt aliquam arcu. Aliquam",
 		"weight": "7",
-		"price": "$68.16",
+		"price": "68.16",
 		"categoryId": "4"
 	},
 	{
@@ -2721,7 +2721,7 @@ const mockedProduct = [
 		"image": "https://cnn.com",
 		"description": "eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero.",
 		"weight": "8",
-		"price": "$74.43",
+		"price": "74.43",
 		"categoryId": "2"
 	},
 	{
@@ -2730,7 +2730,7 @@ const mockedProduct = [
 		"image": "https://google.com",
 		"description": "dignissim tempor arcu. Vestibulum",
 		"weight": "3",
-		"price": "$10.73",
+		"price": "10.73",
 		"categoryId": "3"
 	}
 ]

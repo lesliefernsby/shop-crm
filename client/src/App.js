@@ -9,9 +9,11 @@ import Register from './components/Register/Register'
 import Admin from './components/Admin/Admin';
 import Checkout from './components/Checkout/Checkout';
 import PrivateRoute from './components/PrivateRoute';
-import RestrictedRoute from './components/RestrictedRoute'
+import RestrictedRoute from './components/RestrictedRoute';
+
 
 function App() {
+
   return (
     <React.Fragment>
       <Routes>
@@ -26,6 +28,9 @@ function App() {
         </Route>
       </Routes>
     <Navbar />
+
+
+
     </React.Fragment>
   );
 }

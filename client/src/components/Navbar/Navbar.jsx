@@ -1,9 +1,27 @@
 import React from 'react'
 import { AppBar, Container, Toolbar, Box, IconButton, Typography, Button } from '@mui/material'
-import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material'
+import { Menu, Lock, MeetingRoom, Person } from '@mui/icons-material';
+import { useState } from 'react';
+import { Drawer, Badge } from '@mui/material';
+import styled from "styled-components";
+import { AddShoppingCart } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
+import Cart from '../Cart/Cart';
 // import useProductSearch from '../customHooks/useProductSearch'; Над переносом надо нормально подумать
 
 const Navbar = () => {
+
+  const [cartOpen, setCartOpen] = useState(false);
+  const cart = useSelector(state => state.cart);
+  
+  const StyledButton = styled(IconButton)`
+    position: relative;
+    z-index: 100;
+    right: 30px;
+    top: 90px;
+  
+  `;
+
   return (
     <AppBar>
       <Container maxWidth='lg'>
@@ -69,6 +87,21 @@ const Navbar = () => {
           </Button>
           {/* /logged */}
 
+          <StyledButton onClick={() => setCartOpen(true)}>
+              <Badge badgeContent={cart.length} color="error">
+                <AddShoppingCart style={{ fontSize: "50px" }} />
+              </Badge>
+          </StyledButton>
+
+
+
+          <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+              <Cart />
+          </Drawer>
+
+          
+
+          
         </Toolbar>
       </Container>
     </AppBar>
