@@ -18,6 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Order, {
         foreignKey: 'userId',
       });
+      this.belongsToMany(models.Product, { through: 'Likes', foreignKey: 'productId' });
+
     }
   }
   User.init({
