@@ -1,17 +1,19 @@
-import React, { useRef, useCallback } from 'react'
-import useProductSearch from '../customHooks/useProductSearch';
+import React, { useRef, useCallback, useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import ProductCard from '../ProductCard/ProductCard';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { productsListActions } from '../../redux/actions/productsListActions';
 import CategoryFilter from '../CategoryFilter/CategoryFilter';
+import ProductCard from '../ProductCard/ProductCard';
+// eslint-disable-next-line import/no-named-as-default
+import useProductSearch from '../customHooks/useProductSearch';
 
-const ProductsList = (props) => {
+
+function ProductsList () {
   const dispatch = useDispatch();
+  const {query, pageNumber} = useSelector((state) => state.productsList);
 
   useEffect(() => {
     dispatch(productsListActions.setIsListPage(true));
@@ -19,8 +21,6 @@ const ProductsList = (props) => {
       dispatch(productsListActions.setIsListPage(false));
     }
   }, []);
-
-  const { query, pageNumber, setPageNumber } = props;
 
   const {
     products,
@@ -35,11 +35,12 @@ const ProductsList = (props) => {
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && hasMore) {
-        setPageNumber(prevPageNumber => prevPageNumber + 1)
+        // setPageNumber(prevPageNumber => prevPageNumber + 1)
+        dispatch(productsListActions.setPageNumber(pageNumber + 1))
       }
     })
     if (node) observer.current.observe(node)
-  }, [loading, hasMore, setPageNumber])
+  }, [loading, hasMore]) // maybe error
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -56,10 +57,10 @@ const ProductsList = (props) => {
         </Grid>
         {products.map((product, index) => {
           if (products.length === index + 1) {
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{ display: 'flex' }} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
-          } else {
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
-          }
+            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={product.id}><div style={{ display: 'flex' }} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
+          } 
+            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={product.id}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
+          
         })}
         <Grid
           container

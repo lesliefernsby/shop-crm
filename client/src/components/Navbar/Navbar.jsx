@@ -20,13 +20,17 @@ import {
   MeetingRoom,
   Person,
 } from "@mui/icons-material";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
+import { productsListActions } from '../../redux/actions/productsListActions';
 
-function Navbar(props) {
+function Navbar() {
+
+  const dispatch = useDispatch();
+
   const isProductListPage = useSelector(
     (state) => state.productsList.isProductListPage
   );
@@ -34,11 +38,14 @@ function Navbar(props) {
   // console.log('isLogged', loggedIn)
   const user = useSelector((state) => state.authentication.user);
   // console.log('user', user)
-  const { query, setQuery, setPageNumber } = props;
+  // const { query, setQuery, setPageNumber } = props;
+
+  const query = useSelector(state => state.productsList.query)
+
 
   function handleSearch(e) {
-    setQuery(e.target.value);
-    setPageNumber(1);
+    dispatch(productsListActions.setQuery(e.target.value))
+    dispatch(productsListActions.setPageNumber(1))
   }
 
   const [cartOpen, setCartOpen] = useState(false);

@@ -27,6 +27,21 @@ export function productsList(state = initialState, action) {
         ...state,
         filterCategoryOptions: action.payload,
       };
+    case productsListConstants.SET_QUERY:
+      return {
+        ...state,
+        query: action.payload,
+      };
+    case productsListConstants.SET_PAGE_NUMBER:
+      return {
+        ...state,
+        pageNumber: action.payload,
+      };
+    case productsListConstants.SET_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
+      };
     case productsListConstants.ADD_CATEGORIES_FILTER:
       console.log(action.payload, "action.payloadaction.payloadaction.payload");
       return {

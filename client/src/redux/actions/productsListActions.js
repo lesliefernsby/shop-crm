@@ -32,8 +32,29 @@ function getFilterCategoryOptions() {
   };
 }
 
+function setQuery(value) {
+  return (dispatch) => {
+    dispatch({ type: productsListConstants.SET_QUERY, payload: value });
+  };
+}
+
+function setPageNumber(value) {
+  return (dispatch) => {
+    dispatch({ type: productsListConstants.SET_PAGE_NUMBER, payload: value });
+  };
+}
+
+function setProducts(array) {
+  return (dispatch) => {
+    dispatch({ type: productsListConstants.SET_PRODUCTS, payload: array });
+  };
+}
+
 export const productsListActions = {
   setIsListPage,
   getFilterCategoryOptions,
   addCategoriesFilter,
+  setQuery,
+  setPageNumber,
+  setProducts
 };

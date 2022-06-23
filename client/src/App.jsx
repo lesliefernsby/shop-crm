@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
@@ -12,8 +12,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute";
 
 function App() {
-  const [query, setQuery] = useState("");
-  const [pageNumber, setPageNumber] = useState(1);
 
   return (
     <>
@@ -21,11 +19,7 @@ function App() {
         <Route
           path="/"
           element={
-            <Home
-              query={query}
-              pageNumber={pageNumber}
-              setPageNumber={setPageNumber}
-            />
+            <Home />
           }
         />
         <Route path="/login" element={<Login />} />
@@ -37,7 +31,7 @@ function App() {
           <Route exact path="/admin" element={<Admin />} />
         </Route>
       </Routes>
-      <Navbar query={query} setQuery={setQuery} setPageNumber={setPageNumber} />
+      <Navbar />
     </>
   );
 }
