@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, List, ListItem, ListItemText } from "@mui/material";
 import { useSelector } from "react-redux";
-import styles from "./Checkout.module.css";
+import styles from './Checkout.module.css';
 
 const addresses = [
   "1 Material-UI Drive",
