@@ -1,16 +1,17 @@
-import React, { useRef, useCallback } from 'react'
-import useProductSearch from '../customHooks/useProductSearch';
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable react/prop-types */
+import React, { useRef, useCallback , useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import ProductCard from '../ProductCard/ProductCard';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
+import ProductCard from '../ProductCard/ProductCard';
+import useProductSearch from '../customHooks/useProductSearch';
 import { productsListActions } from '../../redux/actions/productsListActions';
 import CategoryFilter from '../CategoryFilter/CategoryFilter';
 
-const ProductsList = (props) => {
+function ProductsList(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -56,10 +57,10 @@ const ProductsList = (props) => {
         </Grid>
         {products.map((product, index) => {
           if (products.length === index + 1) {
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{ display: 'flex' }} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
-          } else {
-            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={index}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
-          }
+            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={`_${product.id}`}><div style={{ display: 'flex' }} ref={lastProductElementRef} key={product.id}><ProductCard product={product} /></div></Grid>;
+          } 
+            return <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={`_${product.id}`}><div style={{ display: 'flex' }} key={product.id}><ProductCard product={product} /></div></Grid>;
+          
         })}
         <Grid
           container

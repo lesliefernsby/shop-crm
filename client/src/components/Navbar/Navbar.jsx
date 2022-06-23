@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 import {
   Drawer,
   Badge,
@@ -20,11 +20,13 @@ import {
   MeetingRoom,
   Person,
 } from "@mui/icons-material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
+import { userActions } from "../../redux/actions/userActions";
+import { cartActions } from "../../redux/actions/cartActions";
 
 function Navbar(props) {
   const isProductListPage = useSelector(
@@ -34,6 +36,10 @@ function Navbar(props) {
   // console.log('isLogged', loggedIn)
   const user = useSelector((state) => state.authentication.user);
   // console.log('user', user)
+  const cartOpen = useSelector(state => state.cartDialog);
+  const cart = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
   const { query, setQuery, setPageNumber } = props;
 
   function handleSearch(e) {
@@ -41,8 +47,11 @@ function Navbar(props) {
     setPageNumber(1);
   }
 
-  const [cartOpen, setCartOpen] = useState(false);
-  const cart = useSelector((state) => state.cart);
+  function handleLogout() {
+    dispatch(userActions.logout());
+  }
+
+
 
   const StyledButton = styled(IconButton)`
     position: relative;
@@ -118,7 +127,7 @@ function Navbar(props) {
                 </Button>
               </Link>
 
-              <Link className="NavLink" to="/checkout">
+              <Link className="NavLink" onClick={handleLogout} to="/">
                 <Button color="inherit" startIcon={<MeetingRoom />}>
                   Logout
                 </Button>
@@ -128,7 +137,7 @@ function Navbar(props) {
             ""
           )}
 
-          <StyledButton onClick={() => setCartOpen(true)}>
+          <StyledButton onClick={() => dispatch(cartActions.openCart())}>
             <Badge badgeContent={cart.length} color="error">
               <AddShoppingCart style={{ fontSize: "50px" }} />
             </Badge>
@@ -136,8 +145,8 @@ function Navbar(props) {
 
           <Drawer
             anchor="right"
-            open={cartOpen}
-            onClose={() => setCartOpen(false)}
+            open={cartOpen.isOpen}
+            onClose={() => dispatch(cartActions.closeCart())}
           >
             <Cart />
           </Drawer>
