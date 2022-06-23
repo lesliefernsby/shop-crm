@@ -1,6 +1,10 @@
+/* eslint-disable strict */
+/* eslint-disable no-unused-vars */
+
 'use strict';
 
 const bcrypt = require("bcrypt");
+
 const saltRounds = 10;
 
 const { User } = require('../models')

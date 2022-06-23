@@ -1,10 +1,11 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 require('rootpath')();
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const {getProducts} = require('./mockedProducts')//todo delete
 const bodyParser = require('body-parser');
-const errorHandler = require('helpers/error-handler');
+const errorHandler = require('helpers/error-handler.js');
 
 const app = express();
 const { PORT } = process.env ?? 3001;
@@ -27,4 +28,6 @@ app.use(errorHandler);
 
 // start server
 
-app.listen(process.env.PORT ?? 3001, () => { console.log(`Server started sucessfully at port ${PORT} <3`); }); 
+app.listen(process.env.PORT ?? 3001, () => {
+  console.log(`Server started sucessfully at port ${PORT} <3`);
+});

@@ -1,67 +1,87 @@
-const config = require('config.json');
+/* eslint-disable no-param-reassign */
 const jwt = require('jsonwebtoken');
-const Role = require('../helpers/role');
+const bcrypt = require('bcrypt');
+const { Op } = require('sequelize');
+const config = require('../config.json');
 const { User } = require('../db/models');
-const bcrypt = require("bcrypt");
-const Op = require('sequelize').Op;
+
 const saltRounds = 10;
 
-module.exports = {
-    authenticate,
-    getAll,
-    getById,
-    register
-};
-
 async function authenticate({ username, password }) {
-    const hash = await bcrypt.hash(password, saltRounds);
-    const user = await User.findOne({ where : {
-        [Op.or]: [
-          { username: username },
-          { email: username }
-        ]
-      }, raw: true});
 
-    const pass = await bcrypt.compare(password, user.password)
+  const user = await User.findOne({
+    where: {
+      [Op.or]: [{ username }, { email: username }],
+    },
+    raw: true,
+  });
 
-    if (user && pass) {
-        const token = jwt.sign({ sub: user.id, roles: user.roles, firstName: user.firstName, lastName: user.lastName }, config.secret);
-        return {
-          token
-        };
-    }
+  const pass = await bcrypt.compare(password, user.password);
+
+  if (user && pass) {
+    const token = jwt.sign(
+      {
+        sub: user.id,
+        roles: user.roles,
+        firstName: user.firstName,
+        lastName: user.lastName,
+      },
+      config.secret
+    );
+    return {
+      token,
+    };
+  }
+  return null;
 }
 
 async function getAll() {
-    const users = await User.findAll({ raw: true });
-    return users.map(user => {
-        const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
-        return userWithoutPassword;
-    });
+  const users = await User.findAll({ raw: true });
+  return users.map(user => {
+    const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
+    return userWithoutPassword;
+  });
 }
 
 async function getById(id) {
-    const user = await User.findOne({ where : {
-      id: id
-    }, raw: true});
-    if (!user) return;
-    const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
-    return userWithoutPassword;
+  const user = await User.findOne({
+    where: {
+      id,
+    },
+    raw: true,
+  });
+  if (!user) return;
+  const { password, createdAt, updatedAt, ...userWithoutPassword } = user;
+  // eslint-disable-next-line consistent-return
+  return userWithoutPassword;
 }
 
-async function register({username, password, firstName='', lastName='', email}) {
+async function register({
+  username,
+  password,
+  firstName = '',
+  lastName = '',
+  email,
+}) {
   email = email || username;
-  let plainTextPassword = password;
+  const plainTextPassword = password;
   password = await bcrypt.hash(plainTextPassword, saltRounds);
   const roles = ['User'];
-  const user = await User.create({
+  await User.create({
     username,
     email,
     password,
     firstName,
     lastName,
-    roles
-  })
+    roles,
+  });
 
-  return authenticate({username: username, password: plainTextPassword});
+  return authenticate({ username, password: plainTextPassword });
 }
+
+module.exports = {
+  authenticate,
+  getAll,
+  getById,
+  register,
+};
