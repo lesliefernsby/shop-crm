@@ -1,4 +1,8 @@
+/* eslint-disable strict */
+/* eslint-disable no-unused-vars */
+
 'use strict';
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Categories', {

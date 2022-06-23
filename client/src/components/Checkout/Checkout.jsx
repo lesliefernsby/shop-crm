@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { userActions } from '../../redux/actions/userActions';
 import { Link } from 'react-router-dom';
+import { userActions } from '../../redux/actions/userActions';
 
 
 
-const Checkout = () => {
+function Checkout() {
 
   const dispatch = useDispatch();
   const users = useSelector(state => state.users);
@@ -15,17 +15,16 @@ const Checkout = () => {
     }, [dispatch])
 
   return (
-    <React.Fragment>
-      <div className="col-md-6 col-md-offset-3">
+    <div className="col-md-6 col-md-offset-3">
                 
                 <h3>Users from secure api end point:</h3>
                 {users.loading && <em>Loading users...</em>}
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 {users.items &&
                     <ul>
-                        {users.items.map((user, index) =>
+                        {users.items.map((user) =>
                             <li key={user.id}>
-                                {user.firstName + ' ' + user.lastName}
+                                {`${user.firstName  } ${  user.lastName}`}
                             </li>
                         )}
                     </ul>
@@ -34,7 +33,6 @@ const Checkout = () => {
                     <Link to="/login">Logout</Link>
                 </p>
             </div>
-    </React.Fragment>
   )
 }
 
