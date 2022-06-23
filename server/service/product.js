@@ -11,9 +11,9 @@ async function getCategoriesOptions() {
 }
 async function getProductsByPage(body) {
   try {
-    const { page, filters } = body;
+    const { q, page, filters } = body;
     const perPage = body.perPage || 15;
-    const q = body.q.toLowerCase();
+    // const q = body.q.toLowerCase();
 
     let categoryArray = filters?.categories || [];
 

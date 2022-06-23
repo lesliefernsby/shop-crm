@@ -20,15 +20,29 @@ import {
   MeetingRoom,
   Person,
 } from "@mui/icons-material";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
+import { productsListActions } from '../../redux/actions/productsListActions';
+// import CategoryFilter from '../CategoryFilter/CategoryFilter'
 import { userActions } from "../../redux/actions/userActions";
 import { cartActions } from "../../redux/actions/cartActions";
 
-function Navbar(props) {
+const StyledButton = styled(IconButton)`
+position: relative;
+z-index: 100;
+right: 30px;
+top: 90px;
+`;
+
+function Navbar() {
+
+  const dispatch = useDispatch();
+
+
+
   const isProductListPage = useSelector(
     (state) => state.productsList.isProductListPage
   );
@@ -36,29 +50,22 @@ function Navbar(props) {
   // console.log('isLogged', loggedIn)
   const user = useSelector((state) => state.authentication.user);
   // console.log('user', user)
-  const cartOpen = useSelector(state => state.cartDialog);
+  // const { query, setQuery, setPageNumber } = props;
+
+  const query = useSelector(state => state.productsList.query)
+
+  const cartOpen = useSelector((state) => state.cartDialog);
   const cart = useSelector((state) => state.cart);
 
-  const dispatch = useDispatch();
-  const { query, setQuery, setPageNumber } = props;
-
   function handleSearch(e) {
-    setQuery(e.target.value);
-    setPageNumber(1);
+    dispatch(productsListActions.setQuery(e.target.value))
+    dispatch(productsListActions.setPageNumber(1))
   }
 
   function handleLogout() {
     dispatch(userActions.logout());
   }
 
-
-
-  const StyledButton = styled(IconButton)`
-    position: relative;
-    z-index: 100;
-    right: 30px;
-    top: 90px;
-  `;
   return (
     <AppBar>
       <Container maxWidth="lg">
@@ -89,6 +96,19 @@ function Navbar(props) {
           >
             TTS
           </Typography>
+          {/* 
+          {isProductListPage && (
+            <Grid
+              container
+              item
+              xs={12}
+              direction="row"
+              justifyContent="center"
+              alignItems="stretch"
+            >
+              <CategoryFilter />
+            </Grid>
+          )} */}
 
           {isProductListPage && (
             <Grid
@@ -109,16 +129,6 @@ function Navbar(props) {
             </Grid>
           )}
 
-          {!loggedIn ? (
-            <Link className="NavLink" to="/login">
-              <Button color="inherit" startIcon={<Lock />}>
-                Login
-              </Button>
-            </Link>
-          ) : (
-            ""
-          )}
-
           {loggedIn ? (
             <>
               <Link className="NavLink" to="/">
@@ -134,7 +144,11 @@ function Navbar(props) {
               </Link>
             </>
           ) : (
-            ""
+            <Link className="NavLink" to="/login">
+              <Button color="inherit" startIcon={<Lock />}>
+                Login
+              </Button>
+            </Link>
           )}
 
           <StyledButton onClick={() => dispatch(cartActions.openCart())}>

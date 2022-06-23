@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -22,10 +22,10 @@ const MenuProps = {
 };
 
 
-function getStyles(name, personName, theme) {
+function getStyles(name, filterObjects, theme) {
   return {
     fontWeight:
-      personName.indexOf(name) === -1
+      filterObjects.indexOf(name) === -1
         ? theme.typography.fontWeightRegular
         : theme.typography.fontWeightMedium,
   };
@@ -33,42 +33,48 @@ function getStyles(name, personName, theme) {
 
 function CategoryFilter() {
   const dispatch = useDispatch();
-  const optionsList =useSelector((state)=> state.productsList.filterCategoryOptions)
-  
-  useEffect(()=> {
+  const optionsList = useSelector((state) => state.productsList.filterCategoryOptions)
+  // const chosenCategories = useSelector((state)=> state.productsList.filters)
+
+  useEffect(() => {
     dispatch(productsListActions.getFilterCategoryOptions());
   }, []);
 
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  const [filterObjects, setFilterObjects] = React.useState([]);
 
   const handleChange = (event) => {
-    setPersonName(
+    setFilterObjects(
       event.target.value
     );
-    const data = event.target.value.map(i=>i.id)
-    dispatch(productsListActions.addCategoriesFilter(data));
+
   };
+  
+  useEffect(() => {
+    
+    dispatch(productsListActions.addCategoriesFilter(filterObjects.map((item) => item.id)));
+  }, [filterObjects]);
 
   return (
     <div>
+
+
+
       <FormControl sx={{ m: 1, width: 300 }} variant="outlined">
-      <InputLabel id="demo-simple-select-outlined-label">
-          Category
-        </InputLabel>
+        <InputLabel id="test-select-label">Category</InputLabel>
         <Select
-          labelId="demo-simple-select-outlined-label"
-          label="Category"
-          id="Category"
+          label="Category" // here is the difference
           multiple
-          value={personName}
+          value={filterObjects}
           onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+          input={<OutlinedInput id="select-multiple-chip" label="Category" />}
           renderValue={(selected) => (
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-             {selected.map((value) => (
-                <Chip key={value.id} label={value.title} />
-              ))} 
+              {selected.map((value) => (
+                <Chip key={value.id} label={value.title} onMouseDown={(event) => event.stopPropagation()} onDelete={() => {
+                  setFilterObjects(selected.filter(item => item.id !== value.id))
+                }} />
+              ))}
             </Box>
           )}
           MenuProps={MenuProps}
@@ -77,7 +83,7 @@ function CategoryFilter() {
             <MenuItem
               key={item.id}
               value={item}
-              style={getStyles(item.title, personName, theme)}
+              style={getStyles(item.title, filterObjects, theme)}
             >
               {item.title}
             </MenuItem>
