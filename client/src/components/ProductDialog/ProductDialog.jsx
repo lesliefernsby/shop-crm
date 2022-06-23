@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import Dialog from '@mui/material/Dialog';
 import ProductCard from '../ProductCard/ProductCard';
 
-const ProductDialog = (props) => {
+function ProductDialog(props) {
   const { open, setOpen, product } = props;
 
   const handleClose = () => {
@@ -15,7 +17,7 @@ const ProductDialog = (props) => {
       onClose={handleClose}
       scroll='body'
     >
-      <ProductCard product={product} modal={true} />
+      <ProductCard product={product} modal />
     </Dialog>
   )
 }

@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-shadow */
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import {useSelector} from 'react-redux';
@@ -26,9 +28,7 @@ export const  useProductSearch = (query, pageNumber) => {
     .then(res => {
       console.log(res, 'res');
       const products = res?.data || [];
-      setProducts(prevProducts => {
-        return [...new Set([...prevProducts, ...products.map(b => b)])]
-      })
+      setProducts(prevProducts => [...new Set([...prevProducts, ...products.map(b => b)])])
       setHasMore(products.length > 0)
       setLoading(false)
     }).catch(e => {
