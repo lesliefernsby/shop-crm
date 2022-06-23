@@ -36,7 +36,7 @@ function Navbar(props) {
   // console.log('isLogged', loggedIn)
   const user = useSelector((state) => state.authentication.user);
   // console.log('user', user)
-  const cartOpen = useSelector(state => state.cartDialog);
+  const cartOpen = useSelector((state) => state.cartDialog);
   const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
@@ -50,8 +50,6 @@ function Navbar(props) {
   function handleLogout() {
     dispatch(userActions.logout());
   }
-
-
 
   const StyledButton = styled(IconButton)`
     position: relative;
@@ -109,16 +107,6 @@ function Navbar(props) {
             </Grid>
           )}
 
-          {!loggedIn ? (
-            <Link className="NavLink" to="/login">
-              <Button color="inherit" startIcon={<Lock />}>
-                Login
-              </Button>
-            </Link>
-          ) : (
-            ""
-          )}
-
           {loggedIn ? (
             <>
               <Link className="NavLink" to="/">
@@ -134,7 +122,11 @@ function Navbar(props) {
               </Link>
             </>
           ) : (
-            ""
+            <Link className="NavLink" to="/login">
+              <Button color="inherit" startIcon={<Lock />}>
+                Login
+              </Button>
+            </Link>
           )}
 
           <StyledButton onClick={() => dispatch(cartActions.openCart())}>
