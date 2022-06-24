@@ -7,5 +7,6 @@ export const productsListConstants = {
   SET_PAGE_NUMBER: "SET_PAGE_NUMBER",
   SET_PRODUCTS: "SET_PRODUCTS",
   SET_PENDING: "SET_PENDING",
-  SET_ERROR: "SET_ERROR"
+  SET_ERROR: "SET_ERROR",
+  SET_LIKE: "SET_LIKE",
 };

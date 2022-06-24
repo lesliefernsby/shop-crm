@@ -17,6 +17,14 @@ function getCategoriesOptions(req, res, next) {
     .catch(err => next(err));
 }
 
+function fetchLike(req, res, next) {
+  productService
+    .fetchLike(req.params)
+    .then(options => res.json(options))
+    .catch(err => next(err));
+}
+
 router.post('/', getProductsByPage);
 router.get('/categoriesOptions', getCategoriesOptions);
+router.get('/:id/:userId', fetchLike)
 module.exports = router;

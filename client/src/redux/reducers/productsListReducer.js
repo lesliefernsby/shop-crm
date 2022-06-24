@@ -13,6 +13,7 @@ export const initialState = {
   filters: {
     categories: [],
   },
+  likes: [],
 };
 
 export function productsList(state = initialState, action) {
@@ -61,6 +62,19 @@ export function productsList(state = initialState, action) {
           categories: action.payload || [],
         },
       };
+    case productsListConstants.SET_LIKE:
+      // eslint-disable-next-line no-case-declarations
+      let newArray = [];
+      if(state.likes.includes(action.payload)){
+        newArray = state.likes.filter((item) => item !== action.payload)
+      } else {
+        newArray = [...state.likes, action.payload]
+      }
+      return {
+        ...state,
+        likes: newArray
+      };
+
     default:
       return state;
   }
