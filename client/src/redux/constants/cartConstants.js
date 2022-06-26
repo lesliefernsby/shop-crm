@@ -2,6 +2,7 @@
 export const cartConstants = {
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
+  RESET_CART: "RESET_CART",
   OPEN_CART: "OPEN_CART",
   CLOSE_CART: "CLOSE_CART"
 };

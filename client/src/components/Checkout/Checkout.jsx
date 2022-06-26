@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+import React from "react";
 import {
   CssBaseline,
-  AppBar,
-  Toolbar,
   Paper,
   Stepper,
   Step,
@@ -11,13 +9,20 @@ import {
   Button,
   Typography,
 } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styles from "./Checkout.module.css";
 import AddressForm from "./AddressForm";
 import PaymentForm from "./PaymentForm";
 import Review from "./Review";
+import { checkoutActions } from "../../redux/actions/checkoutActions";
+import { cartActions } from "../../redux/actions/cartActions";
 
 function Checkout() {
-  const [activeStep, setActiveStep] = useState(0);
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+  const checkout = useSelector((state) => state.checkout);
   const steps = ["Shipping address", "Payment details", "Review your order"];
 
   function getStepContent(step) {
@@ -33,47 +38,59 @@ function Checkout() {
     }
   }
 
-  const handleNext = () => setActiveStep(activeStep + 1);
-  const handleBack = () => setActiveStep(activeStep - 1);
+  const handleNext = () => {
+    if (checkout.page === steps.length - 1) {
+      dispatch(checkoutActions.create({ cart, inputs: checkout.inputs }));
+      dispatch(cartActions.resetCart());
+    }
+    dispatch(checkoutActions.nextPage());
+  };
+  const handleToPersonal = () => {
+    dispatch(checkoutActions.resetPage());
+    navigate("/personal");
+  };
+  const handleBack = () => dispatch(checkoutActions.previousPage());
 
   return (
     <>
       <CssBaseline />
-      <AppBar position="absolute" color="default" className={styles.AppBar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
-      </AppBar>
+
       <main className={styles.Layout}>
         <Paper className={styles.Paper}>
           <Typography component="h1" variant="h4" align="center">
             Checkout
           </Typography>
-          <Stepper activeStep={activeStep} className={styles.Stepper}>
+          <Stepper activeStep={checkout.page} className={styles.Stepper}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
           </Stepper>
-          {activeStep === steps.length ? (
+          {checkout.page === steps.length ? (
             <>
               <Typography variant="h5" gutterBottom>
-                Thank you for your order.
+                {checkout.inputs.firstName}, thank you for your order!
               </Typography>
               <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
+                Your order number is #{checkout.orderNumber}. We have emailed
+                your order confirmation, and will send you an update when your
+                order has shipped.
               </Typography>
+              <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleToPersonal}
+                  className={styles.Button}
+                >
+                 Go to My Orders
+                </Button>
             </>
           ) : (
             <>
-              {getStepContent(activeStep)}
+              {getStepContent(checkout.page)}
               <div className={styles.Buttons}>
-                {activeStep !== 0 && (
+                {checkout.page !== 0 && (
                   <Button onClick={handleBack} className={styles.Button}>
                     Back
                   </Button>
@@ -84,7 +101,7 @@ function Checkout() {
                   onClick={handleNext}
                   className={styles.Button}
                 >
-                  {activeStep === steps.length - 1 ? "Place order" : "Next"}
+                  {checkout.page === steps.length - 1 ? "Place order" : "Next"}
                 </Button>
               </div>
             </>

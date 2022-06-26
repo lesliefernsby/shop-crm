@@ -3,19 +3,6 @@ import { Grid, Typography, List, ListItem, ListItemText } from "@mui/material";
 import { useSelector } from "react-redux";
 import styles from './Checkout.module.css';
 
-const addresses = [
-  "1 Material-UI Drive",
-  "Reactville",
-  "Anytown",
-  "99999",
-  "USA",
-];
-const payments = [
-  { name: "Card type", detail: "Visa" },
-  { name: "Card holder", detail: "Mr John Smith" },
-  { name: "Card number", detail: "xxxx-xxxx-xxxx-1234" },
-  { name: "Expiry date", detail: "04/2024" },
-];
 
 const total = (a, b) => (a * b).toFixed(2);
 const totalOrder = (arr) => arr.reduce(
@@ -26,6 +13,24 @@ const totalOrder = (arr) => arr.reduce(
 
 function Review() {
   const cart = useSelector((state) => state.cart);
+  const checkout = useSelector(state => state.checkout);
+  const addresses = [
+    checkout.inputs.address1,
+    checkout.inputs.address2,
+    checkout.inputs.city,
+    checkout.inputs.state,
+    checkout.inputs.country,
+    checkout.inputs.zip,
+
+  ];
+
+  const payments = [
+    { name: "Card type", detail: "Visa" },
+    { name: "Card holder", detail: checkout.inputs.cardName },
+    { name: "Card number", detail: `xxxx-xxxx-xxxx-${checkout.inputs.cardNumber.slice(checkout.inputs.cardNumber.length - 4)}` },
+    { name: "Expiry date", detail: checkout.inputs.expDate },
+  ];
+
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -62,7 +67,7 @@ function Review() {
           <Typography variant="h6" gutterBottom className={styles.Title}>
             Shipping
           </Typography>
-          <Typography gutterBottom>John Smith</Typography>
+          <Typography gutterBottom>{`${checkout.inputs.firstName} ${checkout.inputs.lastName}`}</Typography>
           <Typography gutterBottom>{addresses.join(", ")}</Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
