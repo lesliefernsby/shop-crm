@@ -17,6 +17,7 @@ app.use(cors());
 // api routes
 app.use('/users', require('./controllers/users'));
 app.use('/products', require('./controllers/products'));
+app.use('/orders', require('./controllers/orders'));
 
 // app.get('/products/search', async (req, res) => {
 //   const products = await getProducts(req.query);

@@ -4,6 +4,7 @@ import { users } from './usersReducer';
 import { cart } from './cartReducers';
 import { productsList } from './productsListReducer';
 import { cartDialog } from './cartOpenReducer';
+import { checkout } from './checkoutReducer';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   users,
   cart,
   productsList,
-  cartDialog
+  cartDialog,
+  checkout
 
 });
 
