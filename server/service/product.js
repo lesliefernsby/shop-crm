@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 const { Op } = require('sequelize');
-const { Product, Category } = require('../db/models');
+const { Product, Category, User, Like } = require('../db/models');
 
 async function getCategoriesOptions() {
   try {
@@ -70,7 +70,31 @@ async function getProductsByPage(body) {
   }
 }
 
+async function fetchUserLikeIds(userId) {
+  try {
+    let result = await Like.findAll({ where: { userId }, raw: true });
+    return result.map(( item ) => item.productId);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function fetchLike(params) {
+  try {
+    console.log(params);
+    let result = await Like.findOne({ where: { productId: params.id, userId: params.userId } });
+    if (!result) {
+      return await Like.create({ productId: params.id, userId: params.userId });
+    }
+    return await result.destroy();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getProductsByPage,
   getCategoriesOptions,
+  fetchUserLikeIds,
+  fetchLike,
 };

@@ -17,13 +17,19 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Chip from "@mui/material/Chip";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProductDialog from "../ProductDialog/ProductDialog";
 import { cartActions } from "../../redux/actions/cartActions";
+import { productsListActions } from "../../redux/actions/productsListActions";
 
 function ProductCard(props) {
   const { product, modal } = props;
   const [open, setOpen] = useState(false);
+
+  const likes = useSelector((state) => state.productsList.likes);
+  const isLiked = likes.includes(product.id);
+  const isLoggedIn = useSelector((state) => state.authentication?.loggedIn);
+
   const dispatch = useDispatch();
 
   const openModal = () => {
@@ -37,6 +43,12 @@ function ProductCard(props) {
   const handleRemove = () => {
     dispatch(cartActions.removeFromCart(product));
   };
+
+  const addToggleLike = (id) => {
+    dispatch(productsListActions.toggleLike(id))
+  };
+
+
 
   return (
     <>
@@ -73,8 +85,8 @@ function ProductCard(props) {
             {modal
               ? product.description
               : product.description.length > 100
-              ? `${product.description.slice(0, 100)  }...`
-              : product.description}
+                ? `${product.description.slice(0, 100)}...`
+                : product.description}
             {/* {!modal && product.description.length > 100 && <Button color={'info'}>Learn more</Button>} */}
           </Typography>
           {modal && (
@@ -88,9 +100,9 @@ function ProductCard(props) {
           )}
         </CardContent>
         <CardActions sx={{ margin: "auto 0 1rem" }}>
-          <IconButton aria-label="add to favorites">
+          {isLoggedIn && <IconButton aria-label="add to favorites" onClick={() => addToggleLike(product.id)} color={isLiked ? "secondary" : "info"}>
             <FavoriteIcon />
-          </IconButton>
+          </IconButton>}
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>

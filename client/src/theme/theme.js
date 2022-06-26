@@ -29,7 +29,13 @@ export const theme = createTheme({
       dark: "#419544",
       contrastText: "#000",
     },
-    // Used by `getContrastText()` to maximize the contrast between
+    info: {
+      main: '##a2a6ab',
+      // light: '#7DDE81',
+      // dark: '#419544',
+      contrastText: '#000',
+    },
+        // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
     contrastThreshold: 3,
     // Used by the functions below to shift a color's luminance by approximately
