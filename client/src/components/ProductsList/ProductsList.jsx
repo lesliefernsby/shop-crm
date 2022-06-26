@@ -20,11 +20,18 @@ import useProductSearch from '../customHooks/useProductSearch';
 function ProductsList() {
   const dispatch = useDispatch();
   const { query, pageNumber } = useSelector((state) => state.productsList);
+  const isLoggedIn = useSelector((state) => state.authentication?.loggedIn);
 
   useEffect(() => {
     dispatch(productsListActions.setIsListPage(true));
     return () => {
       dispatch(productsListActions.setIsListPage(false));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      dispatch(productsListActions.fetchUserLikeIds());
     }
   }, []);
 
