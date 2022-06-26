@@ -4,7 +4,7 @@ import { personalConstants } from "../constants/personalConstants";
 
 const initialState = {
   loading: true,
-  orders: []
+  orders: [],
 };
 
 export function personal(state = initialState, action) {

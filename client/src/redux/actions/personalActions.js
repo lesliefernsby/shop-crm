@@ -1,11 +1,14 @@
 /* eslint-disable import/prefer-default-export */
-import { checkoutConstants } from "../constants";
+import { personalConstants } from "../constants/personalConstants";
 import { personalService } from "../service/personalService";
 
 function getMyOrders() {
-  personalService.getMyOrders().then((orders) => (dispatch) => {
-    dispatch({ type: checkoutConstants.ADD_CONTACT_INFO, payload: orders });
-  });
+  return (dispatch) =>
+    personalService
+      .getMyOrders()
+      .then((orders) =>
+        dispatch({ type: personalConstants.GET_MY_ORDERS, payload: orders })
+      );
 }
 
 export const personalActions = {
