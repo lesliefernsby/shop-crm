@@ -13,7 +13,16 @@ function fetchLike(id, userId) {
     .then((result) => result);
 }
 
+function fetchUserLikeIds(userId) {
+    return fetch(`${config.API_URL}/products/likes/${userId}`)
+    .then((res) => res.json())
+    .then((result) => result);
+  
+
+}
+
 export const productsListService = {
   getFilterCategoryOptions,
   fetchLike,
+  fetchUserLikeIds,
 };

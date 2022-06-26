@@ -9,4 +9,5 @@ export const productsListConstants = {
   SET_PENDING: "SET_PENDING",
   SET_ERROR: "SET_ERROR",
   SET_LIKE: "SET_LIKE",
+  SET_INITIAL_LIKES: "SET_INITIAL_LIKES"
 };

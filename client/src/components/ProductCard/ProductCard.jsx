@@ -28,6 +28,7 @@ function ProductCard(props) {
 
   const likes = useSelector((state) => state.productsList.likes);
   const isLiked = likes.includes(product.id);
+  const isLoggedIn = useSelector((state) => state.authentication?.loggedIn);
 
   const dispatch = useDispatch();
 
@@ -99,9 +100,9 @@ function ProductCard(props) {
           )}
         </CardContent>
         <CardActions sx={{ margin: "auto 0 1rem" }}>
-          <IconButton aria-label="add to favorites" color={isLiked ? "secondary" : "info"}>
-            <FavoriteIcon onClick={() => addToggleLike(product.id)} />
-          </IconButton>
+          {isLoggedIn && <IconButton aria-label="add to favorites" onClick={() => addToggleLike(product.id)} color={isLiked ? "secondary" : "info"}>
+            <FavoriteIcon />
+          </IconButton>}
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>

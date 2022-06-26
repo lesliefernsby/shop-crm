@@ -65,8 +65,8 @@ export function productsList(state = initialState, action) {
     case productsListConstants.SET_LIKE:
       // eslint-disable-next-line no-case-declarations
       let newArray = [];
-      if(state.likes.includes(action.payload)){
-        newArray = state.likes.filter((item) => item !== action.payload)
+      if (state.likes.includes(action.payload)) {
+        newArray = newArray.filter((item) => item.id !== action.payload)
       } else {
         newArray = [...state.likes, action.payload]
       }
@@ -75,7 +75,15 @@ export function productsList(state = initialState, action) {
         likes: newArray
       };
 
+    case productsListConstants.SET_INITIAL_LIKES:
+      return {
+        ...state,
+        likes: action.payload
+      };
+
     default:
       return state;
   }
-}
+};
+
+

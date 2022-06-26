@@ -76,15 +76,37 @@ function toggleLike(id) {
     const userId = getState().authentication.user.sub
     dispatch(setPending(true));
     dispatch(setError(false));
-    productsListService.fetchLike(id, userId).then(
-      () => {
+    productsListService.fetchLike(id, userId)
+      .then(() => {
         dispatch({ type: productsListConstants.SET_LIKE, payload: id });
         dispatch(setPending(false));
       },
-      () => {
-        dispatch(setError(true));
-      }
-    );
+        () => {
+          dispatch(setError(true));
+        }
+      );
+  };
+}
+
+function fetchUserLikeIds() {
+  return (dispatch, getState) => {
+    const userId = getState().authentication?.user?.sub
+    if (!userId) {
+      dispatch({ type: productsListConstants.SET_INITIAL_LIKES, payload: [] });
+    } else {
+      dispatch(setPending(true));
+      dispatch(setError(false));
+      productsListService.fetchUserLikeIds(userId)
+        .then((likes) => {
+          dispatch({ type: productsListConstants.SET_INITIAL_LIKES, payload: likes });
+          dispatch(setPending(false));
+        },
+          () => {
+            dispatch(setError(true));
+          }
+        );
+    }
+
   };
 }
 
@@ -100,4 +122,5 @@ export const productsListActions = {
   setError,
   setPending,
   toggleLike,
+  fetchUserLikeIds,
 };
