@@ -13,7 +13,8 @@ export function cart(state = initialState, action) {
           {
             item: action.item,
             quantity:
-              state.find((entry) => entry.item.id === action.item.id).quantity + 1,
+              state.find((entry) => entry.item.id === action.item.id).quantity +
+              1,
           },
         ];
       }
@@ -37,6 +38,8 @@ export function cart(state = initialState, action) {
       }
       return state;
     }
+    case cartConstants.RESET_CART:
+      return [];
     default:
       return state;
   }

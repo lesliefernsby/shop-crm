@@ -10,11 +10,13 @@ import Admin from "./components/Admin/Admin";
 import Checkout from "./components/Checkout/Checkout";
 import PrivateRoute from "./components/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute";
+import Personal from "./components/Personal/Personal";
 
 function App() {
 
   return (
     <>
+    <Navbar />
       <Routes>
         <Route
           path="/"
@@ -27,11 +29,13 @@ function App() {
         <Route exact path="/checkout" element={<PrivateRoute />}>
           <Route exact path="/checkout" element={<Checkout />} />
         </Route>
+        <Route exact path="/personal" element={<PrivateRoute />}>
+          <Route exact path="/personal" element={<Personal />} />
+        </Route>
         <Route exact path="/admin" element={<RestrictedRoute />}>
           <Route exact path="/admin" element={<Admin />} />
         </Route>
       </Routes>
-      <Navbar />
     </>
   );
 }

@@ -16,6 +16,13 @@ function removeFromCart(item) {
   };
 }
 
+function resetCart() {
+  return (dispatch) => {
+    cartService.resetCart();
+    dispatch({ type: cartConstants.RESET_CART });
+  };
+}
+
 function openCart() {
   return (dispatch) => dispatch({ type: cartConstants.OPEN_CART });
 }
@@ -27,6 +34,7 @@ function closeCart() {
 export const cartActions = {
   addToCart,
   removeFromCart,
+  resetCart,
   openCart,
-  closeCart
+  closeCart,
 };

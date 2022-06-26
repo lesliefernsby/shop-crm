@@ -51,7 +51,12 @@ function removeFromCart(item) {
   }
 }
 
+function resetCart() {
+  localStorage.removeItem("cart");
+}
+
 export const cartService = {
   addToCart,
   removeFromCart,
+  resetCart
 };

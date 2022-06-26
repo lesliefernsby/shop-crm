@@ -1,5 +1,5 @@
 /* eslint-disable consistent-return */
-const {Op} = require('sequelize');
+const { Op } = require('sequelize');
 const { Product, Category } = require('../db/models');
 
 async function getCategoriesOptions() {
@@ -26,17 +26,17 @@ async function getProductsByPage(body) {
             {
               [Op.or]: categoryArray,
             },
-            
+
             {
               [Op.or]: [
                 {
                   title: {
-                    [Op.like]: `%${  q  }%`,
+                    [Op.like]: `%${q}%`,
                   },
                 },
                 {
                   description: {
-                    [Op.like]: `%${  q  }%`,
+                    [Op.like]: `%${q}%`,
                   },
                 },
               ],
@@ -51,12 +51,12 @@ async function getProductsByPage(body) {
           [Op.or]: [
             {
               title: {
-                [Op.like]: `%${  q  }%`,
+                [Op.like]: `%${q}%`,
               },
             },
             {
               description: {
-                [Op.like]: `%${  q  }%`,
+                [Op.like]: `%${q}%`,
               },
             },
           ],
