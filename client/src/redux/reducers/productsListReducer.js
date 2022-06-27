@@ -14,10 +14,11 @@ export const initialState = {
     categories: [],
   },
   likes: [],
+  favorites: [],
 };
 
 export function productsList(state = initialState, action) {
-
+  let newArray = [];
   switch (action.type) {
     case productsListConstants.SET_IS_LIST_PAGE:
       return {
@@ -63,10 +64,9 @@ export function productsList(state = initialState, action) {
         },
       };
     case productsListConstants.SET_LIKE:
-      // eslint-disable-next-line no-case-declarations
-      let newArray = [];
+      
       if (state.likes.includes(action.payload)) {
-        newArray = newArray.filter((item) => item.id !== action.payload)
+        newArray = state.likes.filter((id) => id !== action.payload)
       } else {
         newArray = [...state.likes, action.payload]
       }
@@ -79,6 +79,12 @@ export function productsList(state = initialState, action) {
       return {
         ...state,
         likes: action.payload
+      };
+
+    case productsListConstants.SET_FAVORITES:
+      return {
+        ...state,
+        favorites: action.payload
       };
 
     default:

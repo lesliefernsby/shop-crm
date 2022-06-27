@@ -13,6 +13,7 @@ import RestrictedRoute from "./components/RestrictedRoute";
 import Personal from "./components/Personal/Personal";
 import PersonalOrders from "./components/Personal/PersonalOrders";
 import Order from "./components/Personal/Order";
+import Favorites from "./components/Personal/Favorites";
 
 function App() {
 
@@ -33,6 +34,10 @@ function App() {
         </Route>
         <Route exact path="/personal" element={<PrivateRoute />}>
           <Route exact path="/personal" element={<Personal />} />
+        </Route>
+
+        <Route exact path="/personal/favorites" element={<PrivateRoute />}>
+          <Route exact path="/personal/favorites" element={<Favorites />} />
         </Route>
 
         <Route exact path="/personal/orders" element={<PrivateRoute />}>

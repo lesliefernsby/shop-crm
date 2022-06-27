@@ -72,11 +72,11 @@ function getFilterCategoryOptions() {
 }
 
 function toggleLike(id) {
-  return (dispatch, getState) => {
-    const userId = getState().authentication.user.sub
+  return (dispatch) => {
+    // const userId = getState().authentication.user.sub
     dispatch(setPending(true));
     dispatch(setError(false));
-    productsListService.fetchLike(id, userId)
+    productsListService.toggleLike(id)
       .then(() => {
         dispatch({ type: productsListConstants.SET_LIKE, payload: id });
         dispatch(setPending(false));
@@ -110,6 +110,22 @@ function fetchUserLikeIds() {
   };
 }
 
+function getFavorites() {
+  return (dispatch) => {
+      dispatch(setPending(true));
+      dispatch(setError(false));
+      productsListService.getFavorites()
+        .then((favs) => {
+          dispatch({ type: productsListConstants.SET_FAVORITES, payload: favs });
+          dispatch(setPending(false));
+        },
+          () => {
+            dispatch(setError(true));
+          }
+        );
+  };
+}
+
 
 
 export const productsListActions = {
@@ -123,4 +139,5 @@ export const productsListActions = {
   setPending,
   toggleLike,
   fetchUserLikeIds,
+  getFavorites,
 };

@@ -6,9 +6,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { productsListActions } from '../../redux/actions/productsListActions';
 
 export const useProductSearch = (query, pageNumber) => {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
-  // const [products, setProducts] = useState([])
+  const loading = useSelector((state) => state.productsList.pending)
+  const error = useSelector((state) => state.productsList.error)
   const [hasMore, setHasMore] = useState(false)
   const filtersCategories = useSelector((state) => state.productsList.filters.categories)
   const perPage = useSelector((state) => state.productsList.perPage)
@@ -20,15 +19,13 @@ export const useProductSearch = (query, pageNumber) => {
   }, [query])
 
   useEffect(() => {
-    setLoading(true)
-    setError(false)
-    let cancel
-    dispatch(productsListActions.setError(false));
     dispatch(productsListActions.setPending(true));
+    dispatch(productsListActions.setError(false));
+    let cancel
     axios({
-      method: 'POST',
+      method: 'GET',
       url: 'http://localhost:3001/products',
-      data: { q: query, page: pageNumber, filters: { categories: filtersCategories }, perPage },
+      params: { q: query, page: pageNumber, filters: { categories: filtersCategories }, perPage },
       // eslint-disable-next-line no-return-assign
       cancelToken: new axios.CancelToken(c => cancel = c)
     })
@@ -36,13 +33,11 @@ export const useProductSearch = (query, pageNumber) => {
         const newData = res?.data || [];
         dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b => b)])]))
         setHasMore(newData.length > 0)
-        setLoading(false);
         dispatch(productsListActions.setPending(false));
       }).catch(e => {
-        dispatch(productsListActions.setError(true));
-        dispatch(productsListActions.setPending(false));
         if (axios.isCancel(e)) return
-        setError(true)
+        dispatch(productsListActions.setError(true));
+
       })
     return () => cancel()
   }, [query, pageNumber, filtersCategories])
