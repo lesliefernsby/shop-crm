@@ -83,7 +83,6 @@ async function fetchUserLikeIds(userId) {
 
 async function toggleLike(productId, userId) {
   try {
-    console.log(productId, userId, 'fkfdlfd');
     const result = await Like.findOne({ where: { productId, userId } });
     if (!result) {
       return await Like.create({ productId, userId });
@@ -94,9 +93,19 @@ async function toggleLike(productId, userId) {
   }
 }
 
+async function getFavorites(userId) {
+  try {
+    const userLikes =  await Like.findAll({ where: { userId } });
+    return await Promise.all(userLikes.map(async (like) => await Product.findOne({where: {id: like.productId}})));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getProductsByPage,
   getCategoriesOptions,
   fetchUserLikeIds,
   toggleLike,
+  getFavorites,
 };

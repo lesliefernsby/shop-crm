@@ -35,8 +35,17 @@ function toggleLike(req, res, next) {
     .catch(err => next(err));
 }
 
+function getFavorites(req, res, next) {
+  const currentUserId = req.user?.sub;
+  productService
+    .getFavorites(currentUserId)
+    .then(options => res.json(options))
+    .catch(err => next(err));
+}
+
 router.get('/', getProductsByPage);
 router.get('/categoriesOptions', getCategoriesOptions);
+router.post('/like', authorize(), toggleLike);
 router.get('/likes/:userId', fetchUserLikeIds);
-router.post('/like',  authorize(), toggleLike);
+router.get('/favorites', authorize(), getFavorites);
 module.exports = router;

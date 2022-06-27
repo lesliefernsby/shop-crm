@@ -14,6 +14,9 @@ function Personal() {
           <Link to="/personal/orders">Your orders</Link>
         </li>
         <li>
+          <Link to="/personal/favorites">Your favorites</Link>
+        </li>
+        <li>
           <Link to="/">Back to main</Link>
         </li>
       </ul>
