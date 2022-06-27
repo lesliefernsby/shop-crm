@@ -45,10 +45,8 @@ function ProductCard(props) {
   };
 
   const addToggleLike = (id) => {
-    dispatch(productsListActions.toggleLike(id))
+    dispatch(productsListActions.toggleLike(id));
   };
-
-
 
   return (
     <>
@@ -85,8 +83,8 @@ function ProductCard(props) {
             {modal
               ? product.description
               : product.description.length > 100
-                ? `${product.description.slice(0, 100)}...`
-                : product.description}
+              ? `${product.description.slice(0, 100)}...`
+              : product.description}
             {/* {!modal && product.description.length > 100 && <Button color={'info'}>Learn more</Button>} */}
           </Typography>
           {modal && (
@@ -100,18 +98,24 @@ function ProductCard(props) {
           )}
         </CardContent>
         <CardActions sx={{ margin: "auto 0 1rem" }}>
-          {isLoggedIn && <IconButton aria-label="add to favorites" onClick={() => addToggleLike(product.id)} color={isLiked ? "secondary" : "info"}>
-            <FavoriteIcon />
-          </IconButton>}
+          {isLoggedIn && (
+            <IconButton
+              aria-label="add to favorites"
+              onClick={() => addToggleLike(product.id)}
+              color={isLiked ? "secondary" : "info"}
+            >
+              <FavoriteIcon />
+            </IconButton>
+          )}
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
           <Box sx={{ "& > :not(style)": { m: 1 }, marginLeft: "auto" }}>
             <Button onClick={handleRemove} size="small">
-              Remove
+              {/* Remove */}
             </Button>
             <Button onClick={handleAdd} size="small">
-              Add
+              {/* Add */}
             </Button>
             <Fab onClick={handleAdd} color="primary" aria-label="add">
               <ShoppingCartOutlinedIcon />

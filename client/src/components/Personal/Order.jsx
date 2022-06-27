@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemText,
   CssBaseline,
+  Button,
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
@@ -51,7 +52,9 @@ function Order() {
       <CssBaseline />
       {order && (
         <>
-          <h1>Order #{order.id}</h1>
+          <Typography variant="h3" gutterBottom component="div">
+            Order #{order.id}
+          </Typography>
           <Typography variant="h6" gutterBottom>
             Order summary
           </Typography>
@@ -98,14 +101,19 @@ function Order() {
           </Grid>
         </>
       )}
-      <ul>
-        <li>
-          <Link to="/personal">To personal page</Link>
-        </li>
-        <li>
-          <Link to="/personal/orders">Back to orders</Link>
-        </li>
-      </ul>
+      <List>
+        <ListItem>
+          <Link to="/personal/orders">
+            <Button variant="contained">Your orders</Button>
+          </Link>
+        </ListItem>
+
+        <ListItem>
+          <Link to="/">
+            <Button variant="text">To main page</Button>
+          </Link>
+        </ListItem>
+      </List>
     </main>
   );
 }
