@@ -108,7 +108,7 @@ function Navbar() {
                 value={query}
                 onChange={handleSearch}
                 placeholder="What are we looking for?"
-                style={{ width: "300px", margin: "0.5rem" }}
+                style={{ width: "50%", margin: "0.5rem" }}
               />
             </Grid>
           )}
