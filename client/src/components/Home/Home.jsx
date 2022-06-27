@@ -5,7 +5,6 @@ import Container from "@mui/material/Container";
 import ProductsList from "../ProductsList/ProductsList";
 
 function Home() {
-
   return (
     <div className="main">
       <CssBaseline />
