@@ -12,10 +12,17 @@ function Personal() {
         Personal page
       </Typography>
 
+
       <List>
         <ListItem>
           <Link to="/personal/orders">
             <Button variant="contained">Your orders</Button>
+          </Link>
+        </ListItem>
+
+        <ListItem>
+           <Link to="/personal/favorites">
+            <Button variant="contained">Your favorites</Button>
           </Link>
         </ListItem>
 
