@@ -1,22 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CssBaseline } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import { CssBaseline, Button, List, ListItem } from "@mui/material";
 import styles from "./Personal.module.css";
 
 function Personal() {
   return (
     <main className={styles.Layout}>
       <CssBaseline />
-      <div>Personal page</div>
+      <Typography variant="h3" gutterBottom component="div">
+        Personal page
+      </Typography>
 
-      <ul>
-        <li>
-          <Link to="/personal/orders">Your orders</Link>
-        </li>
-        <li>
-          <Link to="/">Back to main</Link>
-        </li>
-      </ul>
+      <List>
+        <ListItem>
+          <Link to="/personal/orders">
+            <Button variant="contained">Your orders</Button>
+          </Link>
+        </ListItem>
+
+        <ListItem>
+          <Link to="/">
+            <Button variant="text">To main page</Button>
+          </Link>
+        </ListItem>
+      </List>
     </main>
   );
 }

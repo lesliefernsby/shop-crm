@@ -25,23 +25,20 @@ import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
-import { productsListActions } from '../../redux/actions/productsListActions';
+import { productsListActions } from "../../redux/actions/productsListActions";
 // import CategoryFilter from '../CategoryFilter/CategoryFilter'
 import { userActions } from "../../redux/actions/userActions";
 import { cartActions } from "../../redux/actions/cartActions";
 
 const StyledButton = styled(IconButton)`
-position: relative;
-z-index: 100;
-right: 30px;
-top: 90px;
+  position: relative;
+  z-index: 100;
+  right: 30px;
+  top: 90px;
 `;
 
 function Navbar() {
-
   const dispatch = useDispatch();
-
-
 
   const isProductListPage = useSelector(
     (state) => state.productsList.isProductListPage
@@ -52,14 +49,14 @@ function Navbar() {
   // console.log('user', user)
   // const { query, setQuery, setPageNumber } = props;
 
-  const query = useSelector(state => state.productsList.query)
+  const query = useSelector((state) => state.productsList.query);
 
   const cartOpen = useSelector((state) => state.cartDialog);
   const cart = useSelector((state) => state.cart);
 
   function handleSearch(e) {
-    dispatch(productsListActions.setQuery(e.target.value))
-    dispatch(productsListActions.setPageNumber(1))
+    dispatch(productsListActions.setQuery(e.target.value));
+    dispatch(productsListActions.setPageNumber(1));
   }
 
   function handleLogout() {
@@ -96,19 +93,6 @@ function Navbar() {
           >
             TTS
           </Typography>
-          {/* 
-          {isProductListPage && (
-            <Grid
-              container
-              item
-              xs={12}
-              direction="row"
-              justifyContent="center"
-              alignItems="stretch"
-            >
-              <CategoryFilter />
-            </Grid>
-          )} */}
 
           {isProductListPage && (
             <Grid
@@ -124,7 +108,7 @@ function Navbar() {
                 value={query}
                 onChange={handleSearch}
                 placeholder="What are we looking for?"
-                style={{ minWidth: "20%", margin: "0.5rem" }}
+                style={{ width: "300px", margin: "0.5rem" }}
               />
             </Grid>
           )}
