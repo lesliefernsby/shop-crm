@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
-import styles from "./Personal.module.css";
+import Container from '@mui/material/Container';
 import { productsListActions } from '../../redux/actions/productsListActions';
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -26,7 +26,7 @@ useEffect(() => {
 
 
   return (
-    <main className={styles.Layout}>
+    <Container maxWidth="lg">
       <CssBaseline />
       
 
@@ -38,7 +38,7 @@ useEffect(() => {
 
 
         
-        {favorites.map((fav) => <ProductCard product={fav} />)}
+        {favorites.map((fav) => <Grid item container alignItems="stretch" xs={12} sm={6} md={4} key={fav.id}><ProductCard product={fav} /></Grid>)}
 
         <Grid
           container
@@ -63,7 +63,7 @@ useEffect(() => {
           <Link to="/personal/orders">To orders</Link>
         </li>
       </ul>
-    </main>
+    </Container>
   );
 }
 
