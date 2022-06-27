@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 const { Op } = require('sequelize');
-const { Product, Category, User, Like } = require('../db/models');
+const { Product, Category, Like } = require('../db/models');
 
 async function getCategoriesOptions() {
   try {

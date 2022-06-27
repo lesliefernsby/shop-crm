@@ -11,6 +11,7 @@ import Checkout from "./components/Checkout/Checkout";
 import PrivateRoute from "./components/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute";
 import Personal from "./components/Personal/Personal";
+import Order from "./components/Personal/Order";
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route exact path="/personal" element={<PrivateRoute />}>
           <Route exact path="/personal" element={<Personal />} />
+        </Route>
+        <Route exact path="/orders/:id" element={<PrivateRoute />}>
+          <Route exact path="/orders/:id" element={<Order />} />
         </Route>
         <Route exact path="/admin" element={<RestrictedRoute />}>
           <Route exact path="/admin" element={<Admin />} />
