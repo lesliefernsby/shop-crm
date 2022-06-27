@@ -9,11 +9,13 @@ async function getCategoriesOptions() {
     console.log(error);
   }
 }
-async function getProductsByPage(body) {
+async function getProductsByPage(query) {
   try {
-    const { q, page, filters } = body;
-    const perPage = body.perPage || 15;
-    // const q = body.q.toLowerCase();
+    console.log(query);
+
+    const { q, page, filters } = query;
+    const perPage = query.perPage || 15;
+    // const q = query.q.toLowerCase();
 
     let categoryArray = filters?.categories || [];
 
@@ -73,7 +75,7 @@ async function getProductsByPage(body) {
 async function fetchUserLikeIds(userId) {
   try {
     const result = await Like.findAll({ where: { userId }, raw: true });
-    return result.map(( item ) => item.productId);
+    return result.map((item) => item.productId);
   } catch (error) {
     console.log(error);
   }

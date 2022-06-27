@@ -6,8 +6,9 @@ const productService = require('../service/product');
 const authorize = require('../helpers/authorize');
 
 function getProductsByPage(req, res, next) {
+  console.log('here');
   productService
-    .getProductsByPage(req.body)
+    .getProductsByPage(req.query)
     .then(products => res.json(products))
     .catch(err => next(err));
 }
@@ -34,7 +35,7 @@ function toggleLike(req, res, next) {
     .catch(err => next(err));
 }
 
-router.post('/', getProductsByPage);
+router.get('/', getProductsByPage);
 router.get('/categoriesOptions', getCategoriesOptions);
 router.get('/likes/:userId', fetchUserLikeIds);
 router.post('/like',  authorize(), toggleLike);
