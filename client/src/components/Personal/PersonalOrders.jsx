@@ -11,11 +11,12 @@ import {
   TableBody,
   Paper,
   tableCellClasses,
-  IconButton
+  IconButton,
+  CssBaseline
 } from "@mui/material";
 import { ReadMore } from "@mui/icons-material";
-
 import { personalActions } from "../../redux/actions/personalActions";
+import styles from './Personal.module.css';
 
 function PersonalOrders() {
   const dispatch = useDispatch();
@@ -46,7 +47,12 @@ function PersonalOrders() {
   }));
 
   return (
-    <TableContainer component={Paper}>
+
+    <main className={styles.Layout}>
+      <CssBaseline />
+      <div>Your orders:</div>
+
+      <TableContainer component={Paper}>
       <div>My orders:</div>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
@@ -72,13 +78,27 @@ function PersonalOrders() {
               </StyledTableCell>
               <StyledTableCell>{order.createdAt.slice(0, 10)}</StyledTableCell>
               <IconButton aria-label="readMore" color="success">
-                <Link to={`/orders/${order.id}`}> <ReadMore /></Link>
+                <Link to={`/personal/orders/${order.id}`}> <ReadMore /></Link>
               </IconButton>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+
+      <ul>
+        <li>
+          <Link to="/personal">To personal page</Link>
+        </li>
+        <li>
+          <Link to="/">Back to main</Link>
+        </li>
+      </ul>
+      
+      
+    </main>
+
+    
   );
 }
 export default PersonalOrders;
