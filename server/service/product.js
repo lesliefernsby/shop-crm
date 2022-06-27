@@ -79,12 +79,12 @@ async function fetchUserLikeIds(userId) {
   }
 }
 
-async function fetchLike(params) {
+async function toggleLike(productId, userId) {
   try {
-    console.log(params);
-    const result = await Like.findOne({ where: { productId: params.id, userId: params.userId } });
+    console.log(productId, userId, 'fkfdlfd');
+    const result = await Like.findOne({ where: { productId, userId } });
     if (!result) {
-      return await Like.create({ productId: params.id, userId: params.userId });
+      return await Like.create({ productId, userId });
     }
     return await result.destroy();
   } catch (error) {
@@ -96,5 +96,5 @@ module.exports = {
   getProductsByPage,
   getCategoriesOptions,
   fetchUserLikeIds,
-  fetchLike,
+  toggleLike,
 };

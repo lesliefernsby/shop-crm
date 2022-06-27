@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const productService = require('../service/product');
 
+const authorize = require('../helpers/authorize');
+
 function getProductsByPage(req, res, next) {
   productService
     .getProductsByPage(req.body)
@@ -24,9 +26,10 @@ function fetchUserLikeIds(req, res, next) {
     .catch(err => next(err));
 }
 
-function fetchLike(req, res, next) {
+function toggleLike(req, res, next) {
+  const currentUserId = req.user?.sub;
   productService
-    .fetchLike(req.params)
+    .toggleLike(req.body.productId, currentUserId)
     .then(options => res.json(options))
     .catch(err => next(err));
 }
@@ -34,5 +37,5 @@ function fetchLike(req, res, next) {
 router.post('/', getProductsByPage);
 router.get('/categoriesOptions', getCategoriesOptions);
 router.get('/likes/:userId', fetchUserLikeIds);
-router.get('/:id/:userId', fetchLike);
+router.post('/like',  authorize(), toggleLike);
 module.exports = router;

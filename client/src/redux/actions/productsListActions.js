@@ -72,11 +72,11 @@ function getFilterCategoryOptions() {
 }
 
 function toggleLike(id) {
-  return (dispatch, getState) => {
-    const userId = getState().authentication.user.sub
+  return (dispatch) => {
+    // const userId = getState().authentication.user.sub
     dispatch(setPending(true));
     dispatch(setError(false));
-    productsListService.fetchLike(id, userId)
+    productsListService.toggleLike(id)
       .then(() => {
         dispatch({ type: productsListConstants.SET_LIKE, payload: id });
         dispatch(setPending(false));
