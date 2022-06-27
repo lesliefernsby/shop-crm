@@ -72,7 +72,7 @@ async function getProductsByPage(body) {
 
 async function fetchUserLikeIds(userId) {
   try {
-    let result = await Like.findAll({ where: { userId }, raw: true });
+    const result = await Like.findAll({ where: { userId }, raw: true });
     return result.map(( item ) => item.productId);
   } catch (error) {
     console.log(error);
@@ -82,7 +82,7 @@ async function fetchUserLikeIds(userId) {
 async function fetchLike(params) {
   try {
     console.log(params);
-    let result = await Like.findOne({ where: { productId: params.id, userId: params.userId } });
+    const result = await Like.findOne({ where: { productId: params.id, userId: params.userId } });
     if (!result) {
       return await Like.create({ productId: params.id, userId: params.userId });
     }

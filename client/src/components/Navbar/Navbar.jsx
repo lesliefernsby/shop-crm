@@ -131,7 +131,7 @@ function Navbar() {
 
           {loggedIn ? (
             <>
-              <Link className="NavLink" to="/">
+              <Link className="NavLink" to="/personal">
                 <Button color="inherit" startIcon={<Person />}>
                   {user.firstName}
                 </Button>
