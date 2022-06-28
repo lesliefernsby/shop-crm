@@ -20,6 +20,7 @@ import {
   MeetingRoom,
   Person,
 } from "@mui/icons-material";
+import MarkUnreadChatAltIcon from "@mui/icons-material/MarkUnreadChatAlt";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
@@ -29,15 +30,23 @@ import { productsListActions } from "../../redux/actions/productsListActions";
 // import CategoryFilter from '../CategoryFilter/CategoryFilter'
 import { userActions } from "../../redux/actions/userActions";
 import { cartActions } from "../../redux/actions/cartActions";
+import { chatActions } from "../../redux/actions/chatActions";
+import Chat from "../Chat/Chat";
 
 const StyledButton = styled(IconButton)`
   position: relative;
   z-index: 100;
-  right: 30px;
-  top: 90px;
+  right: 5px;
+  top: 5px;
+`;
+const ChatButton = styled(IconButton)`
+  position: relative;
+  z-index: 100;
+  right: 5px;
+  top: 5px;
 `;
 
-function Navbar() {
+function Navbar({ socket }) {
   const dispatch = useDispatch();
 
   const isProductListPage = useSelector(
@@ -53,6 +62,7 @@ function Navbar() {
 
   const cartOpen = useSelector((state) => state.cartDialog);
   const cart = useSelector((state) => state.cart);
+  const chat = useSelector((state) => state.chat);
 
   function handleSearch(e) {
     dispatch(productsListActions.setQuery(e.target.value));
@@ -141,12 +151,26 @@ function Navbar() {
             </Badge>
           </StyledButton>
 
+          <ChatButton onClick={() => dispatch(chatActions.toggleOpenChat())}>
+            <Badge badgeContent={1} color="error">
+              <MarkUnreadChatAltIcon style={{ fontSize: "50px" }} />
+            </Badge>
+          </ChatButton>
+
           <Drawer
             anchor="right"
             open={cartOpen.isOpen}
             onClose={() => dispatch(cartActions.closeCart())}
           >
             <Cart />
+          </Drawer>
+
+          <Drawer
+            anchor="right"
+            open={chat.isOpen}
+            onClose={() => dispatch(chatActions.toggleOpenChat())}
+          >
+            <Chat socket={socket} />
           </Drawer>
         </Toolbar>
       </Container>

@@ -1,22 +1,20 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
+import jwt_decode from 'jwt-decode';
 import { userConstants } from "../constants";
 import { userService } from "../service/userService";
 
 function login(username, password) {
-  function request(user) {
-    return { type: userConstants.LOGIN_REQUEST, user };
-  }
+  
   function success(user) {
-    return { type: userConstants.LOGIN_SUCCESS, user };
+    return { type: userConstants.LOGIN_SUCCESS, user: jwt_decode(user.token) };
   }
   function failure(error) {
     return { type: userConstants.LOGIN_FAILURE, error };
   }
   return (dispatch) => {
-    dispatch(request({ username }));
-
-    userService.login(username, password).then(
+        userService.login(username, password).then(
       (user) => {
         dispatch(success(user));
       },
