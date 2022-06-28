@@ -2,6 +2,7 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
+
 import ProductsList from "../ProductsList/ProductsList";
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       <CssBaseline />
 
       <Container maxWidth="lg">
+        
         <ProductsList />
       </Container>
     </div>
