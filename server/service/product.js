@@ -105,10 +105,19 @@ async function getFavorites(userId) {
   }
 }
 
-async function deleteProduct(id) {
+async function toggleHideStatus(id) {
   try {
-    const productToDelete = await Product.findOne({ where: { id } });
-    await productToDelete.destroy();
+     const product = await Product.findOne({ where: { id } });
+
+     product.update(
+      {
+        hide: !product.hide,
+      },
+      {
+        where: { id },
+      }
+    );
+    return product;
   } catch (error) {
     console.log(error);
   }
@@ -120,5 +129,5 @@ module.exports = {
   fetchUserLikeIds,
   toggleLike,
   getFavorites,
-  deleteProduct,
+  toggleHideStatus,
 };

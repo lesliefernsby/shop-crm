@@ -1,18 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import { config } from "../constants";
-import { authHeader } from "../helpers/authHeader";
+import { getPostRequestOptions, requestGetOptions } from "../helpers/requestHelper"
 
-const getPostRequestOptions = (body, method = "POST") => ({
-  method,
-  headers: { ...authHeader(), "Content-Type": "application/json" },
-  // withCredentials: true,
-  body: JSON.stringify(body),
-});
-const requestGetOptions = {
-  method: "GET",
-  headers: authHeader(),
-  // withCredentials: true,
-};
+
 
 function getFilterCategoryOptions() {
   return fetch(`${config.API_URL}/products/categoriesOptions`)
@@ -40,7 +30,7 @@ function getFavorites() {
 }
 
 function deleteProduct(id) {
-  return fetch(`http://localhost:3001/products`, getPostRequestOptions({id}, "DELETE"))
+  return fetch(`${config.API_URL}/products`, getPostRequestOptions({id}, "DELETE"))
     .then((res) => res.json())
     .then((result) => result);
 }

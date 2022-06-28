@@ -2146,6 +2146,7 @@ async function getMockedProducts() {
     item.image = urls[Math.floor(Math.random() * urls.length)];
     item.price = Number(item.price)
     item.weight = Number(item.weight)
+    item.hide = false
     item.createdAt = new Date()
     item.updatedAt = new Date()
     item.categoryId = categories[Math.floor(Math.random() * categories.length)].id

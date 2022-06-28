@@ -44,10 +44,10 @@ function getFavorites(req, res, next) {
     .catch(err => next(err));
 }
 
-function deleteProduct(req, res, next) {
+function toggleHideStatus(req, res, next) {
   productService
-    .deleteProduct(req.body.id)
-    .then(() => res.json({ok: 'ok'}))
+    .toggleHideStatus(req.body.id)
+    .then((product) => res.json({product}))
     .catch(err => next(err));
 }
 
@@ -56,5 +56,5 @@ router.get('/categoriesOptions', getCategoriesOptions);
 router.post('/like', authorize(), toggleLike);
 router.get('/likes/:userId', fetchUserLikeIds);
 router.get('/favorites', authorize(), getFavorites);
-router.delete('/', authorize(Role.Admin), deleteProduct);
+router.post('/toggleHideStatus', authorize(Role.Admin), toggleHideStatus);
 module.exports = router;

@@ -1,5 +1,6 @@
 /* eslint-disable default-param-last */
 import { productsListConstants } from "../constants/productsListConstants";
+import { adminConstants } from "../constants/adminConstants";
 
 export const initialState = {
   error: false,
@@ -55,6 +56,11 @@ export function productsList(state = initialState, action) {
         ...state,
         pending: action.payload,
       };
+      case adminConstants.TOGGLE_HIDE_STATUS:
+        return {
+          ...state,
+          pending: action.payload,
+        };
     case productsListConstants.ADD_CATEGORIES_FILTER:
       return {
         ...state,
@@ -87,8 +93,13 @@ export function productsList(state = initialState, action) {
         favorites: action.payload
       };
 
-    case productsListConstants.DELETE_PRODUCT:
-      newArray = state.products.filter(item => item.id !== action.payload)
+    case productsListConstants.TOGGLE_HIDE_STATUS:
+      newArray = state.products.map((pr) => {
+        if (pr.id === action.payload.id) {
+          return {...pr, hide: action.payload.product.hide}
+        } 
+        return {...pr};
+      })
       return {
         ...state,
         products: newArray
