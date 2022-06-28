@@ -24,33 +24,37 @@ function Personal() {
       <List>
         <ListItem>
           <Link to="/personal/orders">
-            <Button variant="contained">Your orders</Button>
+            <Button variant="contained" style={{ marginLeft: "0rem" }}>
+              Your orders
+            </Button>
           </Link>
-        </ListItem>
 
-        <ListItem>
           <Link to="/personal/favorites">
-            <Button variant="contained">Your favorites</Button>
+            <Button variant="contained" style={{ marginLeft: "1rem" }}>
+              Your favorites
+            </Button>
           </Link>
         </ListItem>
 
-        <Divider />
+        <Divider style={{ marginTop: "1rem", marginBottom: "0.5rem" }} />
 
         <ListItem>
           <Link to="/">
-            <Button variant="text">Edit profile</Button>
+            <Button variant="text" style={{ marginLeft: "0rem" }}>
+              Edit profile
+            </Button>
           </Link>
-        </ListItem>
 
-        <ListItem>
           <Link to="/">
-            <Button variant="text">To main page</Button>
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              To main page
+            </Button>
           </Link>
-        </ListItem>
 
-        <ListItem>
           <Link className="NavLink" onClick={handleLogout} to="/">
-            <Button variant="text">Sign out</Button>
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              Sign out
+            </Button>
           </Link>
         </ListItem>
       </List>

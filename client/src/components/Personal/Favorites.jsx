@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CssBaseline, Button, List, ListItem } from "@mui/material";
+import { CssBaseline, Button, List, ListItem, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import Box from "@mui/material/Box";
@@ -67,16 +67,18 @@ function Favorites() {
         </Grid>
       </Box>
 
+      <Divider />
+
       <List>
         <ListItem>
           <Link to="/personal">
             <Button variant="contained">Your profile</Button>
           </Link>
-        </ListItem>
 
-        <ListItem>
           <Link to="/">
-            <Button variant="text">To main page</Button>
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              To main page
+            </Button>
           </Link>
         </ListItem>
       </List>

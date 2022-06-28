@@ -6,6 +6,8 @@ import {
   ListItem,
   ListItemText,
   CssBaseline,
+  Divider,
+  Button,
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
@@ -98,14 +100,21 @@ function Order() {
           </Grid>
         </>
       )}
-      <ul>
-        <li>
-          <Link to="/personal">To personal page</Link>
-        </li>
-        <li>
-          <Link to="/personal/orders">Back to orders</Link>
-        </li>
-      </ul>
+      <Divider />
+
+      <List>
+        <ListItem>
+          <Link to="/personal">
+            <Button variant="contained">Your profile</Button>
+          </Link>
+
+          <Link to="/personal/orders">
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              Your orders
+            </Button>
+          </Link>
+        </ListItem>
+      </List>
     </main>
   );
 }

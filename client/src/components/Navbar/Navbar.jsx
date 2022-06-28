@@ -22,11 +22,7 @@ import {
 } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import Cart from "../Cart/Cart";
-import { productsListActions } from "../../redux/actions/productsListActions";
-// import CategoryFilter from '../CategoryFilter/CategoryFilter'
 import { userActions } from "../../redux/actions/userActions";
 import { cartActions } from "../../redux/actions/cartActions";
 
@@ -40,24 +36,12 @@ const StyledButton = styled(IconButton)`
 function Navbar() {
   const dispatch = useDispatch();
 
-  const isProductListPage = useSelector(
-    (state) => state.productsList.isProductListPage
-  );
   const loggedIn = useSelector((state) => state.authentication.loggedIn);
-  // console.log('isLogged', loggedIn)
-  const user = useSelector((state) => state.authentication.user);
-  // console.log('user', user)
-  // const { query, setQuery, setPageNumber } = props;
 
-  const query = useSelector((state) => state.productsList.query);
+  const user = useSelector((state) => state.authentication.user);
 
   const cartOpen = useSelector((state) => state.cartDialog);
   const cart = useSelector((state) => state.cart);
-
-  function handleSearch(e) {
-    dispatch(productsListActions.setQuery(e.target.value));
-    dispatch(productsListActions.setPageNumber(1));
-  }
 
   function handleLogout() {
     dispatch(userActions.logout());
@@ -82,7 +66,7 @@ function Navbar() {
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
             style={{ minWidth: "20%", margin: "0.5rem" }}
           >
-            The Top Shop
+            The Awesome Shop
           </Typography>
 
           <Typography
@@ -91,27 +75,8 @@ function Navbar() {
             noWrap
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            TTS
+            T.A.S.
           </Typography>
-
-          {isProductListPage && (
-            <Grid
-              container
-              item
-              xs={12}
-              direction="row"
-              justifyContent="center"
-              alignItems="stretch"
-            >
-              <TextField
-                type="text"
-                value={query}
-                onChange={handleSearch}
-                placeholder="What are we looking for?"
-                style={{ width: "50%", margin: "0.5rem" }}
-              />
-            </Grid>
-          )}
 
           {loggedIn ? (
             <>
