@@ -15,7 +15,7 @@ function Chat({ socket }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(chatActions.loadMessages(authentication.user.sub));
+    if (authentication.user) dispatch(chatActions.loadMessages(authentication.user.sub));
   }, []);
 
   return (
@@ -25,14 +25,14 @@ function Chat({ socket }) {
           {chat.messages.map((message) =>
             !(message.senderRole === 'Admin' || message.isAdmin) ? (
               <MessageRight
-                key={message.id}
+                key={message.createdAt}
                 message={message.text}
                 timestamp={new Date(message.createdAt).toLocaleTimeString()}
                 displayName={message.senderName}
               />
             ) : (
               <MessageLeft
-                key={message.id}
+                key={message.createdAt}
                 message={message.text}
                 timestamp={new Date(message.createdAt).toLocaleTimeString()}
                 displayName={message.senderName}

@@ -18,8 +18,8 @@ export default function TextInput({ socket, receiverId, admin }) {
     e.preventDefault();
     socket.emit("send-message", {
       text,
-      senderName: `${authentication.user.firstName} ${authentication.user.lastName}`,
-      senderId: authentication.user.sub,
+      senderName: authentication.user ? `${authentication.user.firstName} ${authentication.user.lastName}` : 'Guest',
+      senderId: authentication.user ? authentication.user.sub : null,
       isAdmin: admin,
       receiverId,
       createdAt: Date.now()

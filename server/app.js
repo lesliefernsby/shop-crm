@@ -35,12 +35,20 @@ app.use(errorHandler);
 
 // start server
 io.on('connection', socket => {
-
-  const {senderId, senderName } = socket.handshake.query;
+  const { senderId, senderName } = socket.handshake.query;
   socket.on('send-message', async message => {
-    const senderRole = message.isAdmin ? 'Admin' : 'User';
-    console.log(senderId, message.receiverId, senderRole, senderName, message.text);
-    await messageService.addMessage(senderId, message.receiverId, senderRole, senderName, message.text);
+    if (message.senderId) {
+      const senderRole = message.isAdmin ? 'Admin' : 'User';
+
+      await messageService.addMessage(
+        senderId,
+        message.receiverId,
+        senderRole,
+        senderName,
+        message.text
+      );
+    }
+
     io.emit('message', message);
   });
   socket.emit('connection', null);

@@ -25,8 +25,8 @@ function App() {
   const authentication = useSelector((state) => state.authentication);
   const socket = socketClient(config.API_URL, {
     query: {
-      senderId: authentication.user.sub,
-      senderName: `${authentication.user.firstName} ${authentication.user.lastName}`,
+      senderId: authentication.user ? authentication.user.sub : null,
+      senderName: authentication.user ? `${authentication.user.firstName} ${authentication.user.lastName}` : 'Guest',
     },
   });
 
