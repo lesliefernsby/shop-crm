@@ -32,10 +32,14 @@ function getStyles(name, filterObjects, theme) {
 
 function CategoryFilter() {
   const dispatch = useDispatch();
-  
   const optionsList = useSelector(
     (state) => state.productsList.filterCategoryOptions
   );
+  // const chosenCategories = useSelector((state)=> state.productsList.filters)
+
+  useEffect(() => {
+    dispatch(productsListActions.getFilterCategoryOptions());
+  }, []);
 
   const theme = useTheme();
   const [filterObjects, setFilterObjects] = React.useState([]);
@@ -43,11 +47,6 @@ function CategoryFilter() {
   const handleChange = (event) => {
     setFilterObjects(event.target.value);
   };
-
-
-  useEffect(() => {
-    dispatch(productsListActions.getFilterCategoryOptions());
-  }, []);
 
   useEffect(() => {
     dispatch(
@@ -59,7 +58,11 @@ function CategoryFilter() {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }} variant="outlined">
+      <FormControl
+        sx={{ m: 1, width: 300 }}
+        variant="outlined"
+        style={{ marginTop: "1rem" }}
+      >
         <InputLabel id="test-select-label">Category</InputLabel>
         <Select
           label="Category" // here is the difference

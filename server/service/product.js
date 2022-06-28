@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 /* eslint-disable consistent-return */
 const { Op } = require('sequelize');
 const { Product, Category, Like } = require('../db/models');
@@ -9,11 +10,13 @@ async function getCategoriesOptions() {
     console.log(error);
   }
 }
-async function getProductsByPage(body) {
+async function getProductsByPage(query) {
   try {
-    const { q, page, filters } = body;
-    const perPage = body.perPage || 15;
-    // const q = body.q.toLowerCase();
+    console.log(query);
+
+    const { q, page, filters } = query;
+    const perPage = query.perPage || 15;
+    // const q = query.q.toLowerCase();
 
     let categoryArray = filters?.categories || [];
 
@@ -73,20 +76,28 @@ async function getProductsByPage(body) {
 async function fetchUserLikeIds(userId) {
   try {
     const result = await Like.findAll({ where: { userId }, raw: true });
-    return result.map(( item ) => item.productId);
+    return result.map((item) => item.productId);
   } catch (error) {
     console.log(error);
   }
 }
 
-async function fetchLike(params) {
+async function toggleLike(productId, userId) {
   try {
-    console.log(params);
-    const result = await Like.findOne({ where: { productId: params.id, userId: params.userId } });
+    const result = await Like.findOne({ where: { productId, userId } });
     if (!result) {
-      return await Like.create({ productId: params.id, userId: params.userId });
+      return await Like.create({ productId, userId });
     }
     return await result.destroy();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getFavorites(userId) {
+  try {
+    const userLikes =  await Like.findAll({ where: { userId } });
+    return await Promise.all(userLikes.map(async (like) => await Product.findOne({where: {id: like.productId}})));
   } catch (error) {
     console.log(error);
   }
@@ -96,5 +107,6 @@ module.exports = {
   getProductsByPage,
   getCategoriesOptions,
   fetchUserLikeIds,
-  fetchLike,
+  toggleLike,
+  getFavorites,
 };

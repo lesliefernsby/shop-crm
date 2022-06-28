@@ -103,19 +103,6 @@ function Navbar({ socket }) {
           >
             TTS
           </Typography>
-          {/* 
-          {isProductListPage && (
-            <Grid
-              container
-              item
-              xs={12}
-              direction="row"
-              justifyContent="center"
-              alignItems="stretch"
-            >
-              <CategoryFilter />
-            </Grid>
-          )} */}
 
           {isProductListPage && (
             <Grid
@@ -131,7 +118,7 @@ function Navbar({ socket }) {
                 value={query}
                 onChange={handleSearch}
                 placeholder="What are we looking for?"
-                style={{ minWidth: "20%", margin: "0.5rem" }}
+                style={{ width: "300px", margin: "0.5rem" }}
               />
             </Grid>
           )}

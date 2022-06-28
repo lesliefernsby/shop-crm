@@ -12,11 +12,15 @@ import {
   Paper,
   tableCellClasses,
   IconButton,
-  CssBaseline
+  CssBaseline,
+  List,
+  ListItem,
+  Button,
 } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import { ReadMore } from "@mui/icons-material";
 import { personalActions } from "../../redux/actions/personalActions";
-import styles from './Personal.module.css';
+import styles from "./Personal.module.css";
 
 function PersonalOrders() {
   const dispatch = useDispatch();
@@ -47,58 +51,65 @@ function PersonalOrders() {
   }));
 
   return (
-
     <main className={styles.Layout}>
       <CssBaseline />
-      <div>Your orders:</div>
+      <Typography variant="h3" gutterBottom component="div">
+        Your orders
+      </Typography>
 
       <TableContainer component={Paper}>
-      <div>My orders:</div>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Order #</StyledTableCell>
-            <StyledTableCell>First Name</StyledTableCell>
-            <StyledTableCell>Last Name</StyledTableCell>
-            <StyledTableCell>Delivery</StyledTableCell>
-            <StyledTableCell>Order Date</StyledTableCell>
-            <StyledTableCell>Details</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {personal.orders.map((order) => (
-            <StyledTableRow key={order.id}>
-              <StyledTableCell component="th" scope="row">
-                {order.id}
-              </StyledTableCell>
-              <StyledTableCell>{order.Delivery.firstName}</StyledTableCell>
-              <StyledTableCell>{order.Delivery.lastName}</StyledTableCell>
-              <StyledTableCell>
-                {`${order.Delivery.address1} ${order.Delivery.address2} ${order.Delivery.city} ${order.Delivery.state} ${order.Delivery.zip}`}
-              </StyledTableCell>
-              <StyledTableCell>{order.createdAt.slice(0, 10)}</StyledTableCell>
-              <IconButton aria-label="readMore" color="success">
-                <Link to={`/personal/orders/${order.id}`}> <ReadMore /></Link>
-              </IconButton>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+        {/* <div>My orders:</div> */}
+        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Order #</StyledTableCell>
+              <StyledTableCell>First Name</StyledTableCell>
+              <StyledTableCell>Last Name</StyledTableCell>
+              <StyledTableCell>Delivery</StyledTableCell>
+              <StyledTableCell>Order Date</StyledTableCell>
+              <StyledTableCell>Details</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {personal.orders.map((order) => (
+              <StyledTableRow key={order.id}>
+                <StyledTableCell component="th" scope="row">
+                  {order.id}
+                </StyledTableCell>
+                <StyledTableCell>{order.Delivery.firstName}</StyledTableCell>
+                <StyledTableCell>{order.Delivery.lastName}</StyledTableCell>
+                <StyledTableCell>
+                  {`${order.Delivery.address1} ${order.Delivery.address2} ${order.Delivery.city} ${order.Delivery.state} ${order.Delivery.zip}`}
+                </StyledTableCell>
+                <StyledTableCell>
+                  {order.createdAt.slice(0, 10)}
+                </StyledTableCell>
+                <IconButton aria-label="readMore" color="success">
+                  <Link to={`/personal/orders/${order.id}`}>
+                    {" "}
+                    <ReadMore />
+                  </Link>
+                </IconButton>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-      <ul>
-        <li>
-          <Link to="/personal">To personal page</Link>
-        </li>
-        <li>
-          <Link to="/">Back to main</Link>
-        </li>
-      </ul>
-      
-      
+      <List>
+        <ListItem>
+          <Link to="/personal">
+            <Button variant="contained">To personal page</Button>
+          </Link>
+        </ListItem>
+
+        <ListItem>
+          <Link to="/">
+            <Button variant="text">To main page</Button>
+          </Link>
+        </ListItem>
+      </List>
     </main>
-
-    
   );
 }
 export default PersonalOrders;

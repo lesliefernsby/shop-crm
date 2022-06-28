@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 require('rootpath')();

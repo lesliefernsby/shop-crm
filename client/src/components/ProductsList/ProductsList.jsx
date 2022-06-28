@@ -28,7 +28,7 @@ function ProductsList() {
     if (isLoggedIn) {
       dispatch(productsListActions.fetchUserLikeIds());
     }
-  }, [isLoggedIn]);
+  }, []);
 
   const { products, hasMore, loading, error } = useProductSearch(
     query,

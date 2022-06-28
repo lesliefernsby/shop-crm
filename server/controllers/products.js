@@ -3,9 +3,12 @@ const express = require('express');
 const router = express.Router();
 const productService = require('../service/product');
 
+const authorize = require('../helpers/authorize');
+
 function getProductsByPage(req, res, next) {
+  console.log('here');
   productService
-    .getProductsByPage(req.body)
+    .getProductsByPage(req.query)
     .then(products => res.json(products))
     .catch(err => next(err));
 }
@@ -24,15 +27,25 @@ function fetchUserLikeIds(req, res, next) {
     .catch(err => next(err));
 }
 
-function fetchLike(req, res, next) {
+function toggleLike(req, res, next) {
+  const currentUserId = req.user?.sub;
   productService
-    .fetchLike(req.params)
+    .toggleLike(req.body.productId, currentUserId)
     .then(options => res.json(options))
     .catch(err => next(err));
 }
 
-router.post('/', getProductsByPage);
+function getFavorites(req, res, next) {
+  const currentUserId = req.user?.sub;
+  productService
+    .getFavorites(currentUserId)
+    .then(options => res.json(options))
+    .catch(err => next(err));
+}
+
+router.get('/', getProductsByPage);
 router.get('/categoriesOptions', getCategoriesOptions);
+router.post('/like', authorize(), toggleLike);
 router.get('/likes/:userId', fetchUserLikeIds);
-router.get('/:id/:userId', fetchLike);
+router.get('/favorites', authorize(), getFavorites);
 module.exports = router;

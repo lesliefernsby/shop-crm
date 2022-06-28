@@ -18,6 +18,7 @@ import Order from "./components/Personal/Order";
 import AdminChat from "./components/Admin/AdminChat";
 import { chatActions } from "./redux/actions/chatActions";
 import { config } from "./redux/constants";
+import Favorites from "./components/Personal/Favorites";
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,10 @@ function App() {
         </Route>
         <Route exact path="/personal" element={<PrivateRoute />}>
           <Route exact path="/personal" element={<Personal />} />
+        </Route>
+
+        <Route exact path="/personal/favorites" element={<PrivateRoute />}>
+          <Route exact path="/personal/favorites" element={<Favorites />} />
         </Route>
 
         <Route exact path="/personal/orders" element={<PrivateRoute />}>
