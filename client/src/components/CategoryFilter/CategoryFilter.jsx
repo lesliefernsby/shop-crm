@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Chip from '@mui/material/Chip';
-import { productsListActions } from '../../redux/actions/productsListActions';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Chip from "@mui/material/Chip";
+import { productsListActions } from "../../redux/actions/productsListActions";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -21,7 +21,6 @@ const MenuProps = {
   },
 };
 
-
 function getStyles(name, filterObjects, theme) {
   return {
     fontWeight:
@@ -33,33 +32,33 @@ function getStyles(name, filterObjects, theme) {
 
 function CategoryFilter() {
   const dispatch = useDispatch();
-  const optionsList = useSelector((state) => state.productsList.filterCategoryOptions)
-  // const chosenCategories = useSelector((state)=> state.productsList.filters)
-
-  useEffect(() => {
-    dispatch(productsListActions.getFilterCategoryOptions());
-  }, []);
+  
+  const optionsList = useSelector(
+    (state) => state.productsList.filterCategoryOptions
+  );
 
   const theme = useTheme();
   const [filterObjects, setFilterObjects] = React.useState([]);
 
   const handleChange = (event) => {
-    setFilterObjects(
-      event.target.value
-    );
-
+    setFilterObjects(event.target.value);
   };
-  
+
+
   useEffect(() => {
-    
-    dispatch(productsListActions.addCategoriesFilter(filterObjects.map((item) => item.id)));
+    dispatch(productsListActions.getFilterCategoryOptions());
+  }, []);
+
+  useEffect(() => {
+    dispatch(
+      productsListActions.addCategoriesFilter(
+        filterObjects.map((item) => item.id)
+      )
+    );
   }, [filterObjects]);
 
   return (
     <div>
-
-
-
       <FormControl sx={{ m: 1, width: 300 }} variant="outlined">
         <InputLabel id="test-select-label">Category</InputLabel>
         <Select
@@ -69,11 +68,18 @@ function CategoryFilter() {
           onChange={handleChange}
           input={<OutlinedInput id="select-multiple-chip" label="Category" />}
           renderValue={(selected) => (
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
               {selected.map((value) => (
-                <Chip key={value.id} label={value.title} onMouseDown={(event) => event.stopPropagation()} onDelete={() => {
-                  setFilterObjects(selected.filter(item => item.id !== value.id))
-                }} />
+                <Chip
+                  key={value.id}
+                  label={value.title}
+                  onMouseDown={(event) => event.stopPropagation()}
+                  onDelete={() => {
+                    setFilterObjects(
+                      selected.filter((item) => item.id !== value.id)
+                    );
+                  }}
+                />
               ))}
             </Box>
           )}

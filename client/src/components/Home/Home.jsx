@@ -11,6 +11,7 @@ function Home() {
       <CssBaseline />
 
       <Container maxWidth="lg">
+        
         <ProductsList />
       </Container>
     </div>

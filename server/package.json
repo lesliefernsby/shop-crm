@@ -23,7 +23,8 @@
     "pg-hstore": "^2.3.4",
     "rootpath": "^0.1.2",
     "sequelize": "^6.20.1",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "socket.io": "^4.5.1"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
