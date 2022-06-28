@@ -1,0 +1,21 @@
+{
+  "name": "shop-crm",
+  "version": "1.0.0",
+  "description": "A shop for Heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OskMurphy/shop-crm.git"
+  },
+  "author": "L.F., D.K., O.A.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OskMurphy/shop-crm/issues"
+  },
+  "homepage": "https://github.com/OskMurphy/shop-crm#readme"
+}
