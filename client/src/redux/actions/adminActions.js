@@ -48,10 +48,17 @@ function toggleHideStatus(id) {
         );
   };
 }
+function addNewProductInfo(inputs) {
+  return (dispatch) => {
+          dispatch({ type: adminConstants.ADD_NEW_PRODUCT_INFO, payload: inputs });
+  };
+}
+
 export const adminActions = {
   submitNewProduct,
   editProduct,
   toggleHideStatus,
   setError,
   setPending,
+  addNewProductInfo
 };

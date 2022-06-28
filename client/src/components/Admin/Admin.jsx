@@ -7,55 +7,41 @@ import {
   // Checkbox,
   Container,
   Paper,
-  Stack,
   Button,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { checkoutActions } from "../../redux/actions/checkoutActions";
+import { adminActions } from "../../redux/actions/adminActions";
 
 function Admin() {
   const dispatch = useDispatch();
-  const checkout = useSelector((state) => state.checkout);
+  const admin = useSelector((state) => state.admin);
 
   const handleChange = (e) => {
-    const { name, value, checked } = e.target;
-    dispatch(
-      checkoutActions.addContactInfo({ ...checkout.inputs, [name]: name !== 'saveAddress' ? value : checked })
-    );
+    const { name, value } = e.target;
+    if (name === 'productImageURL') {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("file", file);
+      dispatch(
+        adminActions.addNewProductInfo({ ...admin.inputs, productImageURL: formData  })
+      );
+    } else {
+      dispatch(
+        adminActions.addNewProductInfo({ ...admin.inputs, [name]: value  })
+      );
+    }
+    
   };
 
   return (
-    <Container maxWidth="sm" sx={{ marginTop: '5rem' }}>
+    <Container maxWidth="sm" sx={{ marginTop: '7rem' }}>
       <Paper elevation={1} sx={{ padding: '0 40px 40px 40px' }}>
         <Typography component="h1" variant="h4" align="center" sx={{ marginBottom: '1rem' }}>
           Add product
         </Typography>
 
         <Grid container spacing={2}>
-          {/* <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="firstName"
-              name="firstName"
-              label="First name"
-              fullWidth
-              autoComplete="fname"
-              onChange={handleChange}
-              value={checkout.inputs.firstName}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="lastName"
-              name="lastName"
-              label="Last name"
-              fullWidth
-              autoComplete="lname"
-              onChange={handleChange}
-              value={checkout.inputs.lastName}
-            />
-          </Grid> */}
+
           <Grid item xs={12}>
             <TextField
               required
@@ -63,9 +49,9 @@ function Admin() {
               name="productCategoryTitle"
               label="Product Category Title"
               fullWidth
-              autoComplete="phone"
+              autoComplete="title"
               onChange={handleChange}
-              value={checkout.inputs.phone}
+              value={admin.inputs.productCategoryTitle}
             />
           </Grid>
           <Grid item xs={12}>
@@ -77,30 +63,37 @@ function Admin() {
               fullWidth
               autoComplete="email"
               onChange={handleChange}
-              value={checkout.inputs.email}
+              value={admin.inputs.productTitle}
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              required
-              id="productImageURL"
-              name="productImageURL"
-              label="Product image URL"
-              fullWidth
-              autoComplete="billing address-line1"
-              onChange={handleChange}
-              value={checkout.inputs.address1}
-            />
-          </Grid>
+            <Button
+              variant="contained"
+              component="label"
+            >
+              Upload image
+              <input
+                type="file"
+                hidden
+                name="productImageURL"
+                value={admin.inputs.uploadImageURL}
+                onChange={handleChange}
+              />
+            </Button>          
+            </Grid>
+
           <Grid item xs={12}>
             <TextField
               id="productDescription"
               name="productDescription"
               label="Product Description"
               fullWidth
+              multiline
+              minRows={3}
+              required
               autoComplete="billing address-line2"
               onChange={handleChange}
-              value={checkout.inputs.address2}
+              value={admin.inputs.productDescription}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -112,7 +105,8 @@ function Admin() {
               fullWidth
               autoComplete="billing address-level2"
               onChange={handleChange}
-              value={checkout.inputs.city}
+              type="number"
+              value={admin.inputs.weight}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -121,52 +115,17 @@ function Admin() {
               id="price"
               name="price"
               label="Price"
+              type="number"
               fullWidth
               autoComplete="billing state"
               onChange={handleChange}
-              value={checkout.inputs.state}
+              value={admin.inputs.price}
             />
           </Grid>
-          {/* <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="zip"
-              name="zip"
-              label="Zip / Postal code"
-              fullWidth
-              autoComplete="billing postal-code"
-              onChange={handleChange}
-              value={checkout.inputs.zip}
-            />
+
+          <Grid container spacing={2} sx={{marginTop: '1rem'}} direction="row" justifyContent='center'>
+            <Button variant="contained" color="secondary" sx={{ marginTop: '1rem' }}>Submit</Button>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="country"
-              name="country"
-              label="Country"
-              fullWidth
-              autoComplete="billing country"
-              onChange={handleChange}
-              value={checkout.inputs.country}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  name="saveAddress"
-                  onChange={handleChange}
-                  color="secondary"
-                  checked={checkout.inputs.saveAddress}
-                />
-              }
-              label="Use this address for payment details"
-            />
-          </Grid> */}
-          <Stack spacing={2} direction="row" >
-            <Button variant="contained" align="center" sx={{ marginTop: '1rem' }}>Submit</Button>
-          </Stack>
         </Grid>
       </Paper>
     </Container>

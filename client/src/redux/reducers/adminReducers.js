@@ -37,6 +37,13 @@ export function admin(state = initialState, action) {
       return {
         ...state,
       };
+    case adminConstants.ADD_NEW_PRODUCT_INFO:
+      return {
+        ...state,
+        inputs: {
+          ...action.payload
+        }
+      };
     default:
       return state;
   }
