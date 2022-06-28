@@ -17,6 +17,8 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Chip from "@mui/material/Chip";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch, useSelector } from "react-redux";
 import ProductDialog from "../ProductDialog/ProductDialog";
 import { cartActions } from "../../redux/actions/cartActions";
@@ -46,6 +48,10 @@ function ProductCard(props) {
 
   const addToggleLike = (id) => {
     dispatch(productsListActions.toggleLike(id));
+  };
+
+  const deleteProduct = () => {
+    dispatch(productsListActions.deleteProduct(product.id));
   };
 
   return (
@@ -83,8 +89,8 @@ function ProductCard(props) {
             {modal
               ? product.description
               : product.description.length > 100
-              ? `${product.description.slice(0, 100)}...`
-              : product.description}
+                ? `${product.description.slice(0, 100)}...`
+                : product.description}
             {/* {!modal && product.description.length > 100 && <Button color={'info'}>Learn more</Button>} */}
           </Typography>
           {modal && (
@@ -110,13 +116,19 @@ function ProductCard(props) {
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
+          <IconButton aria-label="delete" onClick={deleteProduct}>
+            <DeleteIcon />
+          </IconButton>
+          <IconButton aria-label="edit" >
+            <EditIcon />
+          </IconButton>
           <Box sx={{ "& > :not(style)": { m: 1 }, marginLeft: "auto" }}>
             <Button onClick={handleRemove} size="small">
-              {/* Remove */}
+              Remove
             </Button>
-            <Button onClick={handleAdd} size="small">
-              {/* Add */}
-            </Button>
+            {/* <Button onClick={handleAdd} size="small">
+              Add
+            </Button> */}
             <Fab onClick={handleAdd} color="primary" aria-label="add">
               <ShoppingCartOutlinedIcon />
             </Fab>

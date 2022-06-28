@@ -2,14 +2,16 @@
 import { config } from "../constants";
 import { authHeader } from "../helpers/authHeader";
 
-const getPostRequestOptions = (body) => ({
-  method: "POST",
+const getPostRequestOptions = (body, method = "POST") => ({
+  method,
   headers: { ...authHeader(), "Content-Type": "application/json" },
+  // withCredentials: true,
   body: JSON.stringify(body),
 });
 const requestGetOptions = {
   method: "GET",
   headers: authHeader(),
+  // withCredentials: true,
 };
 
 function getFilterCategoryOptions() {
@@ -26,15 +28,19 @@ function toggleLike(id) {
 }
 
 function fetchUserLikeIds(userId) {
-  
   return fetch(`${config.API_URL}/products/likes/${userId}`)
     .then((res) => res.json())
     .then((result) => result);
 }
 
 function getFavorites() {
-
   return fetch(`${config.API_URL}/products/favorites`, requestGetOptions)
+    .then((res) => res.json())
+    .then((result) => result);
+}
+
+function deleteProduct(id) {
+  return fetch(`http://localhost:3001/products`, getPostRequestOptions({id}, "DELETE"))
     .then((res) => res.json())
     .then((result) => result);
 }
@@ -44,4 +50,5 @@ export const productsListService = {
   toggleLike,
   fetchUserLikeIds,
   getFavorites,
+  deleteProduct,
 };

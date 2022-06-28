@@ -87,6 +87,13 @@ export function productsList(state = initialState, action) {
         favorites: action.payload
       };
 
+    case productsListConstants.DELETE_PRODUCT:
+      newArray = state.products.filter(item => item.id !== action.payload)
+      return {
+        ...state,
+        products: newArray
+      };
+
     default:
       return state;
   }

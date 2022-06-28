@@ -24,6 +24,7 @@ export const useProductSearch = (query, pageNumber) => {
     let cancel
     axios({
       method: 'GET',
+      // withCredentials: true,
       url: 'http://localhost:3001/products',
       params: { q: query, page: pageNumber, filters: { categories: filtersCategories }, perPage },
       // eslint-disable-next-line no-return-assign

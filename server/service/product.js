@@ -26,6 +26,9 @@ async function getProductsByPage(query) {
         where: {
           [Op.and]: [
             {
+              hidden: false
+            },
+            {
               [Op.or]: categoryArray,
             },
 
@@ -102,10 +105,20 @@ async function getFavorites(userId) {
   }
 }
 
+async function deleteProduct(id) {
+  try {
+    const productToDelete = await Product.findOne({ where: { id } });
+    await productToDelete.destroy();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getProductsByPage,
   getCategoriesOptions,
   fetchUserLikeIds,
   toggleLike,
   getFavorites,
+  deleteProduct,
 };

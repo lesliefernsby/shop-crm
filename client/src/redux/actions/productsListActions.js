@@ -126,6 +126,22 @@ function getFavorites() {
   };
 }
 
+function deleteProduct(id) {
+  return (dispatch) => {
+      dispatch(setPending(true));
+      dispatch(setError(false));
+      productsListService.deleteProduct(id)
+        .then(() => {
+          dispatch({ type: productsListConstants.DELETE_PRODUCT, payload: id });
+          dispatch(setPending(false));
+        },
+          () => {
+            dispatch(setError(true));
+          }
+        );
+  };
+}
+
 
 
 export const productsListActions = {
@@ -140,4 +156,5 @@ export const productsListActions = {
   toggleLike,
   fetchUserLikeIds,
   getFavorites,
+  deleteProduct,
 };

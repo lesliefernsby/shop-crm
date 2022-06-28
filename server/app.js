@@ -13,7 +13,13 @@ const { PORT } = process.env ?? 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.use(cors());
+
+// app.use(cors({
+//   credentials: true,
+//   origin: ['https://localhost:3000', 'https://localhost:3001']
+// }));
 
 // api routes
 app.use('/users', require('./controllers/users'));

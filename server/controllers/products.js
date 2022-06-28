@@ -2,6 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const productService = require('../service/product');
+const Role = require('../helpers/role');
 
 const authorize = require('../helpers/authorize');
 
@@ -43,9 +44,17 @@ function getFavorites(req, res, next) {
     .catch(err => next(err));
 }
 
+function deleteProduct(req, res, next) {
+  productService
+    .deleteProduct(req.body.id)
+    .then(() => res.json({ok: 'ok'}))
+    .catch(err => next(err));
+}
+
 router.get('/', getProductsByPage);
 router.get('/categoriesOptions', getCategoriesOptions);
 router.post('/like', authorize(), toggleLike);
 router.get('/likes/:userId', fetchUserLikeIds);
 router.get('/favorites', authorize(), getFavorites);
+router.delete('/', authorize(Role.Admin), deleteProduct);
 module.exports = router;
