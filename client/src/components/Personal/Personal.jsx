@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import { CssBaseline, Button, List, ListItem } from "@mui/material";
+import { CssBaseline, Button, List, ListItem, Divider } from "@mui/material";
 import styles from "./Personal.module.css";
 import { userActions } from "../../redux/actions/userActions";
 
@@ -21,7 +21,6 @@ function Personal() {
         Personal page
       </Typography>
 
-
       <List>
         <ListItem>
           <Link to="/personal/orders">
@@ -30,10 +29,12 @@ function Personal() {
         </ListItem>
 
         <ListItem>
-           <Link to="/personal/favorites">
+          <Link to="/personal/favorites">
             <Button variant="contained">Your favorites</Button>
           </Link>
         </ListItem>
+
+        <Divider />
 
         <ListItem>
           <Link to="/">
