@@ -23,7 +23,7 @@ function Chat({ socket }) {
       <Paper className={styles.Paper}>
         <Paper id="style-1" className={styles.MessagesBody}>
           {chat.messages.map((message) =>
-            message.senderRole !== 'Admin' ? (
+            !(message.senderRole === 'Admin' || message.isAdmin) ? (
               <MessageRight
                 key={message.id}
                 message={message.text}

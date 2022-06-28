@@ -21,7 +21,8 @@ export default function TextInput({ socket, receiverId, admin }) {
       senderName: `${authentication.user.firstName} ${authentication.user.lastName}`,
       senderId: authentication.user.sub,
       isAdmin: admin,
-      receiverId
+      receiverId,
+      createdAt: Date.now()
     });
     setText("");
   };
