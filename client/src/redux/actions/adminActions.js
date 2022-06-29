@@ -39,13 +39,6 @@ export const submitEditProduct = (inputs, id) => async dispatch => {
   }
 }
 
-function editProduct() {
-  return (dispatch) =>
-    adminService.editProduct()
-      .then((product) =>
-        dispatch({ type: adminConstants.EDIT_PRODUCT, payload: product })
-      );
-}
 
 function toggleHideStatus(id) {
   return (dispatch) => {
@@ -70,7 +63,6 @@ function addNewProductInfo(inputs) {
 
 export const adminActions = {
   submitNewProduct,
-  editProduct,
   toggleHideStatus,
   setError,
   setPending,
