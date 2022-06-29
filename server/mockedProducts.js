@@ -16,23 +16,23 @@ function getProducts(request) {
   });
 }
 const urls = [
-  'https://cdn0.ozone.ru/s3/multimedia-y/wc1200/6302948026.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-b/wc1200/6324755471.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-r/wc1200/6114718887.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-5/wc1200/6128443253.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-e/wc1200/6207601970.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-m/wc1200/6202119178.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-h/wc1200/6170207045.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-1/wc1200/6319183417.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-e/wc1200/6055366286.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-w/wc1200/6239226548.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-6/wc1200/6082339962.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-p/wc1200/6217102741.jpg',
-  'https://cdn0.ozone.ru/s3/cms/f7/t68/wc300/banner_1.jpg',
-  'https://cdn0.ozone.ru/s3/cms/4d/t39/wc300/banner_2.jpg',
-  'https://cdn0.ozone.ru/s3/cms/76/tae/wc300/banner_3.jpg',
-  'https://cdn0.ozone.ru/s3/cms/03/t40/wc300/banner_4.jpg',
-  'https://cdn0.ozone.ru/s3/multimedia-a/wc1200/6169061554.jpg'
+  '/img/6302948026.webp',
+  '/img/6324755471.webp',
+  '/img/6114718887.webp',
+  '/img/6128443253.webp',
+  '/img/6207601970.webp',
+  '/img/6202119178.webp',
+  '/img/6170207045.webp',
+  '/img/6319183417.webp',
+  '/img/6055366286.webp',
+  '/img/6239226548.webp',
+  '/img/6082339962.webp',
+  '/img/6217102741.webp',
+  '/img/banner_1.webp',
+  '/img/banner_2.webp',
+  '/img/banner_3.webp',
+  '/img/banner_4.webp',
+  '/img/6169061554.webp'
 ]
 
 

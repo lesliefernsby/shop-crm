@@ -29,18 +29,28 @@ export function admin(state = initialState, action) {
       };
 
       
-    case adminConstants.SUBMIT_NEW_PRODUCT:
+    case adminConstants.CLEAR_NEW_PRODUCT_INPUTS:
       return {
         ...state,
+        inputs: {
+          productCategoryTitle: "",
+          productTitle: "",
+          productImageURL: "",
+          productDescription: "",
+          weight: "",
+          price: "",
+        }
       };
     case adminConstants.EDIT_PRODUCT:
       return {
         ...state,
       };
     case adminConstants.ADD_NEW_PRODUCT_INFO:
+      console.log('ADD_NEW_PRODUCT_INFO');
       return {
         ...state,
         inputs: {
+          ...state.inputs,
           ...action.payload
         }
       };

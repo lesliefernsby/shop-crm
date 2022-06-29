@@ -1,12 +1,39 @@
 /* eslint-disable import/prefer-default-export */
+import axios from 'axios';
 import { config } from "../constants";
 import { getPostRequestOptions } from "../helpers/requestHelper" // requestGetOptions
+import {authHeader} from '../helpers/authHeader'
 
-function submitNewProduct() {
-  return fetch(`${config.API_URL}/products/create`, getPostRequestOptions())
-  .then((res) => res.json())
+function submitNewProduct(inputs) {
+  const formData = new FormData();
+  formData.append("file", inputs.productImageURL);
+  const restInputs = {...inputs};
+  delete restInputs.productImageURL;
+  formData.append("document", JSON.stringify(restInputs));
+
+  axios({
+      method: 'post',
+      url: `${config.API_URL}/products/create`,
+      data: formData,
+      headers: authHeader()
+  })
   .then((result) => result);
-}
+  }
+function submitEditProduct(inputs, id) {
+  const formData = new FormData();
+  formData.append("file", inputs.productImageURL);
+  const restInputs = {...inputs, id};
+  delete restInputs.productImageURL;
+  formData.append("document", JSON.stringify(restInputs));
+
+  axios({
+      method: 'post',
+      url: `${config.API_URL}/products/edit`,
+      data: formData,
+      headers: authHeader()
+  })
+  .then((result) => result);
+  }
 
 function editProduct() {
   return fetch(`${config.API_URL}/products/edit`, getPostRequestOptions())
@@ -22,5 +49,6 @@ function toggleHideStatus(id) {
 export const adminService = {
   submitNewProduct,
   editProduct,
-  toggleHideStatus
+  toggleHideStatus,
+  submitEditProduct
 };
