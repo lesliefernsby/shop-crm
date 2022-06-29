@@ -33,7 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     categoryId: {
       type:DataTypes.INTEGER,
       allowNull: false,
-    }
+    },
+    hide: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Product',

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React from "react";
-import { useDispatch } from "react-redux";
+import {useSelector, useDispatch} from 'react-redux';
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import { CssBaseline, Button, List, ListItem, Divider } from "@mui/material";
@@ -8,6 +8,7 @@ import styles from "./Personal.module.css";
 import { userActions } from "../../redux/actions/userActions";
 
 function Personal() {
+  const isAdmin = useSelector((state)=> state.authentication?.user?.roles?.includes("Admin"));
   const dispatch = useDispatch();
 
   function handleLogout() {
@@ -35,6 +36,11 @@ function Personal() {
             </Button>
           </Link>
         </ListItem>
+        {isAdmin && <ListItem>
+           <Link to="/admin">
+            <Button variant="contained">To admin page</Button>
+          </Link>
+        </ListItem>}
 
         <Divider style={{ marginTop: "1rem", marginBottom: "0.5rem" }} />
 
