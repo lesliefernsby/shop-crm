@@ -15,20 +15,13 @@ export const useProductSearch = (query, pageNumber) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('==================================== сброс всех продуктов ==================================');
     dispatch(productsListActions.setProducts([]))
   }, [query])
-  
-  useEffect(() => {
-    console.log('==================================== changed products ==================================');
-    console.log(products);
-  }, [products])
 
   useEffect(() => {
-    dispatch(productsListActions.setProducts([]))
+    // dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
-    console.log(products, '000000000000000000000000000000000000000000');
     let cancel
     axios({
       method: 'GET',

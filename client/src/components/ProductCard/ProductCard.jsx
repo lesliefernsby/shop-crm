@@ -117,8 +117,8 @@ const editProduct = () => {
             onClick={() => (modal ? null : openModal())}
           />
           <CardContent onClick={() => (modal ? null : openModal())}>
-            <Typography variant="h6">{product.categoryId}cat</Typography>
-            <Typography variant="h6">{product.id}id</Typography>
+            {/* <Typography variant="h6">{product.categoryId}cat</Typography>
+            <Typography variant="h6">{product.id}id</Typography> */}
             <Typography gutterBottom variant="h5" component="div">
               {product.title}
             </Typography>

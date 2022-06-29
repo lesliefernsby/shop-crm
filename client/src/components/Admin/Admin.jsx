@@ -25,15 +25,9 @@ function Admin() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'productImageURL') {
-      // const file = e.target.files[0];
-      // const formData = new FormData();
-      // formData.append("file", e.target.files[0]);
-      console.log(e.target.files[0]);
       dispatch(
         adminActions.addNewProductInfo({ ...admin.inputs, productImageURL: e.target.files[0] })
       );
-      console.log(e.target.files[0]
-        );
       setFileName(e.target?.files[0]?.name || '');
 
       setUploadBtnText('Upload another');
