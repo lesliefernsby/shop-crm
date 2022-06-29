@@ -1,10 +1,19 @@
+/* eslint-disable react/jsx-no-bind */
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import { CssBaseline, Button, List, ListItem } from "@mui/material";
+import { CssBaseline, Button, List, ListItem, Divider } from "@mui/material";
 import styles from "./Personal.module.css";
+import { userActions } from "../../redux/actions/userActions";
 
 function Personal() {
+  const dispatch = useDispatch();
+
+  function handleLogout() {
+    dispatch(userActions.logout());
+  }
+
   return (
     <main className={styles.Layout}>
       <CssBaseline />
@@ -12,23 +21,40 @@ function Personal() {
         Personal page
       </Typography>
 
-
       <List>
         <ListItem>
           <Link to="/personal/orders">
-            <Button variant="contained">Your orders</Button>
+            <Button variant="contained" style={{ marginLeft: "0rem" }}>
+              Your orders
+            </Button>
+          </Link>
+
+          <Link to="/personal/favorites">
+            <Button variant="contained" style={{ marginLeft: "1rem" }}>
+              Your favorites
+            </Button>
           </Link>
         </ListItem>
 
-        <ListItem>
-           <Link to="/personal/favorites">
-            <Button variant="contained">Your favorites</Button>
-          </Link>
-        </ListItem>
+        <Divider style={{ marginTop: "1rem", marginBottom: "0.5rem" }} />
 
         <ListItem>
           <Link to="/">
-            <Button variant="text">To main page</Button>
+            <Button variant="text" style={{ marginLeft: "0rem" }}>
+              Edit profile
+            </Button>
+          </Link>
+
+          <Link to="/">
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              To main page
+            </Button>
+          </Link>
+
+          <Link className="NavLink" onClick={handleLogout} to="/">
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              Sign out
+            </Button>
           </Link>
         </ListItem>
       </List>

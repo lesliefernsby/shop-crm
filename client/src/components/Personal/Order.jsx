@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemText,
   CssBaseline,
+  Divider,
   Button,
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
@@ -52,9 +53,7 @@ function Order() {
       <CssBaseline />
       {order && (
         <>
-          <Typography variant="h3" gutterBottom component="div">
-            Order #{order.id}
-          </Typography>
+          <h1>Order #{order.id}</h1>
           <Typography variant="h6" gutterBottom>
             Order summary
           </Typography>
@@ -101,16 +100,18 @@ function Order() {
           </Grid>
         </>
       )}
+      <Divider />
+
       <List>
         <ListItem>
-          <Link to="/personal/orders">
-            <Button variant="contained">Your orders</Button>
+          <Link to="/personal">
+            <Button variant="contained">Your profile</Button>
           </Link>
-        </ListItem>
 
-        <ListItem>
-          <Link to="/">
-            <Button variant="text">To main page</Button>
+          <Link to="/personal/orders">
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              Your orders
+            </Button>
           </Link>
         </ListItem>
       </List>
