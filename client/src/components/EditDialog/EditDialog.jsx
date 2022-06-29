@@ -63,6 +63,7 @@ function EditDialog(props) {
     setUploadBtnText("Upload image")
     setFileName('');
     setOpenEdit(false);
+    
   }
   return (
     <Dialog

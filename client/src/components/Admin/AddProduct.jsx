@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Alert,
   Grid,
@@ -15,12 +15,15 @@ import CircularProgress from "@mui/material/CircularProgress";
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useDispatch, useSelector } from "react-redux";
 import { adminActions } from "../../redux/actions/adminActions";
+import { adminConstants } from "../../redux/constants/adminConstants";
 
 function AddProduct() {
   const dispatch = useDispatch();
   const admin = useSelector((state) => state.admin);
   const { error, pending } = useSelector((state) => state.admin);
-
+useEffect(() => {
+  dispatch({ type: adminConstants.CLEAR_NEW_PRODUCT_INPUTS });
+} ,[])
   const [uploadBtnText, setUploadBtnText] = useState('Upload image')
   const [fileName, setFileName] = useState('');
   const handleChange = (e) => {
