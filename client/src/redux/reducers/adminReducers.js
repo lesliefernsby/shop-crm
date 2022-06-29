@@ -46,7 +46,6 @@ export function admin(state = initialState, action) {
         ...state,
       };
     case adminConstants.ADD_NEW_PRODUCT_INFO:
-      console.log('ADD_NEW_PRODUCT_INFO');
       return {
         ...state,
         inputs: {

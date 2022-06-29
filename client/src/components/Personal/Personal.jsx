@@ -38,7 +38,7 @@ function Personal() {
         </ListItem>
         {isAdmin && <ListItem>
            <Link to="/admin">
-            <Button variant="contained">Add product</Button>
+            <Button variant="contained">To admin page</Button>
           </Link>
         </ListItem>}
 
