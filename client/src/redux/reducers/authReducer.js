@@ -4,9 +4,7 @@ import jwt_decode from "jwt-decode";
 import { userConstants } from "../constants";
 
 const token = localStorage.getItem("token");
-export const initialState = token
-  ? { loggedIn: true, user: jwt_decode(token) }
-  : {};
+export const initialState = token ? { loggedIn: true, user: jwt_decode(token) }  : {};
 
 export function authentication(state = initialState, action) {
   switch (action.type) {

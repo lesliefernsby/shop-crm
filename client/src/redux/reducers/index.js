@@ -6,6 +6,8 @@ import { productsList } from './productsListReducer';
 import { cartDialog } from './cartOpenReducer';
 import { checkout } from './checkoutReducer';
 import { personal } from './personalReducer';
+import { chat } from './chatReducer';
+import { orders } from './ordersReducer';
 
 
 const rootReducer = combineReducers({
@@ -15,7 +17,9 @@ const rootReducer = combineReducers({
   productsList,
   cartDialog,
   checkout,
-  personal
+  personal,
+  chat,
+  orders
 
 });
 
