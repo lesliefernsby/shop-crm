@@ -28,7 +28,7 @@
 
 .MessagesBody {
   width: 80%;
-  margin: 10em;
+  margin: 1em;
   overflow-y: scroll;
   height: 80%;
 }

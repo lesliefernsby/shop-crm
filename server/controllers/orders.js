@@ -15,7 +15,6 @@ function getAll(req, res, next) {
 function getById(req, res, next) {
   const currentUser = req.user;
   const id = parseInt(req.params.id, 10);
-
   orderService
     .getById(id)
     .then(order => {
@@ -34,7 +33,7 @@ function getByUser(req, res, next) {
   const id = parseInt(req.params.id, 10);
   orderService
     .getByUser(id)
-    .then(orders => orders ? res.json(orders) : res.sendStatus(404))
+    .then(orders => (orders ? res.json(orders) : res.sendStatus(404)))
     .catch(err => next(err));
 }
 
@@ -42,7 +41,7 @@ function getOwnOrders(req, res, next) {
   const currentUser = req.user;
   orderService
     .getByUser(currentUser.sub)
-    .then(orders => orders ? res.json(orders) : res.sendStatus(404))
+    .then(orders => (orders ? res.json(orders) : res.sendStatus(404)))
     .catch(err => next(err));
 }
 
@@ -51,10 +50,9 @@ function createOrder(req, res, next) {
   const { cart, delivery, payment } = req.body;
 
   orderService
-  .create(cart, delivery, payment, currentUser.sub)
-  .then(response => res.json(response))
-  .catch(err => next(err));
-
+    .create(cart, delivery, payment, currentUser.sub)
+    .then(response => res.json(response))
+    .catch(err => next(err));
 }
 
 // admin only
@@ -65,6 +63,5 @@ router.get('/user/:id', authorize(Role.Admin), getByUser);
 router.post('/', authorize(), createOrder);
 router.get('/myorders/', authorize(), getOwnOrders);
 router.get('/:id', authorize(), getById);
-
 
 module.exports = router;
