@@ -1,3 +1,4 @@
+/* eslint-disable no-return-await */
 /* eslint-disable consistent-return */
 const { Op } = require('sequelize');
 const { Product, Category, Like } = require('../db/models');

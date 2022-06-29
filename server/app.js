@@ -11,6 +11,7 @@ const errorHandler = require('helpers/error-handler.js');
 const path = require('path');
 
 const app = express();
+
 const { PORT } = process.env ?? 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,26 +21,45 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use(fileUpload());
-// app.use(cors({
-//   credentials: true,
-//   origin: ['https://localhost:3000', 'https://localhost:3001']
-// }));
 
+const server = require('http').createServer(app);
+const io = require('socket.io')(server, {
+  cors: {
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST'],
+  },
+});
+const messageService = require('./service/message');
 // api routes
 app.use('/users', require('./controllers/users'));
 app.use('/products', require('./controllers/products'));
 app.use('/orders', require('./controllers/orders'));
-
-// app.get('/products/search', async (req, res) => {
-//   const products = await getProducts(req.query);
-//   res.json(products)
-// })
+app.use('/messages', require('./controllers/messages'));
 
 // global error handler
 app.use(errorHandler);
 
 // start server
+io.on('connection', socket => {
+  const { senderId, senderName } = socket.handshake.query;
+  socket.on('send-message', async message => {
+    if (message.senderId) {
+      const senderRole = message.isAdmin ? 'Admin' : 'User';
 
-app.listen(process.env.PORT ?? 3001, () => {
+      await messageService.addMessage(
+        senderId,
+        message.receiverId,
+        senderRole,
+        senderName,
+        message.text
+      );
+    }
+
+    io.emit('message', message);
+  });
+  socket.emit('connection', null);
+});
+
+server.listen(process.env.PORT ?? 3001, () => {
   console.log(`Server started sucessfully at port ${PORT} <3`);
 });

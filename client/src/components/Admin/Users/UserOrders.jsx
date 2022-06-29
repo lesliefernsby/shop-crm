@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   styled,
   TableContainer,
@@ -16,20 +16,20 @@ import {
   List,
   ListItem,
   Button,
-  Divider,
 } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { ReadMore } from "@mui/icons-material";
-import { personalActions } from "../../redux/actions/personalActions";
-import styles from "./Personal.module.css";
+import { ordersActions } from "../../../redux/actions/ordersActions";
+import styles from "../Admin.module.css";
 
 function PersonalOrders() {
   const dispatch = useDispatch();
-  const personal = useSelector((state) => state.personal);
+  const orders = useSelector((state) => state.orders);
+  const params = useParams();
 
   useEffect(() => {
-    dispatch(personalActions.getMyOrders());
-  }, [dispatch]);
+    dispatch(ordersActions.getOrders(params.id));
+  }, []);
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -72,7 +72,10 @@ function PersonalOrders() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {personal.orders.map((order) => (
+            {!orders.loading && orders.orders
+            .find((o) => o.id === params.id)
+            .orders
+            .map((order) => (
               <StyledTableRow key={order.id}>
                 <StyledTableCell component="th" scope="row">
                   {order.id}
@@ -86,7 +89,7 @@ function PersonalOrders() {
                   {order.createdAt.slice(0, 10)}
                 </StyledTableCell>
                 <IconButton aria-label="readMore" color="success">
-                  <Link to={`/personal/orders/${order.id}`}>
+                  <Link to={`/admin/orders/details/${order.id}`}>
                     {" "}
                     <ReadMore />
                   </Link>
@@ -97,22 +100,22 @@ function PersonalOrders() {
         </Table>
       </TableContainer>
 
-      <Divider />
-
       <List>
         <ListItem>
-          <Link to="/personal">
-            <Button variant="contained">Your profile</Button>
+          <Link to="/admin/users">
+            <Button variant="contained">To users</Button>
           </Link>
+        </ListItem>
 
+        <ListItem>
           <Link to="/">
-            <Button variant="text" style={{ marginLeft: "1rem" }}>
-              To main page
-            </Button>
+            <Button variant="text">To main page</Button>
           </Link>
         </ListItem>
       </List>
     </main>
+
+
   );
 }
 export default PersonalOrders;

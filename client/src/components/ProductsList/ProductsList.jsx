@@ -1,9 +1,11 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable react/prop-types */
 import React, { useRef, useCallback, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import CircularProgress from "@mui/material/CircularProgress";
+import TextField from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
 import { useDispatch, useSelector } from "react-redux";
 import { productsListActions } from "../../redux/actions/productsListActions";
@@ -16,6 +18,9 @@ function ProductsList() {
   const dispatch = useDispatch();
   const { query, pageNumber } = useSelector((state) => state.productsList);
   const isLoggedIn = useSelector((state) => state.authentication?.loggedIn);
+  const isProductListPage = useSelector(
+    (state) => state.productsList.isProductListPage
+  );
 
   useEffect(() => {
     dispatch(productsListActions.setIsListPage(true));
@@ -51,6 +56,11 @@ function ProductsList() {
     [loading, hasMore]
   ); // maybe error
 
+  function handleSearch(e) {
+    dispatch(productsListActions.setQuery(e.target.value));
+    dispatch(productsListActions.setPageNumber(1));
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -59,7 +69,7 @@ function ProductsList() {
         columns={{ xs: 4, sm: 8, md: 12 }}
         style={{ marginTop: "3.5rem" }}
       >
-        <Grid
+        {/* <Grid
           container
           item
           xs={12}
@@ -68,7 +78,28 @@ function ProductsList() {
           alignItems="stretch"
         >
           <CategoryFilter />
-        </Grid>
+        </Grid> */}
+
+        {isProductListPage && (
+          <Grid
+            container
+            item
+            xs={12}
+            direction="row"
+            justifyContent="center"
+            alignItems="stretch"
+          >
+            <CategoryFilter />
+            <TextField
+              type="text"
+              value={query}
+              onChange={handleSearch}
+              placeholder="What are we looking for?"
+              style={{ width: "50%", margin: "1rem" }}
+            />
+          </Grid>
+        )}
+
         {products.map((product, index) => {
           if (products.length === index + 1) {
             return (

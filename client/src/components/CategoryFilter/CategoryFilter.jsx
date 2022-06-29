@@ -59,9 +59,12 @@ function CategoryFilter() {
   return (
     <div>
       <FormControl
-        sx={{ m: 1, width: 300 }}
+        sx={{ m: 1 }}
         variant="outlined"
-        style={{ marginTop: "1rem" }}
+        style={{
+          marginTop: "1rem",
+          minWidth: "300px",
+        }}
       >
         <InputLabel id="test-select-label">Category</InputLabel>
         <Select

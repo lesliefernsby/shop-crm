@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Grid,
   Typography,
@@ -6,30 +6,32 @@ import {
   ListItem,
   ListItemText,
   CssBaseline,
-  Divider,
   Button,
 } from "@mui/material";
-import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { personalActions } from "../../redux/actions/personalActions";
+import { authHeader } from "../../../redux/helpers/authHeader";
+import { config } from "../../../redux/constants";
 
-import styles from "./Personal.module.css";
+import styles from "../Admin.module.css";
 
-function Order() {
+function OrderDetails() {
   const params = useParams();
-  const dispatch = useDispatch();
-  const personal = useSelector((state) => state.personal);
 
+  const [order, setOrder] = useState(null);
   useEffect(() => {
-    dispatch(personalActions.getMyOrders());
-  }, [dispatch]);
+    const requestOptions = {
+      method: "GET",
+      headers: authHeader(),
+    };
+  
+    fetch(`${config.API_URL}/orders/${params.id}`, requestOptions)
+    .then((res) => res.json())
+    .then((o) => setOrder(o));
+  }, []);
 
-  let order;
+
   let addresses;
-
-  if (!personal.loading) {
-    order = personal.orders.find((o) => o.id === parseInt(params.id, 10));
-
+  if (order) {
     addresses = [
       order.Delivery.address1,
       order.Delivery.address2,
@@ -53,7 +55,9 @@ function Order() {
       <CssBaseline />
       {order && (
         <>
-          <h1>Order #{order.id}</h1>
+          <Typography variant="h3" gutterBottom component="div">
+            Order #{order.id}
+          </Typography>
           <Typography variant="h6" gutterBottom>
             Order summary
           </Typography>
@@ -100,18 +104,16 @@ function Order() {
           </Grid>
         </>
       )}
-      <Divider />
-
       <List>
         <ListItem>
-          <Link to="/personal">
-            <Button variant="contained">Your profile</Button>
+          <Link to="/admin/users">
+            <Button variant="contained">Back to users</Button>
           </Link>
+        </ListItem>
 
-          <Link to="/personal/orders">
-            <Button variant="text" style={{ marginLeft: "1rem" }}>
-              Your orders
-            </Button>
+        <ListItem>
+          <Link to="/">
+            <Button variant="text">To main page</Button>
           </Link>
         </ListItem>
       </List>
@@ -119,4 +121,4 @@ function Order() {
   );
 }
 
-export default Order;
+export default OrderDetails;

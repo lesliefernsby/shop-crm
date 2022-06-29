@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import {
+  CssBaseline,
+  Typography,
   styled,
   TableContainer,
   Table,
@@ -12,25 +12,23 @@ import {
   Paper,
   tableCellClasses,
   IconButton,
-  CssBaseline,
   List,
   ListItem,
   Button,
-  Divider,
 } from "@mui/material";
-import Typography from "@mui/material/Typography";
 import { ReadMore } from "@mui/icons-material";
-import { personalActions } from "../../redux/actions/personalActions";
-import styles from "./Personal.module.css";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import MarkUnreadChatAltIcon from "@mui/icons-material/MarkUnreadChatAlt";
+import styles from "../Admin.module.css";
+import { userActions } from "../../../redux/actions/userActions";
 
-function PersonalOrders() {
+function Users() {
   const dispatch = useDispatch();
-  const personal = useSelector((state) => state.personal);
-
   useEffect(() => {
-    dispatch(personalActions.getMyOrders());
-  }, [dispatch]);
-
+    dispatch(userActions.getAll());
+  }, []);
+  const users = useSelector((state) => state.users);
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -55,7 +53,7 @@ function PersonalOrders() {
     <main className={styles.Layout}>
       <CssBaseline />
       <Typography variant="h3" gutterBottom component="div">
-        Your orders
+        List of users
       </Typography>
 
       <TableContainer component={Paper}>
@@ -63,56 +61,61 @@ function PersonalOrders() {
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Order #</StyledTableCell>
+              <StyledTableCell>id</StyledTableCell>
               <StyledTableCell>First Name</StyledTableCell>
               <StyledTableCell>Last Name</StyledTableCell>
-              <StyledTableCell>Delivery</StyledTableCell>
-              <StyledTableCell>Order Date</StyledTableCell>
-              <StyledTableCell>Details</StyledTableCell>
+              <StyledTableCell>Email</StyledTableCell>
+              <StyledTableCell>Orders</StyledTableCell>
+              <StyledTableCell>Chat</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {personal.orders.map((order) => (
-              <StyledTableRow key={order.id}>
+            {users.items?.map((user) => (
+              <StyledTableRow key={user.id}>
                 <StyledTableCell component="th" scope="row">
-                  {order.id}
+                  {user.id}
                 </StyledTableCell>
-                <StyledTableCell>{order.Delivery.firstName}</StyledTableCell>
-                <StyledTableCell>{order.Delivery.lastName}</StyledTableCell>
+                <StyledTableCell>{user.firstName}</StyledTableCell>
+                <StyledTableCell>{user.lastName}</StyledTableCell>
+                <StyledTableCell>{user.email}</StyledTableCell>
+
                 <StyledTableCell>
-                  {`${order.Delivery.address1} ${order.Delivery.address2} ${order.Delivery.city} ${order.Delivery.state} ${order.Delivery.zip}`}
+                  <IconButton aria-label="readMore" color="success">
+                    <Link to={`/admin/users/orders/${user.id}`}>
+                      {" "}
+                      <ReadMore />
+                    </Link>
+                  </IconButton>
                 </StyledTableCell>
                 <StyledTableCell>
-                  {order.createdAt.slice(0, 10)}
+                  <IconButton aria-label="chat" color="success">
+                    <Link to={`/admin/chat/${user.id}`}>
+                      {" "}
+                      <MarkUnreadChatAltIcon />
+                    </Link>
+                  </IconButton>
                 </StyledTableCell>
-                <IconButton aria-label="readMore" color="success">
-                  <Link to={`/personal/orders/${order.id}`}>
-                    {" "}
-                    <ReadMore />
-                  </Link>
-                </IconButton>
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
 
-      <Divider />
-
       <List>
         <ListItem>
-          <Link to="/personal">
-            <Button variant="contained">Your profile</Button>
+          <Link to="/admin">
+            <Button variant="contained">To admin page</Button>
           </Link>
+        </ListItem> 
 
+        <ListItem>
           <Link to="/">
-            <Button variant="text" style={{ marginLeft: "1rem" }}>
-              To main page
-            </Button>
+            <Button variant="text">To main page</Button>
           </Link>
         </ListItem>
       </List>
     </main>
   );
 }
-export default PersonalOrders;
+
+export default Users;

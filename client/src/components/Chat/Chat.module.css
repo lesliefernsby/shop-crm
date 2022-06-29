@@ -1,15 +1,3 @@
-.Layout {
-  position: relative;
-  width: 80%;
-  margin-top: 10em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.MainContainer {
-  margin: 5em;
-}
-
 .Paper {
   width: 80vw;
   height: 80vh;
@@ -31,7 +19,7 @@
 }
 
 .Container {
-  width: 100vw;
+  width: 40vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -40,13 +28,14 @@
 
 .MessagesBody {
   width: 80%;
-  margin: 10em;
+  margin: 1em;
   overflow-y: scroll;
   height: 80%;
 }
 
 .messageRow {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
 }
 
