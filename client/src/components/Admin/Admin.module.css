@@ -1,3 +1,11 @@
+.Layout {
+  position: relative;
+  width: 80%;
+  margin-top: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .MainContainer {
   margin: 5em;
 }

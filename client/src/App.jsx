@@ -19,6 +19,9 @@ import AdminChat from "./components/Admin/AdminChat";
 import { chatActions } from "./redux/actions/chatActions";
 import { config } from "./redux/constants";
 import Favorites from "./components/Personal/Favorites";
+import Users from "./components/Admin/Users/Users";
+import UserOrder from "./components/Admin/Users/UserOrders";
+import OrderDetails from './components/Admin/Users/OrderDetails'
 
 function App() {
   const dispatch = useDispatch();
@@ -63,6 +66,20 @@ function App() {
         <Route exact path="/admin" element={<RestrictedRoute />}>
           <Route exact path="/admin" element={<Admin />} />
         </Route>
+
+        <Route exact path="/admin/users" element={<RestrictedRoute />}>
+          <Route exact path="/admin/users" element={<Users />} />
+        </Route>
+
+        <Route exact path="/admin/users/orders/:id" element={<RestrictedRoute />}>
+          <Route exact path="/admin/users/orders/:id" element={<UserOrder />} />
+        </Route>
+
+        <Route exact path="/admin/orders/details/:id" element={<RestrictedRoute />}>
+          <Route exact path="/admin/orders/details/:id" element={<OrderDetails />} />
+        </Route>
+
+        
 
         <Route exact path="/admin/chat/:id" element={<RestrictedRoute />}>
           <Route
