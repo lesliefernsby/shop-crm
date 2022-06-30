@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { authHeader } from "../helpers/authHeader";
 import { config } from "../constants";
 

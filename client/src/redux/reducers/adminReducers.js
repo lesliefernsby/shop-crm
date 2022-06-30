@@ -1,5 +1,4 @@
-/* eslint-disable default-param-last */
-/* eslint-disable import/prefer-default-export */
+
 import { adminConstants } from "../constants/adminConstants";
 
 const initialState = {

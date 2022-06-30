@@ -20,14 +20,14 @@ export const useProductSearch = (query, pageNumber) => {
   }, [filtersCategories])
 
   useEffect(() => {
-    // dispatch(productsListActions.setProducts([]))
+    dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
     let cancel
     axios({
       method: 'GET',
-      // withCredentials: true,
-      url: `${config.API_URL}/products`,
+      // url: `${config.API_URL}/products`,
+      url: '/products',
       params: { q: query, page: pageNumber, filters: { categories: filtersCategories }, perPage },
       // eslint-disable-next-line no-return-assign
       cancelToken: new axios.CancelToken(c => cancel = c)

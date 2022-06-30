@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 export const adminConstants = {
   CLEAR_NEW_PRODUCT_INPUTS: "CLEAR_NEW_PRODUCT_INPUTS",
   EDIT_PRODUCT: "EDIT_PRODUCT",

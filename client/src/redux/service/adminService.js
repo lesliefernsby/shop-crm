@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import axios from 'axios';
 import { config } from "../constants";
 import { getPostRequestOptions } from "../helpers/requestHelper" // requestGetOptions

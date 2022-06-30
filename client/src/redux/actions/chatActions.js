@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { chatConstants } from "../constants/chatConstants";
 import { chatService } from "../service/chatService";
 

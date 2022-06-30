@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/no-cycle */
 
 import React, { useState, useEffect } from "react";
 import Dialog from '@mui/material/Dialog';

@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { adminConstants } from "../constants/adminConstants";
 import { adminService } from "../service/adminService";
 import { productsListConstants } from "../constants/productsListConstants";

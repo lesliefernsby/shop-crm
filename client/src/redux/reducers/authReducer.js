@@ -1,5 +1,4 @@
-/* eslint-disable default-param-last */
-// eslint-disable-next-line camelcase
+
 import jwt_decode from "jwt-decode";
 import { userConstants } from "../constants";
 

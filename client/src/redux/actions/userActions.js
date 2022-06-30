@@ -1,6 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/prefer-default-export */
+
 import jwt_decode from 'jwt-decode';
 import { userConstants } from "../constants";
 import { userService } from "../service/userService";

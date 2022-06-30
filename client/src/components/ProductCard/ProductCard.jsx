@@ -1,6 +1,4 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable react/prop-types */
+
 import React, { useState } from "react";
 import {  styled } from '@mui/material/styles';
 

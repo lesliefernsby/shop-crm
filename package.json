@@ -1,0 +1,20 @@
+{
+  "name": "shop-crm",
+  "version": "1.0.0",
+  "description": "Проект интернет-магазина с встроенным CRM",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "build": "cd client && npm i && npm run build && cd ../server && npm i && npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lesliefernsby/shop-crm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lesliefernsby/shop-crm/issues"
+  },
+  "homepage": "https://github.com/lesliefernsby/shop-crm#readme"
+}
