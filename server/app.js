@@ -15,6 +15,7 @@ const app = express();
 const { PORT } = process.env ?? 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.resolve('../client/build/')))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
@@ -35,6 +36,9 @@ app.use('/users', require('./controllers/users'));
 app.use('/products', require('./controllers/products'));
 app.use('/orders', require('./controllers/orders'));
 app.use('/messages', require('./controllers/messages'));
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('../client/build/index.html'));
+})
 
 // global error handler
 app.use(errorHandler);
