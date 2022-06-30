@@ -16,10 +16,10 @@ export const useProductSearch = (query, pageNumber) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(productsListActions.setProducts([]))
-  }, [query])
+  // }, [query])
 
-  useEffect(() => {
-    // dispatch(productsListActions.setProducts([]))
+  // useEffect(() => {
+  //   // dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
     let cancel
