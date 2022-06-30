@@ -4,8 +4,8 @@
   "description": "Проект интернет-магазина с встроенным CRM",
   "main": "index.js",
   "scripts": {
-    "start": "cd server && npm i && npm start",
-    "build": "cd client && npm i && npm run build"
+    "start": "cd server && npm start",
+    "build": "cd client && npm i && npm run build && cd ../server && npm i && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "repository": {
     "type": "git",
