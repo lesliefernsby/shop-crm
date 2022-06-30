@@ -45,7 +45,7 @@ export const useProductSearch = (query, pageNumber) => {
 
         dispatch(productsListActions.setProducts([...newData]))
         //dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
-        setHasMore(newData.length > 0)
+        setHasMore(newData.length > 15)
         dispatch(productsListActions.setPending(false));
       }).catch(e => {
         if (axios.isCancel(e)) return
