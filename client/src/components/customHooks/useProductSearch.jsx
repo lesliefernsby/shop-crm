@@ -17,10 +17,10 @@ export const useProductSearch = (query, pageNumber) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(productsListActions.setProducts([]))
-  }, [filtersCategories])
+  }, [filtersCategories, query])
 
   useEffect(() => {
-    dispatch(productsListActions.setProducts([]))
+    //dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
     let cancel
