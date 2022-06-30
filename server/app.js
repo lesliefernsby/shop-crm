@@ -37,7 +37,7 @@ app.use('/products', require('./controllers/products'));
 app.use('/orders', require('./controllers/orders'));
 app.use('/messages', require('./controllers/messages'));
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve('../client/build/index.html'));
 })
 
