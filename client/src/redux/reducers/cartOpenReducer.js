@@ -1,5 +1,4 @@
-/* eslint-disable default-param-last */
-/* eslint-disable import/prefer-default-export */
+
 import { cartConstants } from "../constants";
 
 const initialState = { isOpen: false };

@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { ordersConstants } from "../constants/ordersConstants";
 import { ordersService } from "../service/ordersService";
 

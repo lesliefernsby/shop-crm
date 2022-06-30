@@ -1,4 +1,4 @@
-/* eslint-disable default-param-last */
+
 import { productsListConstants } from "../constants/productsListConstants";
 import { adminConstants } from "../constants/adminConstants";
 

@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable react/prop-types */
+
 import React, { useRef, useCallback, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";

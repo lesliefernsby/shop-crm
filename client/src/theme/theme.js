@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 
 import { createTheme } from "@mui/material/styles";
 

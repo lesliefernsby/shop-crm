@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { config } from "../constants";
 import { getPostRequestOptions, requestGetOptions } from "../helpers/requestHelper"
 

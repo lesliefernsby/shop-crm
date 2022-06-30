@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable default-param-last */
+
 import { chatConstants } from "../constants/chatConstants";
 
 const initialState = {

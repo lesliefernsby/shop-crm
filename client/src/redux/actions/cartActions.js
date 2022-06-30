@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { cartConstants } from "../constants";
 import { cartService } from "../service/cartService";
 

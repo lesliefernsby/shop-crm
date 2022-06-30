@@ -1,5 +1,4 @@
-/* eslint-disable default-param-last */
-/* eslint-disable import/prefer-default-export */
+
 import { personalConstants } from "../constants/personalConstants";
 
 const initialState = {

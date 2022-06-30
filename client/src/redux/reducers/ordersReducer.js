@@ -1,5 +1,4 @@
-/* eslint-disable default-param-last */
-/* eslint-disable import/prefer-default-export */
+
 import { ordersConstants } from "../constants/ordersConstants";
 
 const initialState = {

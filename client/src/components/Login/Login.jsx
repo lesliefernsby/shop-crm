@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import * as React from "react";
 import { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
