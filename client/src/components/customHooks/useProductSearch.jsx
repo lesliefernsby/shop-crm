@@ -19,7 +19,7 @@ export const useProductSearch = (query, pageNumber) => {
    }, [query])
 
   useEffect(() => {
-  //   // dispatch(productsListActions.setProducts([]))
+    dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
     let cancel
