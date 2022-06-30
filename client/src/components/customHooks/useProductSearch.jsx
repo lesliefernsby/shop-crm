@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { config } from "../../redux/constants";
+// import { config } from "../../redux/constants";
 import { productsListActions } from '../../redux/actions/productsListActions';
 
 export const useProductSearch = (query, pageNumber) => {
