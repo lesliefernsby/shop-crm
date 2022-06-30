@@ -44,7 +44,7 @@ function addCategoriesFilter(value) {
         payload: value,
       });
       dispatch(setPageNumber(1));
-      dispatch(setProducts([]));
+      dispatch(setProducts([]));   // todo remove
     } catch (error) {
       dispatch(setError(true));
     }

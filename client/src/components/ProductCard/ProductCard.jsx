@@ -123,10 +123,9 @@ const editProduct = () => {
               {product.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {modal
-                ? product.description
-                : product.description.length > 100
-                  ? `${product.description.slice(0, 100)}...`
+              {(modal && product) ? product.description :
+                 product.description?.length > 100
+                  ? `${product.description?.slice(0, 100)}...`
                   : product.description}
               {/* {!modal && product.description.length > 100 && <Button color={'info'}>Learn more</Button>} */}
             </Typography>
