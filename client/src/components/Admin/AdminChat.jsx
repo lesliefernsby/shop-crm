@@ -17,7 +17,7 @@ function AdminChat({ socket }) {
   const params = useParams();
 
   useEffect(() => {
-    dispatch(chatActions.loadMessages(params.id));
+    if (params.id !== 0) dispatch(chatActions.loadMessages(params.id));
   }, []);
 
   return (
@@ -25,23 +25,27 @@ function AdminChat({ socket }) {
       <div className={styles.Container}>
         <Paper className={styles.Paper}>
           <Paper id="style-1" className={styles.MessagesBody}>
-            {chat.messages.map((message) =>
-              message.senderRole === "Admin" || message.isAdmin ? (
-                <MessageRight
-                  key={message.id}
-                  message={message.text}
-                  timestamp={new Date(message.createdAt).toLocaleTimeString()}
-                  displayName={message.senderName}
-                />
-              ) : (
-                <MessageLeft
-                  key={message.id}
-                  message={message.text}
-                  timestamp={new Date(message.createdAt).toLocaleTimeString()}
-                  displayName={message.senderName}
-                />
+            {chat.messages
+              .filter((message) =>
+                message.senderId === (params.id === 0) ? null : params.id
               )
-            )}
+              .map((message) =>
+                message.senderRole === "Admin" || message.isAdmin ? (
+                  <MessageRight
+                    key={message.createdAt}
+                    message={message.text}
+                    timestamp={new Date(message.createdAt).toLocaleTimeString()}
+                    displayName={message.senderName}
+                  />
+                ) : (
+                  <MessageLeft
+                    key={message.createdAt}
+                    message={message.text}
+                    timestamp={new Date(message.createdAt).toLocaleTimeString()}
+                    displayName={message.senderName}
+                  />
+                )
+              )}
           </Paper>
           <TextInput socket={socket} receiverId={params.id} admin={true} />
         </Paper>

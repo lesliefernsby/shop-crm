@@ -1,0 +1,8 @@
+/* eslint-disable import/prefer-default-export */
+export const adminConstants = {
+  CLEAR_NEW_PRODUCT_INPUTS: "CLEAR_NEW_PRODUCT_INPUTS",
+  EDIT_PRODUCT: "EDIT_PRODUCT",
+  SET_ADMIN_ERROR: "SET_ADMIN_ERROR",
+  SET_ADMIN_PENDING: "SET_ADMIN_PENDING",
+  ADD_NEW_PRODUCT_INFO: "ADD_NEW_PRODUCT_INFO"
+};

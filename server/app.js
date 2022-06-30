@@ -4,17 +4,23 @@
 require('rootpath')();
 require('dotenv').config();
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const errorHandler = require('helpers/error-handler.js');
+const path = require('path');
 
 const app = express();
 
 const { PORT } = process.env ?? 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+
 app.use(cors());
+
+app.use(fileUpload());
 
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
@@ -35,12 +41,20 @@ app.use(errorHandler);
 
 // start server
 io.on('connection', socket => {
-
-  const {senderId, senderName } = socket.handshake.query;
+  const { senderId, senderName } = socket.handshake.query;
   socket.on('send-message', async message => {
-    const senderRole = message.isAdmin ? 'Admin' : 'User';
-    console.log(senderId, message.receiverId, senderRole, senderName, message.text);
-    await messageService.addMessage(senderId, message.receiverId, senderRole, senderName, message.text);
+    if (message.senderId) {
+      const senderRole = message.isAdmin ? 'Admin' : 'User';
+
+      await messageService.addMessage(
+        senderId,
+        message.receiverId,
+        senderRole,
+        senderName,
+        message.text
+      );
+    }
+
     io.emit('message', message);
   });
   socket.emit('connection', null);

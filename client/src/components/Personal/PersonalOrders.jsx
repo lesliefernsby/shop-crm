@@ -16,6 +16,7 @@ import {
   List,
   ListItem,
   Button,
+  Divider,
 } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { ReadMore } from "@mui/icons-material";
@@ -96,16 +97,18 @@ function PersonalOrders() {
         </Table>
       </TableContainer>
 
+      <Divider />
+
       <List>
         <ListItem>
           <Link to="/personal">
-            <Button variant="contained">To personal page</Button>
+            <Button variant="contained">Your profile</Button>
           </Link>
-        </ListItem>
 
-        <ListItem>
           <Link to="/">
-            <Button variant="text">To main page</Button>
+            <Button variant="text" style={{ marginLeft: "1rem" }}>
+              To main page
+            </Button>
           </Link>
         </ListItem>
       </List>

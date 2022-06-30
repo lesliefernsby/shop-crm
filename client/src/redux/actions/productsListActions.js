@@ -128,6 +128,8 @@ function getFavorites() {
 
 
 
+
+
 export const productsListActions = {
   setIsListPage,
   getFilterCategoryOptions,

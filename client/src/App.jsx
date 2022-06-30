@@ -16,17 +16,21 @@ import Personal from "./components/Personal/Personal";
 import PersonalOrders from "./components/Personal/PersonalOrders";
 import Order from "./components/Personal/Order";
 import AdminChat from "./components/Admin/AdminChat";
+import AddProduct from "./components/Admin/AddProduct";
 import { chatActions } from "./redux/actions/chatActions";
 import { config } from "./redux/constants";
 import Favorites from "./components/Personal/Favorites";
+import Users from "./components/Admin/Users/Users";
+import UserOrder from "./components/Admin/Users/UserOrders";
+import OrderDetails from './components/Admin/Users/OrderDetails'
 
 function App() {
   const dispatch = useDispatch();
   const authentication = useSelector((state) => state.authentication);
   const socket = socketClient(config.API_URL, {
     query: {
-      senderId: authentication.user.sub,
-      senderName: `${authentication.user.firstName} ${authentication.user.lastName}`,
+      senderId: authentication.user ? authentication.user.sub : null,
+      senderName: authentication.user ? `${authentication.user.firstName} ${authentication.user.lastName}` : 'Guest',
     },
   });
 
@@ -64,6 +68,27 @@ function App() {
           <Route exact path="/admin" element={<Admin />} />
         </Route>
 
+        <Route exact path="/admin/users" element={<RestrictedRoute />}>
+          <Route exact path="/admin/users" element={<Users />} />
+        </Route>
+
+        <Route exact path="/admin/users/orders/:id" element={<RestrictedRoute />}>
+          <Route exact path="/admin/users/orders/:id" element={<UserOrder />} />
+        </Route>
+
+        <Route exact path="/admin/orders/details/:id" element={<RestrictedRoute />}>
+          <Route exact path="/admin/orders/details/:id" element={<OrderDetails />} />
+        </Route>
+
+        
+
+        <Route exact path="/admin/new" element={<AddProduct />}>
+          <Route
+            exact
+            path="/admin/new"
+            element={<AddProduct />}
+          />
+        </Route>
         <Route exact path="/admin/chat/:id" element={<RestrictedRoute />}>
           <Route
             exact

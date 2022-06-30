@@ -37,6 +37,9 @@ module.exports = {
           key: 'id',
         },
       },
+      hide: {
+        type: Sequelize.BOOLEAN,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
