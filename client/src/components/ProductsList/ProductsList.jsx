@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { productsListActions } from "../../redux/actions/productsListActions";
 import CategoryFilter from "../CategoryFilter/CategoryFilter";
 import ProductCard from "../ProductCard/ProductCard";
-// eslint-disable-next-line import/no-named-as-default
 import useProductSearch from "../customHooks/useProductSearch";
 
 function ProductsList() {
