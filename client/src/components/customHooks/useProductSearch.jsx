@@ -15,7 +15,7 @@ export const useProductSearch = (query, pageNumber) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(productsListActions.setProducts([]))
+   // dispatch(productsListActions.setProducts([]))
   // }, [query])
 
   // useEffect(() => {
@@ -42,7 +42,9 @@ export const useProductSearch = (query, pageNumber) => {
               }
           }
         }
-        dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
+
+        dispatch(productsListActions.setProducts([...newData]))
+        //dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
         setHasMore(newData.length > 0)
         dispatch(productsListActions.setPending(false));
       }).catch(e => {
