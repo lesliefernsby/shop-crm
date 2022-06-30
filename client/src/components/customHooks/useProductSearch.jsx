@@ -42,7 +42,8 @@ export const useProductSearch = (query, pageNumber) => {
               }
           }
         }
-        dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
+        dispatch(productsListActions.setProducts([...new Set([newData.map(b=>b)])]))
+        //dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
         setHasMore(newData.length > 0)
         dispatch(productsListActions.setPending(false));
       }).catch(e => {
