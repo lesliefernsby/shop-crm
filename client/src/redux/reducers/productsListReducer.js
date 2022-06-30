@@ -92,6 +92,17 @@ export function productsList(state = initialState, action) {
         ...state,
         favorites: action.payload
       };
+    case productsListConstants.PATCH_PRODUCT:
+      newArray = state.products.map(item => {
+        if (item.id === action.payload.id) {
+          return action.payload;
+        }
+        return {...item};
+      })
+      return {
+        ...state,
+        products: newArray,
+      };
 
     case productsListConstants.TOGGLE_HIDE_STATUS:
       newArray = state.products.map((pr) => {

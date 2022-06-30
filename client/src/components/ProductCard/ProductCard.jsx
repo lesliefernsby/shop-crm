@@ -82,6 +82,7 @@ const editProduct = () => {
           maxWidth: modal ? 500 : 345,
           display: "flex",
           flexDirection: "column",
+          padding: '10px'
         }}
         scroll="paper"
       >
@@ -90,7 +91,7 @@ const editProduct = () => {
          
           action={
             <Chip
-              label={<Typography variant="h6">${product.price}</Typography>}
+              label={<Typography sx={{minWidth: '50px'}} variant="h6">${product.price}</Typography>}
               color="secondary"
             />
           }
@@ -115,16 +116,17 @@ const editProduct = () => {
             onClick={() => (modal ? null : openModal())}
           />
           <CardContent onClick={() => (modal ? null : openModal())}>
+
             {/* <Typography variant="h6">{product.categoryId}cat</Typography>
             <Typography variant="h6">{product.id}id</Typography> */}
+
             <Typography gutterBottom variant="h5" component="div">
               {product.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {modal
-                ? product.description
-                : product.description.length > 100
-                  ? `${product.description.slice(0, 100)}...`
+              {(modal && product) ? product.description :
+                 product.description?.length > 100
+                  ? `${product.description?.slice(0, 100)}...`
                   : product.description}
               {/* {!modal && product.description.length > 100 && <Button color={'info'}>Learn more</Button>} */}
             </Typography>

@@ -132,19 +132,26 @@ async function createNewProduct(data) {
 }
 
 async function editProduct(data) {
-  try {    
+  try {  
     const product = await Product.findOne({where: {id: data.id}});
-
+    const prevCategoryId = product.categoryId; 
     let category = await Category.findOne({where: {title: data.productCategoryTitle}});
     if (!category) {
       category = await Category.create({title: data.productCategoryTitle})
     }
+    let editedProduct;
     if (data.url) {
-      return await product.update({title: data.productTitle, image: data.url, description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: product.hide}, {where: {id: data.id}})
-    } 
-      return await product.update({title: data.productTitle,  description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: product.hide}, {where: {id: data.id}})
-    
-    
+       editedProduct = await product.update({title: data.productTitle, image: data.url, description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: product.hide}, {where: {id: data.id}});
+    } else {
+       editedProduct = await product.update({title: data.productTitle,  description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: product.hide}, {where: {id: data.id}});
+    }
+    // если по старой категории нет товаров, удалить категорию
+      const noProducts = await Product.findAll({where: {categoryId: prevCategoryId}});
+      if (noProducts.length === 0) {
+        const prevCategory = await Category.findOne({where: {id: prevCategoryId}});
+        await prevCategory.destroy();
+      }
+      return editedProduct;
   } catch (error) {
     console.log(error);
   }

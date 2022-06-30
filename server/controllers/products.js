@@ -82,9 +82,6 @@ function createNewProduct(req, res, next) {
 // eslint-disable-next-line consistent-return
 function editProduct(req, res, next) {
   try {
-    // if (!req.files || Object.keys(req.files).length === 0) {
-    //   return res.status(400).json({ msg: 'No files were uploaded.' });
-    // }
     if (req.files) {
       const productImageURL = req.files.file;
       const uploadPath = path.resolve('public/img', productImageURL.name);
