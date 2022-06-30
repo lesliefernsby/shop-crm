@@ -34,20 +34,8 @@ export const useProductSearch = (query, pageNumber) => {
     })
       .then(res => {
         const newData = res?.data || [];
-        //   for (let i = 0; newData.length > i; i +=1  ) {
-        //     const neDataItem =  newData[i];
-        //     for (let j = 0; j < products.length; j+=1) {
-        //       const prItem = products[j];
-        //         if (prItem.id === neDataItem.id) {
-        //           newData.splice(j, 1)
-        //         }
-        //     }
-        //   }
-        // console.log([[...products, ...newData].reduce((map, obj) => map.set(obj.id, obj), new Map()).values()]);
-        // const mapValues = [[...products, ...newData].reduce((map, obj) => map.set(obj.id, obj), new Map()).values()];
-        // console.log([...mapValues]);
+       
         const map = new Map([...products, ...newData].map(item => [item.id, item]));
-        console.log([...map.values()])
         dispatch(productsListActions.setProducts([...map.values()]));
         setHasMore(newData.length > 0)
         dispatch(productsListActions.setPending(false));

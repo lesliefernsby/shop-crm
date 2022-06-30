@@ -100,8 +100,29 @@ function ProductsList() {
           </Grid>
         )}
 
-        {products.map((product, index) => {
-          if (products.length === index + 1) {
+        {(products.length === 0 && !loading ) ? <Grid sx={{marginTop: '4rem'}} container xs={12} justifyContent="center"><Alert severity="info">Nothing was found</Alert></Grid> : (
+          products.map((product, index) => {
+            if (products.length === index + 1) {
+              return (
+                <Grid
+                  item
+                  container
+                  alignItems="stretch"
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  key={product.id}
+                >
+                  <div
+                    style={{ display: "flex" }}
+                    ref={lastProductElementRef}
+                    key={product.id}
+                  >
+                    <ProductCard product={product} />
+                  </div>
+                </Grid>
+              );
+            }
             return (
               <Grid
                 item
@@ -112,32 +133,13 @@ function ProductsList() {
                 md={4}
                 key={product.id}
               >
-                <div
-                  style={{ display: "flex" }}
-                  ref={lastProductElementRef}
-                  key={product.id}
-                >
+                <div style={{ display: "flex" }} key={product.id}>
                   <ProductCard product={product} />
                 </div>
               </Grid>
             );
-          }
-          return (
-            <Grid
-              item
-              container
-              alignItems="stretch"
-              xs={12}
-              sm={6}
-              md={4}
-              key={product.id}
-            >
-              <div style={{ display: "flex" }} key={product.id}>
-                <ProductCard product={product} />
-              </div>
-            </Grid>
-          );
-        })}
+          })
+        )}
         <Grid
           container
           item

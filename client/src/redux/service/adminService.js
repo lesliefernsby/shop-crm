@@ -19,20 +19,20 @@ function submitNewProduct(inputs) {
   })
   .then((result) => result);
   }
-function submitEditProduct(inputs, id) {
+async function submitEditProduct(inputs, id) {
   const formData = new FormData();
   formData.append("file", inputs.productImageURL);
   const restInputs = {...inputs, id};
   delete restInputs.productImageURL;
   formData.append("document", JSON.stringify(restInputs));
 
-  axios({
+  const result = await axios({
       method: 'post',
       url: `${config.API_URL}/products/edit`,
       data: formData,
       headers: authHeader()
-  })
-  .then((result) => result);
+  });
+  return result.data;
   }
 
 function editProduct() {

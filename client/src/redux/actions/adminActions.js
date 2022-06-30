@@ -1,7 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import { adminConstants } from "../constants/adminConstants";
 import { adminService } from "../service/adminService";
-import { productsListConstants } from "../constants/productsListConstants"
+import { productsListConstants } from "../constants/productsListConstants";
+import { productsListActions } from "./productsListActions";
 
 function setError(value) {
   return (dispatch) => {
@@ -31,9 +32,11 @@ export const submitEditProduct = (inputs, id) => async dispatch => {
   try {
     dispatch(setPending(true));
     dispatch(setError(false));
-    await adminService.submitEditProduct(inputs, id);
+    const product = await adminService.submitEditProduct(inputs, id);
     dispatch(setPending(false));
     dispatch({ type: adminConstants.CLEAR_NEW_PRODUCT_INPUTS });
+    dispatch({type: productsListConstants.PATCH_PRODUCT, payload: product});
+    dispatch(productsListActions.getFilterCategoryOptions());
   } catch (error) {
     dispatch(setError(true));
   }
