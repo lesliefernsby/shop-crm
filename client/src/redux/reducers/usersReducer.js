@@ -1,5 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable default-param-last */
+
 import { userConstants } from "../constants";
 
 export function users(state = {}, action) {

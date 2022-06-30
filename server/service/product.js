@@ -3,6 +3,7 @@
 const { Op } = require('sequelize');
 const { Product, Category, Like } = require('../db/models');
 
+
 async function getCategoriesOptions() {
   try {
     return await Category.findAll({ raw: true });
@@ -12,15 +13,13 @@ async function getCategoriesOptions() {
 }
 async function getProductsByPage(query) {
   try {
-    console.log(query);
-
     const { q, page, filters } = query;
     const perPage = query.perPage || 15;
     // const q = query.q.toLowerCase();
-
-    let categoryArray = filters?.categories || [];
+    let categoryArray = (filters?.categories) || [];
 
     categoryArray = categoryArray.map(item => ({ categoryId: item }));
+
     let products = [];
     if (categoryArray.length > 0) {
       products = await Product.findAll({
@@ -103,10 +102,62 @@ async function getFavorites(userId) {
   }
 }
 
+async function toggleHideStatus(id) {
+  try {
+     const product = await Product.findOne({ where: { id } });
+
+     product.update(
+      {
+        hide: !product.hide,
+      },
+      {
+        where: { id },
+      }
+    );
+    return product;
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function createNewProduct(data) {
+  try {    
+    let category = await Category.findOne({where: {title: data.productCategoryTitle}});
+    if (!category) {
+      category = await Category.create({title: data.productCategoryTitle})
+    }
+    return await Product.create({title: data.productTitle, image: data.url, description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: false})
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function editProduct(data) {
+  try {    
+    const product = await Product.findOne({where: {id: data.id}});
+
+    let category = await Category.findOne({where: {title: data.productCategoryTitle}});
+    if (!category) {
+      category = await Category.create({title: data.productCategoryTitle})
+    }
+    if (data.url) {
+      return await product.update({title: data.productTitle, image: data.url, description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: product.hide}, {where: {id: data.id}})
+    } 
+      return await product.update({title: data.productTitle,  description: data.productDescription, weight: Number(data.weight), price: Number(data.price), categoryId: category.id, hide: product.hide}, {where: {id: data.id}})
+    
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
 module.exports = {
   getProductsByPage,
   getCategoriesOptions,
   fetchUserLikeIds,
   toggleLike,
   getFavorites,
+  toggleHideStatus,
+  createNewProduct,
+  editProduct
 };

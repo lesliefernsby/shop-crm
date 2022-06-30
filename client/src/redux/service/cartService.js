@@ -1,5 +1,4 @@
-/* eslint-disable no-nested-ternary */
-/* eslint-disable import/prefer-default-export */
+
 
 function addToCart(item) {
   const oldCart = JSON.parse(localStorage.getItem("cart"));

@@ -15,23 +15,36 @@ export const useProductSearch = (query, pageNumber) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(productsListActions.setProducts([]))
-  }, [query])
+     dispatch(productsListActions.setProducts([]))
+   }, [query])
 
   useEffect(() => {
+    dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
     let cancel
     axios({
       method: 'GET',
-      url: 'http://localhost:3001/products',
+      // withCredentials: true,
+      url: '/products',
       params: { q: query, page: pageNumber, filters: { categories: filtersCategories }, perPage },
       // eslint-disable-next-line no-return-assign
       cancelToken: new axios.CancelToken(c => cancel = c)
     })
       .then(res => {
         const newData = res?.data || [];
-        dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b => b)])]))
+        for (let i = 0; newData.length > i; i +=1  ) {
+          const neDataItem =  newData[i];
+          for (let j = 0; j < products.length; j+=1) {
+            const prItem = products[j];
+              if (prItem.id === neDataItem.id) {
+                newData.splice(j, 1)
+              }
+          }
+        }
+
+        dispatch(productsListActions.setProducts([...products, ...newData]))
+        //dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
         setHasMore(newData.length > 0)
         dispatch(productsListActions.setPending(false));
       }).catch(e => {

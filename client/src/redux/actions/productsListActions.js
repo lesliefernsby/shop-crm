@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import { productsListConstants } from "../constants/productsListConstants";
 import { productsListService } from "../service/productsListService";
 
@@ -125,6 +125,8 @@ function getFavorites() {
         );
   };
 }
+
+
 
 
 

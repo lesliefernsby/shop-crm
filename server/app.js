@@ -4,17 +4,24 @@
 require('rootpath')();
 require('dotenv').config();
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const errorHandler = require('helpers/error-handler.js');
+const path = require('path');
 
 const app = express();
 
 const { PORT } = process.env ?? 3001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.resolve('../client/build/')))
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
+
 app.use(cors());
+
+app.use(fileUpload());
 
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
@@ -29,6 +36,10 @@ app.use('/users', require('./controllers/users'));
 app.use('/products', require('./controllers/products'));
 app.use('/orders', require('./controllers/orders'));
 app.use('/messages', require('./controllers/messages'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('../client/build/index.html'));
+})
 
 // global error handler
 app.use(errorHandler);

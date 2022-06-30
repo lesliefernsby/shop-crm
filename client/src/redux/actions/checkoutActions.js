@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 
 import { checkoutConstants } from "../constants";
 import { checkoutService } from "../service/checkoutService";

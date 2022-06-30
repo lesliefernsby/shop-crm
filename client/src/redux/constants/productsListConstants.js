@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 export const productsListConstants = {
   SET_IS_LIST_PAGE: "SET_IS_LIST_PAGE",
   GET_FILTER_CATEGORY_OPTIONS: "GET_FILTER_CATEGORY_OPTIONS",
@@ -11,4 +11,5 @@ export const productsListConstants = {
   SET_LIKE: "SET_LIKE",
   SET_INITIAL_LIKES: "SET_INITIAL_LIKES",
   SET_FAVORITES: "SET_FAVORITES",
+  TOGGLE_HIDE_STATUS: "TOGGLE_HIDE_STATUS"
 };

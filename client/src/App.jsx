@@ -16,6 +16,7 @@ import Personal from "./components/Personal/Personal";
 import PersonalOrders from "./components/Personal/PersonalOrders";
 import Order from "./components/Personal/Order";
 import AdminChat from "./components/Admin/AdminChat";
+import AddProduct from "./components/Admin/AddProduct";
 import { chatActions } from "./redux/actions/chatActions";
 import { config } from "./redux/constants";
 import Favorites from "./components/Personal/Favorites";
@@ -81,6 +82,13 @@ function App() {
 
         
 
+        <Route exact path="/admin/new" element={<AddProduct />}>
+          <Route
+            exact
+            path="/admin/new"
+            element={<AddProduct />}
+          />
+        </Route>
         <Route exact path="/admin/chat/:id" element={<RestrictedRoute />}>
           <Route
             exact

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { CssBaseline, Button, List, ListItem, Typography } from "@mui/material";
@@ -17,6 +18,11 @@ function Admin() {
             <Button variant="contained">Users</Button>
           </Link>
         </ListItem>
+        <ListItem>
+          <Link to="/admin/new">
+            <Button variant="contained">Add product</Button>
+          </Link>
+        </ListItem>
 
         <ListItem>
           <Link to="/admin/chat/0">
@@ -32,6 +38,7 @@ function Admin() {
       </List>
     </main>
   );
+
 }
 
 export default Admin;
