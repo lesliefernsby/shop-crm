@@ -15,10 +15,10 @@ export const useProductSearch = (query, pageNumber) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-   // dispatch(productsListActions.setProducts([]))
-  // }, [query])
+     dispatch(productsListActions.setProducts([]))
+   }, [query])
 
-  // useEffect(() => {
+  useEffect(() => {
   //   // dispatch(productsListActions.setProducts([]))
     dispatch(productsListActions.setPending(true));
     dispatch(productsListActions.setError(false));
@@ -43,9 +43,9 @@ export const useProductSearch = (query, pageNumber) => {
           }
         }
 
-        dispatch(productsListActions.setProducts([...newData]))
+        dispatch(productsListActions.setProducts([...products, ...newData]))
         //dispatch(productsListActions.setProducts([...new Set([...products, ...newData.map(b=>b)])]))
-        setHasMore(newData.length > 15)
+        setHasMore(newData.length > 0)
         dispatch(productsListActions.setPending(false));
       }).catch(e => {
         if (axios.isCancel(e)) return
