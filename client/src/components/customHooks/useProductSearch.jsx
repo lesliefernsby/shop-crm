@@ -17,7 +17,7 @@ export const useProductSearch = (query, pageNumber) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(productsListActions.setProducts([]))
-  }, [query, filtersCategories])
+  }, [filtersCategories])
 
   useEffect(() => {
     // dispatch(productsListActions.setProducts([]))

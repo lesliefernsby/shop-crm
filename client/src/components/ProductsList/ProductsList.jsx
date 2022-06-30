@@ -59,6 +59,7 @@ function ProductsList() {
   function handleSearch(e) {
     dispatch(productsListActions.setQuery(e.target.value));
     dispatch(productsListActions.setPageNumber(1));
+    dispatch(productsListActions.setProducts([]));
   }
 
   return (

@@ -84,6 +84,7 @@ const editProduct = () => {
           maxWidth: modal ? 500 : 345,
           display: "flex",
           flexDirection: "column",
+          padding: '10px'
         }}
         scroll="paper"
       >
@@ -92,7 +93,7 @@ const editProduct = () => {
          
           action={
             <Chip
-              label={<Typography variant="h6">${product.price}</Typography>}
+              label={<Typography sx={{minWidth: '50px'}} variant="h6">${product.price}</Typography>}
               color="secondary"
             />
           }
@@ -117,7 +118,7 @@ const editProduct = () => {
             onClick={() => (modal ? null : openModal())}
           />
           <CardContent onClick={() => (modal ? null : openModal())}>
-            
+
             {/* <Typography variant="h6">{product.categoryId}cat</Typography>
             <Typography variant="h6">{product.id}id</Typography> */}
 
