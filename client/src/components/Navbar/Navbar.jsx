@@ -15,7 +15,7 @@ import {
 import styled from "styled-components";
 import {
   AddShoppingCart,
-  Menu,
+  // Menu,
   Lock,
   MeetingRoom,
   Person,
@@ -23,6 +23,7 @@ import {
 import MarkUnreadChatAltIcon from "@mui/icons-material/MarkUnreadChatAlt";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import HomeIcon from '@mui/icons-material/Home';
 import Cart from "../Cart/Cart";
 import { userActions } from "../../redux/actions/userActions";
 import { cartActions } from "../../redux/actions/cartActions";
@@ -63,8 +64,8 @@ function Navbar({ socket }) {
         <Toolbar disableGutters>
           <Box sx={{ mr: 1 }}>
             <Link className="NavLink" to="/">
-              <IconButton size="large" color="inherit">
-                <Menu />
+              <IconButton   sx={{color: 'black'}} size="large" color="inherit">
+                <HomeIcon />
               </IconButton>
             </Link>
           </Box>
@@ -91,32 +92,32 @@ function Navbar({ socket }) {
           {loggedIn ? (
             <>
               <Link className="NavLink" to="/personal">
-                <Button color="inherit" startIcon={<Person />}>
+                <Button  sx={{color: 'black'}} startIcon={<Person />}>
                   {user.firstName}
                 </Button>
               </Link>
 
               <Link className="NavLink" onClick={handleLogout} to="/">
-                <Button color="inherit" startIcon={<MeetingRoom />}>
+                <Button sx={{color: 'black'}} startIcon={<MeetingRoom />}>
                   Logout
                 </Button>
               </Link>
             </>
           ) : (
             <Link className="NavLink" to="/login">
-              <Button color="inherit" startIcon={<Lock />}>
+              <Button  sx={{color: 'black'}} startIcon={<Lock />} >
                 Login
               </Button>
             </Link>
           )}
 
-          <StyledButton onClick={() => dispatch(cartActions.openCart())}>
+          <StyledButton onClick={() => dispatch(cartActions.openCart())} sx={{marginLeft: '1rem'}}>
             <Badge badgeContent={cart.length} color="error">
-              <AddShoppingCart style={{ fontSize: "50px" }} />
+              <AddShoppingCart style={{ fontSize: "50px" }}  />
             </Badge>
           </StyledButton>
 
-          <ChatButton onClick={() => dispatch(chatActions.toggleOpenChat())}>
+          <ChatButton onClick={() => dispatch(chatActions.toggleOpenChat())}  sx={{marginLeft: '1rem'}}>
             <Badge badgeContent={1} color="error">
               <MarkUnreadChatAltIcon style={{ fontSize: "50px" }} />
             </Badge>
