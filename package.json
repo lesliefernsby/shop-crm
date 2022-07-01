@@ -1,6 +1,7 @@
 {
   "name": "shop-crm",
   "version": "1.0.0",
+
   "description": "Проект интернет-магазина с встроенным CRM",
   "main": "index.js",
   "scripts": {
@@ -17,4 +18,5 @@
     "url": "https://github.com/lesliefernsby/shop-crm/issues"
   },
   "homepage": "https://github.com/lesliefernsby/shop-crm#readme"
+
 }
