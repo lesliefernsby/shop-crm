@@ -2,6 +2,8 @@
 
 <h1>The Awesome Shop</h1>
 
+<img src="https://user-images.githubusercontent.com/96200348/178016648-65c4302b-e6d7-4522-9d93-3f55f04c91a8.jpeg" width="600">
+
 <p>Deployed project <a href="https://shop-crm.herokuapp.com/">here</a></p>
 
 <p>Universal online shop with categories, search, infinite scroll, cart, checkout and socket-based chat with Administrator</p>
@@ -43,6 +45,8 @@ then <b>npm i, npx sequelize db:migrate, npx sequelize db:seed:all</b>
 
 Then run <b>npm start</b>
 
-![photo_5350616480527531081_y](https://user-images.githubusercontent.com/96200348/178016648-65c4302b-e6d7-4522-9d93-3f55f04c91a8.jpeg|width=100px)
-![photo_5350616480527531080_y](https://user-images.githubusercontent.com/96200348/178016733-838cf209-6c26-4bf5-9912-c2448f98f185.jpeg)
-![photo_5350616480527531082_y](https://user-images.githubusercontent.com/96200348/178016633-1f4ee8f0-e178-425d-895f-1634853c6055.jpeg)
+<h2>More screenshots</h2>
+
+<img src="https://user-images.githubusercontent.com/96200348/178016733-838cf209-6c26-4bf5-9912-c2448f98f185.jpeg" width="600">
+
+<img src="https://user-images.githubusercontent.com/96200348/178016633-1f4ee8f0-e178-425d-895f-1634853c6055.jpeg" width="600">
