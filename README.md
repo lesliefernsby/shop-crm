@@ -2,6 +2,13 @@
 
 <h1>The Awesome Shop</h1>
 
+<h2>Our team:</h2>
+<ul>
+<li>Leslie Fernsby - <a href="mailto:lesliefernsby@gmail.com">lesliefernsby@gmail.com</a></li>
+<li>Dmitry Krasnov</li>
+<li>Oskar Akhmadeev</li>
+</ul>
+
 <img src="https://user-images.githubusercontent.com/96200348/178016648-65c4302b-e6d7-4522-9d93-3f55f04c91a8.jpeg" width="600">
 
 <p>Deployed project <a href="https://shop-crm.herokuapp.com/">here</a></p>
