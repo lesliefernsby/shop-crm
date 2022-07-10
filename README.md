@@ -51,6 +51,8 @@ then <b>cd server, npm i</b>
 
 Then run <b>npm start</b>
 
+It can be found on <b>http://localhost:3001</b>
+
 <h2>More screenshots</h2>
 
 <img src="https://user-images.githubusercontent.com/96200348/178016733-838cf209-6c26-4bf5-9912-c2448f98f185.jpeg" width="600">
