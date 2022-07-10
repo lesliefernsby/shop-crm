@@ -47,8 +47,7 @@
 <h2>Installation and running locally</h2>
 
 To run the project locally clone it, 
-fill it your date to .env file,
-then <b>npm i, npx sequelize db:migrate, npx sequelize db:seed:all</b> 
+then <b>cd server, npm i</b> 
 
 Then run <b>npm start</b>
 
